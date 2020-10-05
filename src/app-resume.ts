@@ -12,7 +12,7 @@
  * http://polymer.github.io/PATENTS.txt
  */
 
-import {LitElement, html, customElement, property, css} from 'lit-element';
+import {css, customElement, html, LitElement} from 'lit-element';
 
 /**
  * An example element.
@@ -20,50 +20,38 @@ import {LitElement, html, customElement, property, css} from 'lit-element';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('my-element')
-export class MyElement extends LitElement {
+@customElement('app-resume')
+export class Resume extends LitElement {
   static styles = css`
     :host {
-      display: block;
-      border: solid 1px gray;
-      padding: 16px;
-      max-width: 800px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    blockquote {
+      background-color: gray;
+      padding: 1rem;
+      margin-left: 1rem;
+      border-left: 1rem darkslategray solid;
+      color: white;
+    }
+
+    @media print {
+      :host {
+        font-family: "Comic Sans MS";
+      }
     }
   `;
 
-  /**
-   * The name to say "Hello" to.
-   */
-  @property()
-  name = 'World';
-
-  /**
-   * The number of times the button has been clicked.
-   */
-  @property({type: Number})
-  count = 0;
-
   render() {
     return html`
-      <h1>Hello, ${this.name}!</h1>
-      <button @click=${this._onClick} part="button">
-        Click Count: ${this.count}
-      </button>
-      <slot></slot>
+      <h1>Navinn Ravindaran</h1>
+      <blockquote>Hire me pls.</blockquote>
     `;
-  }
-
-  private _onClick() {
-    this.count++;
-  }
-
-  foo(): string {
-    return 'foo';
   }
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'my-element': MyElement;
+    'app-resume': Resume;
   }
 }
