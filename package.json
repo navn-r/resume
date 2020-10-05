@@ -28,6 +28,7 @@
   "author": "The Polymer Authors",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "lit-element": "^2.3.1"
   },
   "devDependencies": {
