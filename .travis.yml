@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- node
+install:
+- npm ci
+script:
+- npm run deploy
+- npm run clean:build
+- npm run print:pdf
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: docs
+  target_branch: master
+  keep_history: true
+  on:
+    branch: develop
