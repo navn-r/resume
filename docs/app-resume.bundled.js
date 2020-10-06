@@ -557,6 +557,7 @@ found at http://polymer.github.io/PATENTS.txt
         grid-template-areas:
           'header header header header'
           '. content content .';
+        margin-bottom: 5rem;
       }
 
       @media (max-width: 900px) {
