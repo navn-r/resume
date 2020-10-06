@@ -237,7 +237,8 @@ export class Resume extends LitElement {
               TravisCI, MongoDB, Firebase
             </div>
             <div class="category">
-            <strong>Development Methodology:</strong> Agile with Scrum Framework
+              <strong>Development Methodology:</strong> Agile with Scrum
+              Framework
             </div>
           </div>
         </div>

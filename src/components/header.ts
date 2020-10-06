@@ -47,6 +47,42 @@ export class Header extends LitElement {
       color: #fff;
     }
 
+    .footer {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      background-color: var(--text);
+      color: var(--accent);
+      padding: 1rem 0;
+    }
+
+    .footer fa-icon {
+      font-size: 1rem;
+    }
+
+    #print {
+      background-color: var(--accent);
+      color: var(--primary);
+      border: 0;
+      padding: 0.25rem 1rem;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    #print fa-icon {
+      color: var(--primary);
+    }
+
+    #print:hover {
+      cursor: pointer;
+    }
+
+    @media print {
+      .footer {
+        display: none;
+      }
+    }
+
     @media screen and (max-width: 900px) {
       @media (max-width: 900px) {
         #header {
@@ -65,7 +101,6 @@ export class Header extends LitElement {
       }
 
       @media (max-width: 600px) {
-
         #header {
           padding: 1rem;
         }
@@ -91,6 +126,10 @@ export class Header extends LitElement {
       }
     }
   `;
+
+  downloadToPDF() {
+    window.print();
+  }
 
   render() {
     return html`
@@ -120,6 +159,10 @@ export class Header extends LitElement {
             <a href="https://github.com/navn-r">navn-r</a>
           </div>
         </div>
+      </div>
+      <div class="footer">
+        <div style="display: flex; align-items: center;"><em>Last Updated: Oct. 6th 2020</em></div>
+        <button id="print" @click="${this.downloadToPDF}">Print Resume</button>
       </div>
     `;
   }
