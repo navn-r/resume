@@ -64,6 +64,7 @@ export class Resume extends LitElement {
     .body {
       margin-top: 1rem;
       font-size: 1.1rem;
+      padding-right: 2rem;
     }
     
     #uni-awards {
@@ -162,8 +163,24 @@ export class Resume extends LitElement {
             location="ritrovo.herokuapp.com"
             time="Sept. 2020"
             ><div slot="body" class="body">
-              <em>Coming Soon.</em><fa-icon class="far fa-heart"></fa-icon></div
-          ></experience-card>
+              <ul>
+                <li>
+                  Built a <strong>Markdown</strong> post based dashboard using
+                  <strong>Angular</strong> and <strong>Bootstrap</strong>
+                  <em>while maintaining</em> a clean design
+                </li>
+                <li>
+                  Implemented a <strong>REST API</strong> with
+                  <strong>Node and ExpressJS</strong> featuring standard
+                  <strong>CRUD</strong> operations for Users and Posts
+                </li>
+                <li>
+                  Added <strong>Password Hashing</strong> to the
+                  <strong>MongoDB</strong> database to improve User security and authentication
+                </li>
+              </ul>
+            </div></experience-card
+          >
           <experience-card
             title="Noten"
             subtitle="Cloud Based Grade Management Application"
