@@ -14,8 +14,8 @@ export class ExperienceCard extends LitElement {
   @property({type: String})
   time = '';
 
-  @property({type: Boolean})
-  isProject = false;
+  @property({type: String})
+  isProject = "";
 
   static styles = css`
     #card {
@@ -73,7 +73,7 @@ export class ExperienceCard extends LitElement {
   }
 
   getInfo() {
-    return this.isProject
+    return !!this.isProject
       ? html`<a href="https://${this.location}" id="location">${this.location}</a>`
       : html`<span id="location">${this.location}</span>`;
   }

@@ -16,6 +16,7 @@ import filesize from 'rollup-plugin-filesize';
 import {terser} from 'rollup-plugin-terser';
 import resolve from 'rollup-plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
+import copy from 'rollup-plugin-copy';
 
 export default {
   input: './out/app-resume.js',
@@ -31,6 +32,14 @@ export default {
   plugins: [
     replace({'Reflect.decorate': 'undefined'}),
     resolve(),
+    copy({
+      targets: [
+        {
+          src: 'node_modules/@fortawesome/',
+          dest: 'docs/node_modules/',
+        },
+      ],
+    }),
     terser({
       module: true,
       warnings: true,

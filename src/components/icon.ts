@@ -2,7 +2,7 @@ import {css, customElement, html, LitElement, property} from 'lit-element';
 @customElement('fa-icon')
 export class Icon extends LitElement {
   static styles = css`
-    @import '../../node_modules/@fortawesome/fontawesome-free/css/all.css';
+    @import './node_modules/@fortawesome/fontawesome-free/css/all.css';
   `;
 
   @property({type: String})
