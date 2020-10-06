@@ -65,7 +65,7 @@ class v{constructor(t,e,i){this.t=[],this.template=t,this.processor=e,this.optio
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */const b=t=>null===t||!("object"==typeof t||"function"==typeof t),S=t=>Array.isArray(t)||!(!t||!t[Symbol.iterator]);class x{constructor(t,e,i){this.dirty=!0,this.element=t,this.name=e,this.strings=i,this.parts=[];for(let t=0;t<i.length-1;t++)this.parts[t]=this._createPart()}_createPart(){return new C(this)}_getValue(){const t=this.strings,e=t.length-1;let i="";for(let s=0;s<e;s++){i+=t[s];const e=this.parts[s];if(void 0!==e){const t=e.value;if(b(t)||!S(t))i+="string"==typeof t?t:String(t);else for(const e of t)i+="string"==typeof e?e:String(e)}}return i+=t[e],i}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class C{constructor(t){this.value=void 0,this.committer=t}setValue(t){t===m||b(t)&&t===this.value||(this.value=t,p(t)||(this.committer.dirty=!0))}commit(){for(;p(this.value);){const t=this.value;this.value=m,t(this)}this.value!==m&&this.committer.commit()}}class P{constructor(t){this.value=void 0,this.i=void 0,this.options=t}appendInto(t){this.startNode=t.appendChild(c()),this.endNode=t.appendChild(c())}insertAfterNode(t){this.startNode=t,this.endNode=t.nextSibling}appendIntoPart(t){t.s(this.startNode=c()),t.s(this.endNode=c())}insertAfterPart(t){t.s(this.startNode=c()),this.endNode=t.endNode,t.endNode=this.startNode}setValue(t){this.i=t}commit(){if(null===this.startNode.parentNode)return;for(;p(this.i);){const t=this.i;this.i=m,t(this)}const t=this.i;t!==m&&(b(t)?t!==this.value&&this.o(t):t instanceof y?this.l(t):t instanceof Node?this.h(t):S(t)?this.u(t):t===g?(this.value=g,this.clear()):this.o(t))}s(t){this.endNode.parentNode.insertBefore(t,this.endNode)}h(t){this.value!==t&&(this.clear(),this.s(t),this.value=t)}o(t){const e=this.startNode.nextSibling,i="string"==typeof(t=null==t?"":t)?t:String(t);e===this.endNode.previousSibling&&3===e.nodeType?e.data=i:this.h(document.createTextNode(i)),this.value=t}l(t){const e=this.options.templateFactory(t);if(this.value instanceof v&&this.value.template===e)this.value.update(t.values);else{const i=new v(e,t.processor,this.options),s=i._clone();i.update(t.values),this.h(s),this.value=i}}u(t){Array.isArray(this.value)||(this.value=[],this.clear());const e=this.value;let i,s=0;for(const n of t)i=e[s],void 0===i&&(i=new P(this.options),e.push(i),0===s?i.appendIntoPart(this):i.insertAfterPart(e[s-1])),i.setValue(n),i.commit(),s++;s<e.length&&(e.length=s,this.clear(i&&i.endNode))}clear(t=this.startNode){e(this.startNode.parentNode,t.nextSibling,this.endNode)}}class _{constructor(t,e,i){if(this.value=void 0,this.i=void 0,2!==i.length||""!==i[0]||""!==i[1])throw new Error("Boolean attributes can only contain a single expression");this.element=t,this.name=e,this.strings=i}setValue(t){this.i=t}commit(){for(;p(this.i);){const t=this.i;this.i=m,t(this)}if(this.i===m)return;const t=!!this.i;this.value!==t&&(t?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=t),this.i=m}}class j extends x{constructor(t,e,i){super(t,e,i),this.single=2===i.length&&""===i[0]&&""===i[1]}_createPart(){return new O(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class O extends C{}let A=!1;(()=>{try{const t={get capture(){return A=!0,!1}};window.addEventListener("test",t,t),window.removeEventListener("test",t,t)}catch(t){}})();class ${constructor(t,e,i){this.value=void 0,this.i=void 0,this.element=t,this.eventName=e,this.eventContext=i,this.p=t=>this.handleEvent(t)}setValue(t){this.i=t}commit(){for(;p(this.i);){const t=this.i;this.i=m,t(this)}if(this.i===m)return;const t=this.i,e=this.value,i=null==t||null!=e&&(t.capture!==e.capture||t.once!==e.once||t.passive!==e.passive),s=null!=t&&(null==e||i);i&&this.element.removeEventListener(this.eventName,this.p,this.m),s&&(this.m=M(t),this.element.addEventListener(this.eventName,this.p,this.m)),this.value=t,this.i=m}handleEvent(t){"function"==typeof this.value?this.value.call(this.eventContext||this.element,t):this.value.handleEvent(t)}}const M=t=>t&&(A?{capture:t.capture,passive:t.passive,once:t.once}:t.capture)
+ */const b=t=>null===t||!("object"==typeof t||"function"==typeof t),x=t=>Array.isArray(t)||!(!t||!t[Symbol.iterator]);class S{constructor(t,e,i){this.dirty=!0,this.element=t,this.name=e,this.strings=i,this.parts=[];for(let t=0;t<i.length-1;t++)this.parts[t]=this._createPart()}_createPart(){return new C(this)}_getValue(){const t=this.strings,e=t.length-1;let i="";for(let s=0;s<e;s++){i+=t[s];const e=this.parts[s];if(void 0!==e){const t=e.value;if(b(t)||!x(t))i+="string"==typeof t?t:String(t);else for(const e of t)i+="string"==typeof e?e:String(e)}}return i+=t[e],i}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class C{constructor(t){this.value=void 0,this.committer=t}setValue(t){t===m||b(t)&&t===this.value||(this.value=t,p(t)||(this.committer.dirty=!0))}commit(){for(;p(this.value);){const t=this.value;this.value=m,t(this)}this.value!==m&&this.committer.commit()}}class P{constructor(t){this.value=void 0,this.i=void 0,this.options=t}appendInto(t){this.startNode=t.appendChild(c()),this.endNode=t.appendChild(c())}insertAfterNode(t){this.startNode=t,this.endNode=t.nextSibling}appendIntoPart(t){t.s(this.startNode=c()),t.s(this.endNode=c())}insertAfterPart(t){t.s(this.startNode=c()),this.endNode=t.endNode,t.endNode=this.startNode}setValue(t){this.i=t}commit(){if(null===this.startNode.parentNode)return;for(;p(this.i);){const t=this.i;this.i=m,t(this)}const t=this.i;t!==m&&(b(t)?t!==this.value&&this.o(t):t instanceof y?this.l(t):t instanceof Node?this.h(t):x(t)?this.u(t):t===g?(this.value=g,this.clear()):this.o(t))}s(t){this.endNode.parentNode.insertBefore(t,this.endNode)}h(t){this.value!==t&&(this.clear(),this.s(t),this.value=t)}o(t){const e=this.startNode.nextSibling,i="string"==typeof(t=null==t?"":t)?t:String(t);e===this.endNode.previousSibling&&3===e.nodeType?e.data=i:this.h(document.createTextNode(i)),this.value=t}l(t){const e=this.options.templateFactory(t);if(this.value instanceof v&&this.value.template===e)this.value.update(t.values);else{const i=new v(e,t.processor,this.options),s=i._clone();i.update(t.values),this.h(s),this.value=i}}u(t){Array.isArray(this.value)||(this.value=[],this.clear());const e=this.value;let i,s=0;for(const n of t)i=e[s],void 0===i&&(i=new P(this.options),e.push(i),0===s?i.appendIntoPart(this):i.insertAfterPart(e[s-1])),i.setValue(n),i.commit(),s++;s<e.length&&(e.length=s,this.clear(i&&i.endNode))}clear(t=this.startNode){e(this.startNode.parentNode,t.nextSibling,this.endNode)}}class _{constructor(t,e,i){if(this.value=void 0,this.i=void 0,2!==i.length||""!==i[0]||""!==i[1])throw new Error("Boolean attributes can only contain a single expression");this.element=t,this.name=e,this.strings=i}setValue(t){this.i=t}commit(){for(;p(this.i);){const t=this.i;this.i=m,t(this)}if(this.i===m)return;const t=!!this.i;this.value!==t&&(t?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=t),this.i=m}}class j extends S{constructor(t,e,i){super(t,e,i),this.single=2===i.length&&""===i[0]&&""===i[1]}_createPart(){return new O(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class O extends C{}let A=!1;(()=>{try{const t={get capture(){return A=!0,!1}};window.addEventListener("test",t,t),window.removeEventListener("test",t,t)}catch(t){}})();class ${constructor(t,e,i){this.value=void 0,this.i=void 0,this.element=t,this.eventName=e,this.eventContext=i,this.p=t=>this.handleEvent(t)}setValue(t){this.i=t}commit(){for(;p(this.i);){const t=this.i;this.i=m,t(this)}if(this.i===m)return;const t=this.i,e=this.value,i=null==t||null!=e&&(t.capture!==e.capture||t.once!==e.once||t.passive!==e.passive),s=null!=t&&(null==e||i);i&&this.element.removeEventListener(this.eventName,this.p,this.m),s&&(this.m=M(t),this.element.addEventListener(this.eventName,this.p,this.m)),this.value=t,this.i=m}handleEvent(t){"function"==typeof this.value?this.value.call(this.eventContext||this.element,t):this.value.handleEvent(t)}}const M=t=>t&&(A?{capture:t.capture,passive:t.passive,once:t.once}:t.capture)
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -105,7 +105,7 @@ class v{constructor(t,e,i){this.t=[],this.template=t,this.processor=e,this.optio
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-class{handleAttributeExpressions(t,e,i,s){const n=e[0];if("."===n){return new j(t,e.slice(1),i).parts}return"@"===n?[new $(t,e.slice(1),s.eventContext)]:"?"===n?[new _(t,e.slice(1),i)]:new x(t,e,i).parts}handleTextExpression(t){return new P(t)}};
+class{handleAttributeExpressions(t,e,i,s){const n=e[0];if("."===n){return new j(t,e.slice(1),i).parts}return"@"===n?[new $(t,e.slice(1),s.eventContext)]:"?"===n?[new _(t,e.slice(1),i)]:new S(t,e,i).parts}handleTextExpression(t){return new P(t)}};
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -178,7 +178,9 @@ found at http://polymer.github.io/PATENTS.txt
       /><i class=${this.class}></i>
     `}};et([G({type:String})],it.prototype,"class",void 0),it=et([q("fa-icon")],it);var st=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let nt=class extends tt{render(){return U`
       <div id="header">
-        <h1>Navinn <span id="lastName">Ravindaran</span></h1>
+        <div id="name">
+          <h1>Navinn <span id="lastName">Ravindaran</span></h1>
+        </div>
         <div id="contact-container">
           <div class="contact">
             <fa-icon class="fas fa-link"></fa-icon>
@@ -208,7 +210,6 @@ found at http://polymer.github.io/PATENTS.txt
       display: grid;
       grid-template-columns: 2fr 1fr;
       padding: 2rem;
-      text-align: center;
       color: #fff;
     }
 
@@ -218,10 +219,11 @@ found at http://polymer.github.io/PATENTS.txt
       color: var(--accent);
     }
 
-    h1 {
+    #name h1 {
       font-size: 3.5rem;
       font-weight: 400;
       font-style: italic;
+      text-align: center;
     }
 
     #lastName {
@@ -243,8 +245,52 @@ found at http://polymer.github.io/PATENTS.txt
     }
 
     .contact a {
-        text-decoration: none;
-        color: #fff;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    @media screen and (max-width: 900px) {
+      @media (max-width: 900px) {
+        #header {
+          grid-template-columns: auto;
+          justify-content: center;
+        }
+
+        #contact-container {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .contact {
+          justify-content: center;
+          padding: 0 1rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+
+        #header {
+          padding: 1rem;
+        }
+
+        #contact-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .contact {
+          justify-content: flex-start;
+        }
+
+        #name h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 375px) {
+        #contact-container {
+          grid-template-columns: auto;
+          margin-bottom: 1.5rem;
+        }
+      }
     }
   `,nt=st([q("app-header")],nt);var ot=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let rt=class extends tt{constructor(){super(...arguments),this.title="Experience",this.subtitle="summary/degree/position",this.location="",this.time="",this.isProject=""}render(){return U`
       <div id="card">
@@ -297,151 +343,178 @@ found at http://polymer.github.io/PATENTS.txt
     }
   `,ot([G({type:String})],rt.prototype,"title",void 0),ot([G({type:String})],rt.prototype,"subtitle",void 0),ot([G({type:String})],rt.prototype,"location",void 0),ot([G({type:String})],rt.prototype,"time",void 0),ot([G({type:String})],rt.prototype,"isProject",void 0),rt=ot([q("experience-card")],rt);var at=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let ct=class extends tt{render(){return U`
       <app-header></app-header>
-      <div class="section">
-        <div class="title">
-          <fa-icon class="fas fa-graduation-cap"></fa-icon>
-          <h2>EDUCATION</h2>
+      <div id="content">
+        <div class="section">
+          <div class="title">
+            <fa-icon class="fas fa-graduation-cap"></fa-icon>
+            <h2>EDUCATION</h2>
+          </div>
+          <experience-card
+            title="University of Toronto"
+            subtitle="Honours Bachelor of Science, Computer Science Co-op"
+            location="Toronto, ON"
+            time="2019 — Present"
+          >
+            <div slot="body" class="body">
+              Cumulative GPA: <strong>3.75 / 4.00</strong> <br />
+              Notable Courses: Software Design, Intro to Software Engineering,
+              Discrete Mathematics, Multivariable Calculus, Linear Algebra<br />
+              Awards:
+              <ul id="uni-awards">
+                <li><strong>Dean's List</strong> 2020-21</li>
+                <li><strong>University of Toronto Scholar</strong> ($7500)</li>
+              </ul>
+            </div>
+          </experience-card>
         </div>
-        <experience-card
-          title="University of Toronto"
-          subtitle="Honours Bachelor of Science, Computer Science Co-op"
-          location="Toronto, ON"
-          time="2019 — Present"
-        >
-          <div slot="body" class="body">
-            Cumulative GPA: <strong>3.75 / 4.00</strong> <br />
-            Notable Courses: Software Design, Intro to Software Engineering,
-            Discrete Mathematics, Multivariable Calculus, Linear Algebra<br />
-            Awards:
-            <ul id="uni-awards">
-              <li><strong>Dean's List</strong> 2020-21</li>
-              <li><strong>University of Toronto Scholar</strong> ($7500)</li>
-            </ul>
+        <div class="section">
+          <div class="title">
+            <fa-icon class="fas fa-briefcase"></fa-icon>
+            <h2>EXPERIENCES</h2>
           </div>
-        </experience-card>
-      </div>
-      <div class="section">
-        <div class="title">
-          <fa-icon class="fas fa-briefcase"></fa-icon>
-          <h2>EXPERIENCES</h2>
+          <experience-card
+            title="Software Developer Co-op"
+            subtitle="CaseWare International Inc."
+            location="Toronto, ON"
+            time="Sept. 2020 — Present"
+          >
+            <div slot="body" class="body">
+              <em>Coming Soon.</em><fa-icon class="far fa-heart"></fa-icon>
+            </div>
+          </experience-card>
+          <experience-card
+            title="Food Service Associate — Tim Hortons"
+            subtitle="Canada's Wonderland"
+            location="Vaughan, ON"
+            time="July — Sept. 2017"
+          >
+            <div slot="body" class="body">
+              <ul>
+                <li>
+                  Prepared and served
+                  <strong>food and beverage items</strong> to park guests and
+                  operated cash registers
+                </li>
+                <li>
+                  Provided <strong>quality service</strong> to guests,
+                  <em><strong>excelling</strong></em> in
+                  <strong>customer service</strong> and
+                  <strong>communication</strong>
+                </li>
+                <li>
+                  Fulfilled orders while focusing on
+                  <strong>direct Guest-Associate interactions</strong> in
+                  compliance with <strong>WHMIS</strong> and company protocol
+                </li>
+              </ul>
+            </div>
+          </experience-card>
         </div>
-        <experience-card
-          title="Software Developer Co-op"
-          subtitle="CaseWare International Inc."
-          location="Toronto, ON"
-          time="Sept. 2020 — Present"
-        >
-          <div slot="body" class="body">
-            <em>Coming Soon.</em><fa-icon class="far fa-heart"></fa-icon>
+        <div class="section">
+          <div class="title">
+            <fa-icon class="fas fa-code"></fa-icon>
+            <h2>PROJECTS</h2>
           </div>
-        </experience-card>
-        <experience-card
-          title="Food Service Associate — Tim Hortons"
-          subtitle="Canada's Wonderland"
-          location="Vaughan, ON"
-          time="July — Sept. 2017"
-        >
-          <div slot="body" class="body">
-            <ul>
-              <li>
-                Prepared and served <strong>food and beverage items</strong> to
-                park guests and operated cash registers
-              </li>
-              <li>
-                Provided <strong>quality service</strong> to guests,
-                <em><strong>excelling</strong></em> in
-                <strong>customer service</strong> and
-                <strong>communication</strong>
-              </li>
-              <li>
-                Fulfilled orders while focusing on
-                <strong>direct Guest-Associate interactions</strong> in
-                compliance with <strong>WHMIS</strong> and company protocol
-              </li>
-            </ul>
-          </div>
-        </experience-card>
-      </div>
-      <div class="section">
-        <div class="title">
-          <fa-icon class="fas fa-code"></fa-icon>
-          <h2>PROJECTS</h2>
+          <experience-card
+            title="Ritrovo"
+            subtitle="Full-Stack Social Platform"
+            isProject="true"
+            location="ritrovo.herokuapp.com"
+            time="Sept. 2020"
+            ><div slot="body" class="body">
+              <em>Coming Soon.</em><fa-icon class="far fa-heart"></fa-icon></div
+          ></experience-card>
+          <experience-card
+            title="Noten"
+            subtitle="Cloud Based Grade Management Application"
+            isProject="true"
+            location="ply.gl/com.noten"
+            time="May 2020"
+          >
+            <div slot="body" class="body">
+              <ul>
+                <li>
+                  Built using <strong>React Native</strong> to achieve
+                  <em>a single codebase</em> deployable on
+                  <strong>Android</strong> and <strong>iOS</strong>
+                </li>
+                <li>
+                  Implemented
+                  <strong>Firebase Auth and Realtime Database</strong> to allow
+                  users to login and sync data
+                  <em><strong>instantly</strong></em>
+                </li>
+                <li>
+                  Followed modern React practices such as
+                  <strong>Hooks and Lifecycle</strong> methods
+                </li>
+                <li>
+                  Learned the basics of async functions and promises with
+                  <strong>JavaScript ES6</strong>
+                </li>
+              </ul>
+            </div>
+          </experience-card>
+          <experience-card
+            title="Personal Portfolio"
+            subtitle="Showcase of Projects and Experiences"
+            isProject="true"
+            location="navn.me"
+            time="Jan. 2020 — Present"
+          >
+            <div slot="body" class="body">
+              <ul>
+                <li>
+                  Built using <strong>HTML</strong>, <strong>CSS</strong> and
+                  <strong>JavaScript</strong> with a focus on
+                  <strong>responsive web design</strong>
+                </li>
+                <li>
+                  Used modular <strong>Web Components</strong> to
+                  <em><strong>decrease</strong></em> redundant code and
+                  <em><strong>increase</strong></em> code reusability
+                </li>
+                <li>
+                  Implemented <strong>CSS Grid</strong> to increase usability
+                  across various screen sizes
+                </li>
+              </ul>
+            </div>
+          </experience-card>
         </div>
-        <experience-card
-          title="Ritrovo"
-          subtitle="Full-Stack Social Platform"
-          isProject="true"
-          location="ritrovo.herokuapp.com"
-          time="Sept. 2020"
-          ><div slot="body" class="body">
-            <em>Coming Soon.</em><fa-icon class="far fa-heart"></fa-icon></div
-        ></experience-card>
-        <experience-card
-          title="Noten"
-          subtitle="Cloud Based Grade Management Application"
-          isProject="true"
-          location="ply.gl/com.noten"
-          time="May 2020"
-        >
-          <div slot="body" class="body">
-            <ul>
-              <li>
-                Built using <strong>React Native</strong> to achieve
-                <em>a single codebase</em> deployable on
-                <strong>Android</strong> and <strong>iOS</strong>
-              </li>
-              <li>
-                Implemented
-                <strong>Firebase Auth and Realtime Database</strong> to allow
-                users to login and sync data <em><strong>instantly</strong></em>
-              </li>
-              <li>
-                Followed modern React practices such as
-                <strong>Hooks and Lifecycle</strong> methods
-              </li>
-              <li>
-                Learned the basics of async functions and promises with
-                <strong>JavaScript ES6</strong>
-              </li>
-            </ul>
+        <div class="section">
+          <div class="title">
+            <fa-icon class="fas fa-medal"></fa-icon>
+            <h2>SKILLS</h2>
           </div>
-        </experience-card>
-        <experience-card
-          title="Personal Portfolio"
-          subtitle="Showcase of Projects and Experiences"
-          isProject="true"
-          location="navn.me"
-          time="Jan. 2020 — Present"
-        >
-          <div slot="body" class="body">
-            <ul>
-              <li>
-                Built using <strong>HTML</strong>, <strong>CSS</strong> and
-                <strong>JavaScript</strong> with a focus on
-                <strong>responsive web design</strong>
-              </li>
-              <li>
-                Used modular <strong>Web Components</strong> to
-                <em><strong>decrease</strong></em> redundant code and
-                <em><strong>increase</strong></em> code reusability
-              </li>
-              <li>
-                Implemented <strong>CSS Grid</strong> to increase usability
-                across various screen sizes
-              </li>
-            </ul>
-          </div>
-        </experience-card>
-      </div>
-      <div class="section">
-        <div class="title">
-          <fa-icon class="fas fa-medal"></fa-icon>
-          <h2>SKILLS</h2>
         </div>
       </div>
     `}};ct.styles=Y`
     :host {
       font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    @media screen {
+      :host {
+        display: grid;
+        grid-template-areas:
+          'header header header header'
+          '. content content .';
+      }
+
+      @media (max-width: 900px) {
+        :host {
+          grid-template-areas: 'header' 'content';
+        }
+      }
+    }
+
+    #content {
+      grid-area: content;
+    }
+
+    app-header {
+      grid-area: header;
     }
 
     fa-icon {

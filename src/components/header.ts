@@ -8,7 +8,6 @@ export class Header extends LitElement {
       display: grid;
       grid-template-columns: 2fr 1fr;
       padding: 2rem;
-      text-align: center;
       color: #fff;
     }
 
@@ -18,10 +17,11 @@ export class Header extends LitElement {
       color: var(--accent);
     }
 
-    h1 {
+    #name h1 {
       font-size: 3.5rem;
       font-weight: 400;
       font-style: italic;
+      text-align: center;
     }
 
     #lastName {
@@ -43,15 +43,61 @@ export class Header extends LitElement {
     }
 
     .contact a {
-        text-decoration: none;
-        color: #fff;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    @media screen and (max-width: 900px) {
+      @media (max-width: 900px) {
+        #header {
+          grid-template-columns: auto;
+          justify-content: center;
+        }
+
+        #contact-container {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .contact {
+          justify-content: center;
+          padding: 0 1rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+
+        #header {
+          padding: 1rem;
+        }
+
+        #contact-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .contact {
+          justify-content: flex-start;
+        }
+
+        #name h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 375px) {
+        #contact-container {
+          grid-template-columns: auto;
+          margin-bottom: 1.5rem;
+        }
+      }
     }
   `;
 
   render() {
     return html`
       <div id="header">
-        <h1>Navinn <span id="lastName">Ravindaran</span></h1>
+        <div id="name">
+          <h1>Navinn <span id="lastName">Ravindaran</span></h1>
+        </div>
         <div id="contact-container">
           <div class="contact">
             <fa-icon class="fas fa-link"></fa-icon>
