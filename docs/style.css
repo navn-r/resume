@@ -51,6 +51,11 @@ table {
 	--primary: #682218;
 	--text: #531b13;
 	--accent: #f8be3d;
+	--bg: #FFE8E1;
+}
+
+body {
+	background-color: var(--bg);
 }
 
 @media print {
