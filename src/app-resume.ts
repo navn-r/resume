@@ -65,9 +65,18 @@ export class Resume extends LitElement {
       margin-top: 1rem;
       font-size: 1.1rem;
     }
-
+    
     #uni-awards {
       margin-top: 0.25rem;
+    }
+    
+    #skills {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      row-gap: 1rem;
+      color: var(--text);
+      margin-left: 2rem;
+      font-size: 1.1rem;
     }
   `;
 
@@ -217,6 +226,19 @@ export class Resume extends LitElement {
           <div class="title">
             <fa-icon class="fas fa-medal"></fa-icon>
             <h2>SKILLS</h2>
+          </div>
+          <div id="skills">
+            <div class="category">
+              <strong>Programming:</strong> HTML, CSS, TypeScript, JavaScript,
+              Java, C, Python, Shell
+            </div>
+            <div class="category">
+              <strong>Frameworks and Tools:</strong> Angular, React Native, Git,
+              TravisCI, MongoDB, Firebase
+            </div>
+            <div class="category">
+            <strong>Development Methodology:</strong> Agile with Scrum Framework
+            </div>
           </div>
         </div>
       </div>
