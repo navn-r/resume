@@ -7,6 +7,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
+    "bundle": "rollup -c",
     "build:watch": "tsc --watch",
     "clean": "rimraf app-resume.{d.ts,d.ts.map,js,js.map} test/app-resume.{d.ts,d.ts.map,js,js.map} test/app-resume_test.{d.ts,d.ts.map,js,js.map}",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",

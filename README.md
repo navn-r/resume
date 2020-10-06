@@ -9,7 +9,7 @@ Note:
 
 Run the following to bundle for production
 ```bash
-👉 ./node_modules/.bin/rollup -c # deployable at ./docs
+👉 npm run bundle # deployable at ./docs
 ```
 
 ---

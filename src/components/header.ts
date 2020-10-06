@@ -1,5 +1,6 @@
 import './icon';
 import {css, customElement, html, LitElement, property} from 'lit-element';
+
 @customElement('app-header')
 export class Header extends LitElement {
   static styles = css`
@@ -136,6 +137,7 @@ export class Header extends LitElement {
 
   constructor() {
     super();
+    // TODO: UNCOMMENT BEFORE DEPLOY
     this.getRecentCommit();
   }
 
@@ -143,7 +145,7 @@ export class Header extends LitElement {
     fetch('https://api.github.com/repos/navn-r/resume')
       .then((res) => res.json())
       .then((repo) => {
-        this.time = new Date(repo.updated_at);
+        this.time = new Date(repo.pushed_at);
       });
   }
 
