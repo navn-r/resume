@@ -61,23 +61,7 @@ export class Header extends LitElement {
       font-size: 1rem;
     }
 
-    #print {
-      background-color: var(--accent);
-      color: var(--primary);
-      border: 0;
-      padding: 0.25rem 1rem;
-      font-weight: 600;
-      font-style: italic;
-    }
-
-    #print fa-icon {
-      color: var(--primary);
-    }
-
-    #print:hover {
-      cursor: pointer;
-    }
-
+    
     @media print {
       .footer {
         display: none;
@@ -128,16 +112,11 @@ export class Header extends LitElement {
     }
   `;
 
-  downloadToPDF() {
-    window.print();
-  }
-
   @property({attribute: false})
   time: Date = new Date(Date.now());
 
   constructor() {
     super();
-    // TODO: UNCOMMENT BEFORE DEPLOY
     this.getRecentCommit();
   }
 
@@ -182,7 +161,9 @@ export class Header extends LitElement {
         <div style="display: flex; align-items: center;">
           <em>Updated: ${this.time.toDateString()}</em>
         </div>
-        <button id="print" @click="${this.downloadToPDF}">Print Resume</button>
+        <div>
+          Made with <fa-icon class="far fa-heart"></fa-icon>
+        </div>
       </div>
     `;
   }
