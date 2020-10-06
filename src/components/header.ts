@@ -1,5 +1,5 @@
 import './icon';
-import {css, customElement, html, LitElement} from 'lit-element';
+import {css, customElement, html, LitElement, property} from 'lit-element';
 @customElement('app-header')
 export class Header extends LitElement {
   static styles = css`
@@ -131,6 +131,22 @@ export class Header extends LitElement {
     window.print();
   }
 
+  @property({attribute: false})
+  time: Date = new Date(Date.now());
+
+  constructor() {
+    super();
+    this.getRecentCommit();
+  }
+
+  getRecentCommit(): void {
+    fetch('https://api.github.com/repos/navn-r/resume')
+      .then((res) => res.json())
+      .then((repo) => {
+        this.time = new Date(repo.updated_at);
+      });
+  }
+
   render() {
     return html`
       <div id="header">
@@ -161,7 +177,9 @@ export class Header extends LitElement {
         </div>
       </div>
       <div class="footer">
-        <div style="display: flex; align-items: center;"><em>Last Updated: Oct. 6th 2020</em></div>
+        <div style="display: flex; align-items: center;">
+          <em>Updated: ${this.time.toDateString()}</em>
+        </div>
         <button id="print" @click="${this.downloadToPDF}">Print Resume</button>
       </div>
     `;
