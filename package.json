@@ -1,7 +1,7 @@
 {
-  "name": "lit-element-starter-ts",
-  "version": "0.0.0",
-  "description": "A simple web component",
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "Resume built with web technologies",
   "main": "app-resume.js",
   "module": "app-resume.js",
   "type": "module",

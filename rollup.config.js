@@ -18,9 +18,9 @@ import resolve from 'rollup-plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 
 export default {
-  input: 'app-resume.js',
+  input: './out/app-resume.js',
   output: {
-    file: 'app-resume.bundled.js',
+    file: './docs/app-resume.bundled.js',
     format: 'esm',
   },
   onwarn(warning) {
