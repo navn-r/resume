@@ -1,15 +1,18 @@
-import {css, customElement, html, LitElement, property} from 'lit-element';
+import { customElement, html, LitElement, property } from 'lit-element';
 @customElement('fa-icon')
 export class Icon extends LitElement {
-  static styles = css`
-    @import './node_modules/@fortawesome/fontawesome-free/css/all.css';
-  `;
-
   @property({type: String})
   class="fas fa-coffee"
 
   render() {
-    return html` <i class=${this.class}></i> `;
+    return html`
+      <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous"
+      /><i class=${this.class}></i>
+    `;
   }
 }
 
