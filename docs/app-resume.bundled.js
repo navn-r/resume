@@ -176,7 +176,7 @@ found at http://polymer.github.io/PATENTS.txt
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
         crossorigin="anonymous"
       /><i class=${this.class}></i>
-    `}};et([G({type:String})],it.prototype,"class",void 0),it=et([W("fa-icon")],it);var st=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let nt=class extends tt{constructor(){super(),this.time=new Date(Date.now())}getRecentCommit(){fetch("https://api.github.com/repos/navn-r/resume").then(t=>t.json()).then(t=>{this.time=new Date(t.pushed_at)})}render(){return N`
+    `}};et([G({type:String})],it.prototype,"class",void 0),it=et([W("fa-icon")],it);var st=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let nt=class extends tt{constructor(){super(),this.time=new Date(Date.now()),this.getRecentCommit()}getRecentCommit(){fetch("https://api.github.com/repos/navn-r/resume").then(t=>t.json()).then(t=>{this.time=new Date(t.pushed_at)})}render(){return N`
       <div id="header">
         <div id="name">
           <h1>Navinn <span id="lastName">Ravindaran</span></h1>

@@ -117,7 +117,7 @@ export class Header extends LitElement {
 
   constructor() {
     super();
-    // this.getRecentCommit();
+    this.getRecentCommit();
   }
 
   getRecentCommit(): void {
