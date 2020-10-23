@@ -59,17 +59,21 @@ export class Resume extends LitElement {
     .section {
       display: grid;
       grid-template-rows: auto;
-      row-gap: 1.5rem;
+      row-gap: 1rem;
     }
 
     .body {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
       font-size: 1.1rem;
       padding-right: 2rem;
     }
     
     #uni-awards {
-      margin-top: 0.25rem;
+      margin-top: 0.5rem;
+    }
+
+    ul {
+      margin-top: 0;
     }
     
     #skills {
@@ -115,13 +119,28 @@ export class Resume extends LitElement {
             <h2>EXPERIENCES</h2>
           </div>
           <experience-card
-            title="Software Developer Co-op"
-            subtitle="CaseWare International Inc."
+            title="Software Developer"
+            subtitle="CaseWare International Inc. &bull; Co-op"
             location="Toronto, ON"
             time="Sept. 2020 — Present"
           >
             <div slot="body" class="body">
-              <em>Coming Soon.</em><fa-icon class="far fa-heart"></fa-icon>
+              <ul>
+                <li>
+                  Engaged in an <strong>Agile Scrum</strong> of 11 team members
+                  for the <strong>CaseWare Cloud</strong> product.
+                </li>
+                <li>
+                  Developed bug fixes using <strong>Angular</strong> and
+                  <strong>AngularJS</strong> <em>improving</em> the end
+                  experience for distributors
+                </li>
+                <li>
+                  Designed and implemented <strong>Unit Tests</strong> from
+                  existing manual tests <strong><em>reducing</em></strong> the
+                  developer and QA regression effort.
+                </li>
+              </ul>
             </div>
           </experience-card>
           <experience-card
@@ -177,7 +196,8 @@ export class Resume extends LitElement {
                 </li>
                 <li>
                   Added <strong>Password Hashing</strong> to the
-                  <strong>MongoDB</strong> database to improve User security and authentication
+                  <strong>MongoDB</strong> database to improve User security and
+                  authentication
                 </li>
               </ul>
             </div></experience-card
@@ -251,8 +271,8 @@ export class Resume extends LitElement {
               Java, C, Python, Shell
             </div>
             <div class="category">
-              <strong>Frameworks and Tools:</strong> Angular, React Native, Git,
-              TravisCI, MongoDB, Firebase
+              <strong>Frameworks and Tools:</strong> Angular, React Native,
+              Jira, Git, TravisCI, MongoDB, Firebase
             </div>
             <div class="category">
               <strong>Development Methodology:</strong> Agile with Scrum
