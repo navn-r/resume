@@ -373,6 +373,26 @@ found at http://polymer.github.io/PATENTS.txt
       <div id="content">
         <div class="section">
           <div class="title">
+            <fa-icon class="fas fa-medal"></fa-icon>
+            <h2>SKILLS</h2>
+          </div>
+          <div id="skills">
+            <div class="category">
+              <strong>Programming:</strong> HTML, CSS, TypeScript, JavaScript,
+              Java, C, Python, Shell
+            </div>
+            <div class="category">
+              <strong>Frameworks and Tools:</strong> Angular, React Native,
+              Jira, Git, TravisCI, MongoDB, Firebase
+            </div>
+            <div class="category">
+              <strong>Development Methodology:</strong> Agile with Scrum
+              Framework
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="title">
             <fa-icon class="fas fa-graduation-cap"></fa-icon>
             <h2>EDUCATION</h2>
           </div>
@@ -540,26 +560,6 @@ found at http://polymer.github.io/PATENTS.txt
               </ul>
             </div>
           </experience-card>
-        </div>
-        <div class="section">
-          <div class="title">
-            <fa-icon class="fas fa-medal"></fa-icon>
-            <h2>SKILLS</h2>
-          </div>
-          <div id="skills">
-            <div class="category">
-              <strong>Programming:</strong> HTML, CSS, TypeScript, JavaScript,
-              Java, C, Python, Shell
-            </div>
-            <div class="category">
-              <strong>Frameworks and Tools:</strong> Angular, React Native,
-              Jira, Git, TravisCI, MongoDB, Firebase
-            </div>
-            <div class="category">
-              <strong>Development Methodology:</strong> Agile with Scrum
-              Framework
-            </div>
-          </div>
         </div>
       </div>
     `}};ct.styles=Y`

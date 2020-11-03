@@ -107,7 +107,7 @@ export class Resume extends LitElement {
               Discrete Mathematics, Multivariable Calculus, Linear Algebra<br />
               Awards:
               <ul id="uni-awards">
-                <li><strong>Dean's List</strong> 2020-21</li>
+                <li><strong>Dean's List</strong> 2019-20</li>
                 <li><strong>University of Toronto Scholar</strong> ($7500)</li>
               </ul>
             </div>
