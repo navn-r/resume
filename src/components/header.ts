@@ -137,7 +137,7 @@ export class Header extends LitElement {
         <div id="contact-container">
           <div class="contact">
             <fa-icon class="fas fa-link"></fa-icon>
-            <a href="https://navn-r.github.io">navn.me</a>
+            <a href="https://navn.me">navn.me</a>
           </div>
           <div class="contact">
             <fa-icon class="fas fa-paper-plane"></fa-icon>

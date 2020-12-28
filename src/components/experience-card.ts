@@ -3,7 +3,7 @@ import {css, customElement, html, LitElement, property} from 'lit-element';
 @customElement('experience-card')
 export class ExperienceCard extends LitElement {
   @property({type: String})
-  title = 'Experience';
+  name = 'Experience';
 
   @property({type: String})
   subtitle = 'summary/degree/position';
@@ -15,7 +15,10 @@ export class ExperienceCard extends LitElement {
   time = '';
 
   @property({type: String})
-  isProject = "";
+  isProject = '';
+
+  @property({type: String})
+  repo = '';
 
   static styles = css`
     #card {
@@ -46,13 +49,15 @@ export class ExperienceCard extends LitElement {
     #time {
       grid-area: time;
       text-align: right;
-      font-style: italic;
     }
+    
     #location {
       grid-area: location;
-      font-style: italic;
       text-align: right;
       font-size: 1.25rem;
+    }
+
+    a {
       text-decoration: none;
       color: var(--text);
     }
@@ -62,7 +67,7 @@ export class ExperienceCard extends LitElement {
     return html`
       <div id="card">
         <div id="title-container">
-          <h3 id="title">${this.title}</h3>
+          ${this.getTitle()}
           <h4 id="subtitle">${this.subtitle}</h4>
           ${this.getInfo()}
           <span id="time">${this.time}</span>
@@ -76,6 +81,12 @@ export class ExperienceCard extends LitElement {
     return !!this.isProject
       ? html`<a href="https://${this.location}" id="location">${this.location}</a>`
       : html`<span id="location">${this.location}</span>`;
+  }
+
+  getTitle() {
+    return !!this.isProject && !!this.repo
+      ? html`<a href="${this.repo}"><h3 id="title">${this.name}</h3></a>`
+      : html`<h3 id="title">${this.name}</h3>`;
   }
 }
 
