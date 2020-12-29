@@ -206,13 +206,13 @@ export class Resume extends LitElement {
                   <strong>50%</strong>
                 </li>
                 <li>
-                  <strong>Core features:</strong> Multiple User types, Courses, Graded Assessments,
+                  <strong>Core features:</strong> Courses, Graded Assessments, Student Analytics, 
                   Surveys & Ratings, Realtime Chat, Volunteer & Employment
                   Opportunities and a community-driven Donation System
                 </li>
                 <li>
                   <strong>Technology:</strong> MongoDB, ExpressJS, Angular,
-                  Node.js, Socket.io, Multer, GridFS, Figma, Jira, Github
+                  Node.js, Socket.io, Chart.js, Multer, GridFS, Figma, Jira, Github
                 </li>
               </ul>
             </div></experience-card
