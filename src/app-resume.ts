@@ -228,8 +228,8 @@ export class Resume extends LitElement {
               <ul>
                 <li>
                   <strong>Core Features:</strong> Creating and following user
-                  pro<span class="space">f</span>iles, liking songs, playlist
-                  generation and querying liked songs from followers
+                  pro<span class="space">f</span>iles, Uploading and liking songs, Playlist
+                  generation and Querying liked songs from followers
                 </li>
                 <li>
                   <strong>Technology:</strong> Java, Spring Boot, MongoDB, Neo4j

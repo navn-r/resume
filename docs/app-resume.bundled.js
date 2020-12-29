@@ -507,7 +507,7 @@ found at http://polymer.github.io/PATENTS.txt
               <ul>
                 <li>
                   <strong>Core Features:</strong> Creating and following user
-                  pro<span class="space">f</span>iles, liking songs, playlist
+                  pro<span class="space">f</span>iles, Uploading and liking songs, playlist
                   generation and querying liked songs from followers
                 </li>
                 <li>
