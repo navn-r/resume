@@ -44,6 +44,7 @@ export class Resume extends LitElement {
 
     li {
       margin: 0.25rem 0;
+      line-height: 1.25rem;
     }
 
     .title {
@@ -52,7 +53,7 @@ export class Resume extends LitElement {
       grid-template-columns: 2.5rem auto;
       align-items: flex-end;
       border-bottom: 0.25rem var(--primary) solid;
-      margin: 2rem 2rem 0 2rem;
+      margin: 1.5rem 2rem 0 2rem;
       padding-bottom: 0.75rem;
     }
 
@@ -78,6 +79,7 @@ export class Resume extends LitElement {
 
     ul {
       margin-top: 0;
+      margin-left: -0.5rem;
     }
 
     #skills {
@@ -162,15 +164,13 @@ export class Resume extends LitElement {
                   <strong>Jira</strong> Boards
                 </li>
                 <li>
-                  Designed and implemented <strong>Unit Tests</strong> from
-                  existing manual tests reducing the developer and QA regression
-                  effort
+                  Decreased developer & QA regression efforts by <strong>60%</strong> by converting manual tests to unit tests with <strong>Karma</strong> and <strong>Jasmine</strong>
                 </li>
                 <li>
                   Developed bug <span class="space">f</span>ixes and features
                   using <strong>Angular, AngularJS</strong> and
                   <strong>TypeScript</strong> improving the end-user experience
-                  for distributors and <span class="space">f</span>irms
+                  for <strong>69+</strong> international distributors and <span class="space">f</span>irms across <strong>130</strong> countries
                 </li>
               </ul>
             </div>
