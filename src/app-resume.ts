@@ -150,7 +150,7 @@ export class Resume extends LitElement {
             name="Software Developer"
             subtitle="CaseWare International Inc. &bull; Co-op"
             location="Toronto, ON"
-            time="Sept. 2020 — Present"
+            time="Sept. 2020 — Apr. 2021"
           >
             <div slot="body" class="body">
               <ul>
