@@ -108,7 +108,7 @@ export class Resume extends LitElement {
             time="Sept. 2019 — Apr. 2023 (Expected)"
           >
             <div slot="body" class="body">
-              Cumulative GPA: <strong>3.83 / 4.00</strong> <br />
+              Cumulative GPA: <strong>3.78 / 4.00</strong> <br />
               Notable Courses: Software Design, Intro to Software Engineering,
               Discrete Mathematics, Multivariable Calculus, Linear Algebra<br />
               Awards:
