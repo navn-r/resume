@@ -170,7 +170,7 @@ export class Resume extends LitElement {
                   Developed bug <span class="space">f</span>ixes and features
                   using <strong>Angular, AngularJS</strong> and
                   <strong>TypeScript</strong> improving the end-user experience
-                  for <strong>69+</strong> international distributors and <span class="space">f</span>irms across <strong>130</strong> countries
+                  for <strong>60+</strong> international distributors
                 </li>
               </ul>
             </div>
