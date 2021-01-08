@@ -65,4 +65,8 @@ body {
 	html {
 		font-size: 80%;
 	}
+	body {
+		margin: 0;
+		overflow: hidden;
+	}
 }

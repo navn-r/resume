@@ -29,7 +29,8 @@
   "author": "The Polymer Authors",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "lit-element": "^2.4.0"
+    "lit-element": "^2.4.0",
+    "puppeteer": "^5.5.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",

@@ -21,7 +21,7 @@ export default {
   input: './out/app-resume.js',
   output: {
     file: './docs/app-resume.bundled.js',
-    format: 'esm',
+    format: 'iife'
   },
   onwarn(warning) {
     if (warning.code !== 'THIS_IS_UNDEFINED') {
