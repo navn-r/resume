@@ -1,7 +1,9 @@
+os: osx
 language: node_js
 node_js:
 - node
 install:
+- brew install node
 - npm ci
 script:
 - npm run deploy
