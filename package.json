@@ -10,7 +10,7 @@
     "bundle": "rollup -c",
     "build:watch": "tsc --watch",
     "deploy": "npm run build && npm run bundle",
-    "print:pdf": "rm -rf ./docs/RavindaranNavinn_Resume.pdf && ts-node print.ts",
+    "print:pdf": "rm -rf ./docs/RavindaranNavinn_Resume.pdf && ts-node print.js",
     "clean": "rimraf app-resume.{d.ts,d.ts.map,js,js.map} test/app-resume.{d.ts,d.ts.map,js,js.map} test/app-resume_test.{d.ts,d.ts.map,js,js.map}",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
     "lint:eslint": "eslint 'src/**/*.ts'",
