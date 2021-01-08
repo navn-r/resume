@@ -1,7 +1,7 @@
-'use strict';
+/* tslint:disable */
+// @ts-nocheck
 
 const puppeteer = require('puppeteer');
-const fs = require('fs');
 
 (async () => {
   const browser = await puppeteer.launch({ dumpio: true, headless: true, args: ['--font-render-hinting=none'] });
@@ -16,3 +16,5 @@ const fs = require('fs');
   });
   await browser.close();
 })();
+
+/* tslint:enable */
