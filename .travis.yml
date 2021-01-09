@@ -4,7 +4,8 @@ node_js:
 install:
 - npm ci
 script:
-- cp style.css docs/style.css
+- mkdir -p docs && cp style.css docs/style.css && cp index.html docs/index.html
+- sed -i '7s@.*@    <script src="app-resume.bundled.js"></script>@' docs/index.html
 - npm run deploy
 - npm run print:pdf
 deploy:
