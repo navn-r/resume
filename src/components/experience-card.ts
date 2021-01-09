@@ -1,4 +1,5 @@
 import {css, customElement, html, LitElement, property} from 'lit-element';
+import {unsafeHTML} from 'lit-html/directives/unsafe-html';
 
 @customElement('experience-card')
 export class ExperienceCard extends LitElement {
@@ -68,7 +69,7 @@ export class ExperienceCard extends LitElement {
       <div id="card">
         <div id="title-container">
           ${this.getTitle()}
-          <h4 id="subtitle">${this.subtitle}</h4>
+          <h4 id="subtitle">${unsafeHTML(this.subtitle)}</h4>
           ${this.getInfo()}
           <span id="time">${this.time}</span>
         </div>

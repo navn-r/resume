@@ -17,6 +17,8 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "plugins": [
       {
         "name": "ts-lit-plugin",
@@ -24,6 +26,6 @@
       }
     ]
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "assets/resume.json"],
   "exclude": []
 }

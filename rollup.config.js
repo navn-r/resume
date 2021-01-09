@@ -16,6 +16,7 @@ import filesize from 'rollup-plugin-filesize';
 import {terser} from 'rollup-plugin-terser';
 import resolve from 'rollup-plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
+import json from "@rollup/plugin-json";
 
 export default {
   input: './out/app-resume.js',
@@ -30,6 +31,7 @@ export default {
   },
   plugins: [
     replace({'Reflect.decorate': 'undefined'}),
+    json(),
     resolve(),
     terser({
       module: true,

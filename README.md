@@ -9,7 +9,7 @@ Built with:
 
 ## Schema
 
-This resume was inspired by the [JSON Resume](https://jsonresume.org/schema/) initiative. As such, all the data found in the resume is located in [`resume.json`](/assets/resume.json).  
+This resume was inspired by the [JSON Resume](https://jsonresume.org/schema/) initiative. As such, all the data found in the resume is located in [`resume.json`](/src/resume.json).  
 
 My goal was to abstract all the personal resume data *outside* the main web code and into a reusable and easily customizable format. So if anyone wants to use the same resume style, they can just change the JSON.
 
@@ -83,13 +83,13 @@ npm run clean:build   # removes the /out dir (optional)
 ```
 
 ### Printing to PDF (optional)  
-> Follow **Deployment** before proceding
+> Follow **Deployment** before proceeding
 ```
 npm run print:pdf
 ```  
 
 We use `ts-node` to run the print script since `node.js` scripts wouldn't work on TravisCI, if you would like to use `node.js` ...  
-  1. Remove the `ts-lint` comments in [`print.ts`](https://github.com/navn-r/resume/blob/develop/assets/print.ts) and rename it to `print.js`  
+  1. Remove the `ts-lint` comments in [`print.ts`](https://github.com/navn-r/resume/blob/develop/print.ts) and rename it to `print.js`  
   2. Replace the `print:pdf` script in [`package.json`](https://github.com/navn-r/resume/blob/develop/package.json) with    
   ```json
   "print:pdf": "rm -rf ./docs/RavindaranNavinn_Resume.pdf && node print.js",

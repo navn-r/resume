@@ -1,7 +1,9 @@
 import './components/header';
 import './components/experience-card';
 import './components/icon';
+import * as data from './resume.json';
 import {css, customElement, html, LitElement} from 'lit-element';
+import {unsafeHTML} from 'lit-html/directives/unsafe-html';
 
 @customElement('app-resume')
 export class Resume extends LitElement {
@@ -89,37 +91,31 @@ export class Resume extends LitElement {
       color: var(--text);
       margin-left: 2rem;
       font-size: 1.1rem;
+      margin-bottom: 1rem;
     }
   `;
 
   render() {
     return html`
-      <app-header></app-header>
+      <app-header .about="${data.about}"></app-header>
       <div id="content">
         <div class="section">
           <div class="title">
             <fa-icon class="fas fa-graduation-cap"></fa-icon>
             <h2>EDUCATION</h2>
           </div>
-          <experience-card
-            name="University of Toronto"
-            subtitle="Honours Bachelor of Science, Computer Science Co-op"
-            location="Toronto, ON"
-            time="Sept. 2019 — Apr. 2023 (Expected)"
-          >
+          ${data.education.map(({school, degree, location, duration, cgpa, courses, awards}) => html`
+          <experience-card name="${school}" subtitle="${degree}" location="${location}" time="${duration}">
             <div slot="body" class="body">
-              Cumulative GPA: <strong>3.78 / 4.00</strong> <br />
-              Notable Courses: Software Design, Intro to Software Engineering,
-              Discrete Mathematics, Multivariable Calculus, Linear Algebra<br />
+              Cumulative GPA: <strong>${unsafeHTML(cgpa)}</strong> <br />
+              Notable Courses: ${unsafeHTML(courses.join(', '))} <br />
               Awards:
               <ul id="uni-awards">
-                <li>
-                  <strong>Dean's List of Academic Excellence</strong> (2019-20)
-                </li>
-                <li><strong>University of Toronto Scholar</strong> ($7500)</li>
+                ${awards.map(award => html`<li>${unsafeHTML(award)}</li>`)}
               </ul>
             </div>
           </experience-card>
+          `)}
         </div>
         <div class="section">
           <div class="title">
@@ -127,18 +123,7 @@ export class Resume extends LitElement {
             <h2>SKILLS</h2>
           </div>
           <div id="skills">
-            <div class="category">
-              <strong>Programming:</strong> HTML, CSS, TypeScript, JavaScript,
-              Java, C, Python, Shell
-            </div>
-            <div class="category">
-              <strong>Frameworks and Tools:</strong> Angular, React Native,
-              Jira, Git, TravisCI, MongoDB, Firebase
-            </div>
-            <div class="category">
-              <strong>Development Methodology:</strong> Agile with Scrum
-              Framework
-            </div>
+            ${data.skills.map(skill => html`<div class="category">${unsafeHTML(skill)}</div>`)}
           </div>
         </div>
         <div class="section">
@@ -146,133 +131,30 @@ export class Resume extends LitElement {
             <fa-icon class="fas fa-briefcase"></fa-icon>
             <h2>EXPERIENCE</h2>
           </div>
-          <experience-card
-            name="Software Developer"
-            subtitle="CaseWare International Inc. &bull; Co-op"
-            location="Toronto, ON"
-            time="Sept. 2020 — Apr. 2021"
-          >
+          ${data.experience.map(({position, employer, location, duration, accomplishments}) => html`
+          <experience-card name="${position}" subtitle="${employer}" location="${location}" time="${duration}">
             <div slot="body" class="body">
-              <ul>
-                <li>
-                  Engaged in an <strong>Agile Scrum</strong> of 11 members for
-                  the <strong>Simple Engagements</strong> product
-                </li>
-                <li>
-                  Facilitated <strong>Daily Standup</strong> meetings using
-                  various Sprint, Regression, and On Call
-                  <strong>Jira</strong> Boards
-                </li>
-                <li>
-                  Decreased developer & QA regression efforts by <strong>60%</strong> by converting manual tests to unit tests with <strong>Karma</strong> and <strong>Jasmine</strong>
-                </li>
-                <li>
-                  Developed bug <span class="space">f</span>ixes and features
-                  using <strong>Angular, AngularJS</strong> and
-                  <strong>TypeScript</strong> improving the end-user experience
-                  for <strong>60+</strong> international distributors
-                </li>
-              </ul>
+              <ul>${accomplishments.map(accomplishment => html`<li>${unsafeHTML(accomplishment)}</li>`)}</ul>
             </div>
           </experience-card>
+          `)}
         </div>
         <div class="section">
           <div class="title">
             <fa-icon class="fas fa-code"></fa-icon>
             <h2>PROJECTS</h2>
           </div>
-          <experience-card
-            name="UImpactify"
-            subtitle="Online Learning Platform"
-            isProject="true"
-            repo="https://github.com/navn-r/uimpactify"
-            location="uimpactify.herokuapp.com"
-            time="Sept. 2020 — Dec. 2020"
-            ><div slot="body" class="body">
-              <ul>
-                <li>
-                  Developed in an Agile Scrum of 7 members over 4 sprints,
-                  specializing in education for the social purpose
-                  sector
-                </li>
-                <li>
-                  Facilitated Scrum Daily Standup, Backlog Re<span class="space">f</span>inement, and Software Architecture Design meetings
-                </li>
-                <li>
-                  Developed and implemented a Discord Bot to supplement Daily Standup Meetings, reducing overall meeting time by <strong>50%</strong>
-                </li>
-                <li>
-                  <strong>Core features:</strong> Courses, Graded Assessments, Student Analytics, 
-                  Surveys & Ratings, Realtime Chat, Volunteer & Employment
-                  Opportunities and a community-driven Donation System
-                </li>
-                <li>
-                  <strong>Technology:</strong> MongoDB, ExpressJS, Angular,
-                  Node.js, Socket.io, Chart.js, Multer, GridFS, Figma, Jira, Github
-                </li>
-              </ul>
-            </div></experience-card
-          >
-          <experience-card
-            name="Spotify API Clone"
-            time="Nov. 2020 — Dec. 2020"
-            subtitle="Social-centric Music Player Backend"
-            repo="https://github.com/navn-r/spotify-api-clone"
-            location="navn.me/spotify-api-clone"
-            isProject="true"
-            ><div slot="body" class="body">
-              <ul>
-                <li>
-                  <strong>Core Features:</strong> Creating and following user pro<span class="space">f</span>iles, Uploading and liking songs, Playlist generation and Querying liked songs from followers
-                </li>
-                <li>
-                  <strong>Technology:</strong> Java, Spring Boot, MongoDB, Neo4j
-                </li>
-              </ul>
-            </div></experience-card
-          >
-          <experience-card
-            name="Ritrovo"
-            time="Sept. 2020"
-            subtitle="Full-Stack Social Platform"
-            repo="https://github.com/navn-r/ritrovo"
-            location="ritrovo.herokuapp.com"
-            isProject="true"
-            ><div slot="body" class="body">
-              <ul>
-                <li>
-                  <strong>Core features:</strong> Create, Edit, View, and Delete posts made by other users in a single-community based dashboard
-                </li>
-                <li>
-                  <strong>Technology:</strong> MongoDB, ExpressJS, Angular,
-                  Node.js, Markdown, Bootstrap, Heroku
-                </li>
-              </ul>
-            </div></experience-card
-          >
-          <experience-card
-            name="Noten"
-            time="May 2020"
-            subtitle="Cloud Based Grade Management Application"
-            repo="https://github.com/navn-r/Noten"
-            location="ply.gl/com.noten"
-            isProject="true"
-          >
+          ${data.projects.map(({name, date, shortDesc, repoUrl, demoUrl, accomplishments, features, technology}) => html`
+          <experience-card name="${name}" subtitle="${shortDesc}" location="${demoUrl}" time="${date}" repo="${repoUrl}" isProject="true">
             <div slot="body" class="body">
               <ul>
-                <li>
-                  <strong>Core features:</strong> Multi-Semester and Course
-                  Management, Grade Prediction Calculator, Pass/Fail Courses,
-                  Multiple Grade Scales <br />
-                  and Incognito Grades
-                </li>
-                <li>
-                  <strong>Technology:</strong> React Native, Firebase Realtime
-                  Database, Google OAuth 2.0
-                </li>
+                ${accomplishments.map(accomplishment => html`<li>${unsafeHTML(accomplishment)}</li>`)}
+                <li><strong>Core features:</strong> ${unsafeHTML(features.join(', '))}</li>
+                <li><strong>Technology:</strong> ${unsafeHTML(technology.join(', '))}</li>
               </ul>
             </div>
           </experience-card>
+          `)}
         </div>
       </div>
     `;

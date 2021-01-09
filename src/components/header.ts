@@ -1,6 +1,17 @@
 import './icon';
 import {css, customElement, html, LitElement, property} from 'lit-element';
 
+export interface About {
+  firstName: string;
+  lastName: string;
+  contact: {
+    portfolio: string;
+    email: string;
+    linkedIn: string;
+    github: string;
+  }
+}
+
 @customElement('app-header')
 export class Header extends LitElement {
   static styles = css`
@@ -115,6 +126,9 @@ export class Header extends LitElement {
   @property({attribute: false})
   time: Date = new Date(Date.now());
 
+  @property({type: Object})
+  about!: About;
+
   constructor() {
     super();
     this.getRecentCommit();
@@ -132,28 +146,28 @@ export class Header extends LitElement {
     return html`
       <div id="header">
         <div id="name">
-          <h1>Navinn <span id="lastName">Ravindaran</span></h1>
+          <h1>${this.about.firstName} <span id="lastName">${this.about.lastName}</span></h1>
         </div>
         <div id="contact-container">
           <div class="contact">
             <fa-icon class="fas fa-link"></fa-icon>
-            <a href="https://navn.me">navn.me</a>
+            <a href="https://${this.about.contact.portfolio}">${this.about.contact.portfolio}</a>
           </div>
           <div class="contact">
             <fa-icon class="fas fa-paper-plane"></fa-icon>
-            <a href="mailto:navinn.ravindaran@mail.utoronto.ca"
-              >navinn.ravindaran@mail.utoronto.ca</a
+            <a href="mailto:${this.about.contact.email}"
+              >${this.about.contact.email}</a
             >
           </div>
           <div class="contact">
             <fa-icon class="fab fa-linkedin"></fa-icon>
-            <a href="https://linkedin.com/in/navinn-ravindaran"
-              >navinn-ravindaran</a
+            <a href="https://linkedin.com/in/${this.about.contact.linkedIn}"
+              >${this.about.contact.linkedIn}</a
             >
           </div>
           <div class="contact">
             <fa-icon class="fab fa-github"></fa-icon>
-            <a href="https://github.com/navn-r">navn-r</a>
+            <a href="https://github.com/${this.about.contact.github}">${this.about.contact.github}</a>
           </div>
         </div>
       </div>
