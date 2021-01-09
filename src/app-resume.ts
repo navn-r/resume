@@ -196,14 +196,10 @@ export class Resume extends LitElement {
                   sector
                 </li>
                 <li>
-                  Facilitated Scrum Daily Standup, Backlog Re<span class="space"
-                    >f</span
-                  >inement, and Software Architecture Design meetings
+                  Facilitated Scrum Daily Standup, Backlog Re<span class="space">f</span>inement, and Software Architecture Design meetings
                 </li>
                 <li>
-                  Developed and implemented a Discord Bot to supplement Daily
-                  Standup Meetings, reducing overall meeting time by
-                  <strong>50%</strong>
+                  Developed and implemented a Discord Bot to supplement Daily Standup Meetings, reducing overall meeting time by <strong>50%</strong>
                 </li>
                 <li>
                   <strong>Core features:</strong> Courses, Graded Assessments, Student Analytics, 
@@ -219,17 +215,15 @@ export class Resume extends LitElement {
           >
           <experience-card
             name="Spotify API Clone"
+            time="Nov. 2020 — Dec. 2020"
             subtitle="Social-centric Music Player Backend"
-            isProject="true"
             repo="https://github.com/navn-r/spotify-api-clone"
             location="navn.me/spotify-api-clone"
-            time="Nov. 2020 — Dec. 2020"
+            isProject="true"
             ><div slot="body" class="body">
               <ul>
                 <li>
-                  <strong>Core Features:</strong> Creating and following user
-                  pro<span class="space">f</span>iles, Uploading and liking songs, Playlist
-                  generation and Querying liked songs from followers
+                  <strong>Core Features:</strong> Creating and following user pro<span class="space">f</span>iles, Uploading and liking songs, Playlist generation and Querying liked songs from followers
                 </li>
                 <li>
                   <strong>Technology:</strong> Java, Spring Boot, MongoDB, Neo4j
@@ -239,17 +233,15 @@ export class Resume extends LitElement {
           >
           <experience-card
             name="Ritrovo"
+            time="Sept. 2020"
             subtitle="Full-Stack Social Platform"
-            isProject="true"
             repo="https://github.com/navn-r/ritrovo"
             location="ritrovo.herokuapp.com"
-            time="Sept. 2020"
+            isProject="true"
             ><div slot="body" class="body">
               <ul>
                 <li>
-                  <strong>Core features:</strong> Create, Edit, View, and Delete
-                  posts made by other users in a single-community based
-                  dashboard
+                  <strong>Core features:</strong> Create, Edit, View, and Delete posts made by other users in a single-community based dashboard
                 </li>
                 <li>
                   <strong>Technology:</strong> MongoDB, ExpressJS, Angular,
@@ -260,11 +252,11 @@ export class Resume extends LitElement {
           >
           <experience-card
             name="Noten"
+            time="May 2020"
             subtitle="Cloud Based Grade Management Application"
-            isProject="true"
             repo="https://github.com/navn-r/Noten"
             location="ply.gl/com.noten"
-            time="May 2020"
+            isProject="true"
           >
             <div slot="body" class="body">
               <ul>

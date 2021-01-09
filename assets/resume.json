@@ -1,0 +1,141 @@
+{
+  "about": {
+    "firstName": "Navinn",
+    "lastName": "Ravindaran",
+    "contact": {
+      "portfolio": "navn.me",
+      "email": "me@navn.me",
+      "linkedIn": "navinn-ravindaran",
+      "github": "navn-r"
+    }
+  },
+  "skills": [
+    "<strong>Programming:</strong> HTML, CSS, TypeScript, JavaScript, Java, C, Python, Shell",
+    "<strong>Frameworks and Tools:</strong> Angular, React Native, Jira, Git, TravisCI, MongoDB, Firebase",
+    "<strong>Development Methodology:</strong> Agile with Scrum Framework"
+  ],
+  "education": [
+    {
+      "school": "University of Toronto",
+      "degree": "Honours Bachelor of Science, Computer Science Co-op",
+      "location": "Toronto, ON",
+      "duration": "Sept. 2019 — Apr. 2023 (Expected)",
+      "cgpa": "3.78 / 4.00",
+      "courses": [
+        "Software Design",
+        "Intro to Software Engineering",
+        "Discrete Mathematics",
+        "Multivariable Calculus",
+        "Linear Algebra"
+      ],
+      "awards": [
+        "<strong>Dean's List of Academic Excellence</strong> (2019-20)",
+        "<strong>University of Toronto Scholar</strong> ($7500)</li>"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "position": "Software Developer",
+      "employer": "CaseWare International Inc. &bull; Co-op",
+      "location": "Toronto, ON",
+      "duration": "Sept. 2020 — Apr. 2021",
+      "accomplishments": [
+        "Engaged in an <strong>Agile Scrum</strong> of 11 members for the <strong>Simple Engagements</strong> product",
+        "Facilitated <strong>Daily Standup</strong> meetings using various Sprint, Regression, and On Call <strong>Jira</strong> Boards",
+        "Decreased developer & QA regression efforts by <strong>60%</strong> by converting manual tests to unit tests with <strong>Karma</strong> and <strong>Jasmine</strong>",
+        "Developed bug <span class=\"space\">f</span>ixes and features using <strong>Angular, AngularJS</strong> and <strong>TypeScript</strong> improving the end-user experience for <strong>60+</strong> international distributors"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "UImpactify",
+      "date": "Sept. 2020 — Dec. 2020",
+      "shortDesc": "Online Learning Platform",
+      "repoUrl": "https://github.com/navn-r/uimpactify",
+      "demoUrl": "uimpactify.herokuapp.com",
+      "accomplishments": [
+        "Developed in an Agile Scrum of 7 members over 4 sprints, specializing in education for the social purpose sector",
+        "Facilitated Scrum Daily Standup, Backlog Re<span class=\"space\">f</span>inement, and Software Architecture Design meetings",
+        "Developed and implemented a Discord Bot to supplement Daily Standup Meetings, reducing overall meeting time by <strong>50%</strong>"
+      ],
+      "features": [
+        "Courses",
+        "Graded Assessments",
+        "Student Analytics",
+        "Surveys & Ratings",
+        "Realtime Chat",
+        "Volunteer & Employment Opportunities",
+        "Community-driven Donation System"
+      ],
+      "technology": [
+        "MongoDB",
+        "ExpressJS",
+        "Angular",
+        "Node.js",
+        "Clarity Design",
+        "Socket.io",
+        "Chart.js",
+        "Multer",
+        "GridFS",
+        "Figma",
+        "Jira"
+      ]
+    },
+    {
+      "name": "Spotify API Clone",
+      "date": "Nov. 2020 — Dec. 2020",
+      "shortDesc": "Social-centric Music Player Backend",
+      "repoUrl": "https://github.com/navn-r/spotify-api-clone",
+      "demoUrl": "navn.me/spotify-api-clone",
+      "accomplishments": [],
+      "features": [
+        "Creating and following user pro<span class=\"space\">f</span>iles",
+        "Uploading and liking songs",
+        "Playlist generation",
+        "Querying liked songs from followers"
+      ],
+      "technology": ["Java", "Spring Boot", "MongoDB", "Neo4j"]
+    },
+    {
+      "name": "Ritrovo",
+      "date": "Sept. 2020",
+      "shortDesc": "Full-Stack Social Platform",
+      "repoUrl": "https://github.com/navn-r/ritrovo",
+      "demoUrl": "ritrovo.herokuapp.com",
+      "accomplishments": [],
+      "features": [
+        "Create, Edit, View, and Delete posts made by other users in a single-community based dashboard"
+      ],
+      "technology": [
+        "MongoDB",
+        "ExpressJS",
+        "Angular",
+        "Node.js",
+        "Markdown",
+        "Bootstrap",
+        "Heroku"
+      ]
+    },
+    {
+      "name": "Noten",
+      "date": "May 2020",
+      "shortDesc": "Cloud Based Grade Management Application",
+      "repoUrl": "https://github.com/navn-r/Noten",
+      "demoUrl": "ply.gl/com.noten",
+      "accomplishments": [],
+      "features": [
+        "Multi-Semester and Course Management",
+        "Grade Prediction Calculator",
+        "Pass/Fail Courses",
+        "Multiple Grade Scales <br /> and Incognito Grades"
+      ],
+      "technology": [
+        "React Native",
+        "Firebase Realtime Database",
+        "Google OAuth 2.0"
+      ]
+    }
+  ]
+}
