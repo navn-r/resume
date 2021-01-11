@@ -8,7 +8,7 @@
     "build": "tsc",
     "bundle": "rollup -c",
     "build:watch": "tsc --watch",
-    "deploy": "npm run build && npm run bundle && mkdir -p docs && cp src/style.css docs/style.css && cp src/index.html docs/index.html && cp src/resume.json docs/resume.json && sed -i '7s@.*@    <script src=\"app-resume.bundled.js\"></script>@' docs/index.html && sed -i '6s@.*@    <link href=\"style.css\" rel=\"stylesheet\" />@' docs/index.html",
+    "deploy": "npm run build && npm run bundle && mkdir -p docs && cp src/style.css docs/style.css && cp src/index.html docs/index.html && cp src/resume.json docs/resume.json && cp src/favicon.png docs/favicon.png && sed -i '7s@.*@    <script src=\"app-resume.bundled.js\"></script>@' docs/index.html && sed -i '6s@.*@    <link href=\"style.css\" rel=\"stylesheet\" />@' docs/index.html",
     "print:pdf": "rm -rf ./docs/RavindaranNavinn_Resume.pdf && ts-node print.ts",
     "clean": "rm -rf out docs",
     "clean:build": "rm -rf out",
