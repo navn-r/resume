@@ -353,6 +353,7 @@ const at=new WeakMap,ct=(lt=t=>e=>{if(!(e instanceof M))throw new Error("unsafeH
     #title-container {
       display: grid;
       justify-content: space-between;
+      row-gap: 0.125rem;
       grid-template-areas:
         'title location'
         'subtitle time';
