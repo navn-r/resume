@@ -28,19 +28,12 @@ export class Resume extends LitElement {
       }
     }
 
-    @media print {
-      app-header {
-        width: calc(100% + 2px);
-      }
-    }
-
     #content {
       grid-area: content;
     }
 
     app-header {
       grid-area: header;
-      width: calc(100% + 1px);
     }
 
     fa-icon {
