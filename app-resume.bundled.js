@@ -468,6 +468,12 @@ const at=new WeakMap,ct=(lt=t=>e=>{if(!(e instanceof M))throw new Error("unsafeH
       }
     }
 
+    @media print {
+      app-header {
+        width: calc(100% + 2px);
+      }
+    }
+
     #content {
       grid-area: content;
     }
