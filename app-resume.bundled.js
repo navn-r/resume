@@ -474,6 +474,7 @@ const at=new WeakMap,ct=(lt=t=>e=>{if(!(e instanceof M))throw new Error("unsafeH
 
     app-header {
       grid-area: header;
+      width: calc(100% + 1px);
     }
 
     fa-icon {
