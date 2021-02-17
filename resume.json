@@ -10,9 +10,9 @@
     }
   },
   "skills": [
-    "<strong>Programming:</strong> HTML, CSS, TypeScript, JavaScript, Java, C, Python, Shell",
-    "<strong>Frameworks and Tools:</strong> Angular, React Native, Jira, Git, TravisCI, MongoDB, Firebase",
-    "<strong>Development Methodology:</strong> Agile with Scrum Framework"
+    "<strong>Programming:</strong> HTML, CSS, TypeScript, JavaScript, Java, C, Python, Shell, LaTeX",
+    "<strong>Frameworks and Tools:</strong> Angular, React, React Native, Jira, Git, GitHub Actions, TravisCI, MongoDB, Firebase",
+    "<strong>Development Methodology:</strong> Agile Scrum, Agile Kanban"
   ],
   "education": [
     {
