@@ -34,6 +34,7 @@ export class Resume extends LitElement {
 
     app-header {
       grid-area: header;
+      width: calc(100% + 1px);
     }
 
     fa-icon {
