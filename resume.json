@@ -11,7 +11,7 @@
   },
   "skills": [
     "<strong>Programming:</strong> HTML, CSS, TypeScript, JavaScript, Java, C, Python, Shell, LaTeX",
-    "<strong>Frameworks and Tools:</strong> Angular, React, React Native, Jira, Git, GitHub Actions, TravisCI, MongoDB, Firebase",
+    "<strong>Frameworks and Tools:</strong> Angular, React, React Native, Node.js, Express.js, Jira, Git, GitHub Actions, TravisCI, MongoDB, Firebase",
     "<strong>Development Methodology:</strong> Agile Scrum, Agile Kanban"
   ],
   "education": [
@@ -71,7 +71,7 @@
       ],
       "technology": [
         "MongoDB",
-        "ExpressJS",
+        "Express.js",
         "Angular",
         "Node.js",
         "Clarity Design",
@@ -109,7 +109,7 @@
       ],
       "technology": [
         "MongoDB",
-        "ExpressJS",
+        "Express.js",
         "Angular",
         "Node.js",
         "Markdown",
