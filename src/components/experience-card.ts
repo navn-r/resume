@@ -30,7 +30,7 @@ export class ExperienceCard extends LitElement {
     #title-container {
       display: grid;
       justify-content: space-between;
-      row-gap: 0.125rem;
+      row-gap: 0.25rem;
       grid-template-areas:
         'title location'
         'subtitle time';

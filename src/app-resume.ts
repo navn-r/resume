@@ -29,6 +29,7 @@ export class Resume extends LitElement {
     }
 
     #content {
+      margin-top: 0.75rem;
       grid-area: content;
     }
 
@@ -46,7 +47,7 @@ export class Resume extends LitElement {
 
     li {
       margin: 0.25rem 0;
-      line-height: 1.25rem;
+      line-height: 1.35rem;
     }
 
     .title {
@@ -55,20 +56,24 @@ export class Resume extends LitElement {
       grid-template-columns: 2.5rem auto;
       align-items: flex-end;
       border-bottom: 0.25rem var(--primary) solid;
-      margin: 1.5rem 2rem 0 2rem;
-      padding-bottom: 0.75rem;
+      margin: 1rem 2rem;
+      padding-bottom: 0.5rem;
     }
 
     .section {
       display: grid;
       grid-template-rows: auto;
-      row-gap: 1rem;
     }
 
     .body {
       margin-top: 0.5rem;
       font-size: 1.1rem;
       padding-right: 2rem;
+    }
+
+    .education {
+      line-height: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .space {
@@ -81,6 +86,7 @@ export class Resume extends LitElement {
 
     ul {
       margin-top: 0;
+      margin-bottom: 1.125rem;
       margin-left: -0.5rem;
     }
 
@@ -106,13 +112,10 @@ export class Resume extends LitElement {
           </div>
           ${data.education.map(({school, degree, location, duration, cgpa, courses, awards}) => html`
           <experience-card name="${school}" subtitle="${degree}" location="${location}" time="${duration}">
-            <div slot="body" class="body">
+            <div slot="body" class="body education">
               Cumulative GPA: <strong>${unsafeHTML(cgpa)}</strong> <br />
               Notable Courses: ${unsafeHTML(courses.join(', '))} <br />
-              Awards:
-              <ul id="uni-awards">
-                ${awards.map(award => html`<li>${unsafeHTML(award)}</li>`)}
-              </ul>
+              Awards: ${unsafeHTML(awards.join(', '))}
             </div>
           </experience-card>
           `)}
