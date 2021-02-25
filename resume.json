@@ -17,7 +17,7 @@
   "education": [
     {
       "school": "University of Toronto",
-      "degree": "Honours Bachelor of Science, Computer Science Co-op",
+      "degree": "Honours Bachelor of Science, Computer Science & Statistics Co-op",
       "location": "Toronto, ON",
       "duration": "Sept. 2019 — Apr. 2023 (Expected)",
       "cgpa": "3.78 / 4.00",
@@ -41,10 +41,10 @@
       "location": "Toronto, ON",
       "duration": "Sept. 2020 — Apr. 2021",
       "accomplishments": [
-        "Engaged in an <strong>Agile Scrum</strong> of 11 members for the <strong>Simple Engagements</strong> product",
+        "Active contributor in an <strong>Agile Scrum</strong> of 11 members, closely collaborating with developers, QA, managers and product owners",
         "Facilitated <strong>Daily Standup</strong> meetings using various Sprint, Regression, and On Call <strong>Jira</strong> Boards",
         "Decreased developer & QA regression efforts by <strong>60%</strong> by converting manual tests to unit tests with <strong>Karma</strong> and <strong>Jasmine</strong>",
-        "Developed bug <span class=\"space\">f</span>ixes and features using <strong>Angular, AngularJS</strong> and <strong>TypeScript</strong> improving the end-user experience for <strong>60+</strong> international distributors"
+        "Developed major features and hot<span class=\"space\">f</span>ixes using <strong>Angular, AngularJS</strong> and <strong>TypeScript</strong> improving the end-user experience for <strong>60+</strong> international distributors"
       ]
     }
   ],
@@ -56,9 +56,10 @@
       "repoUrl": "https://github.com/navn-r/uimpactify",
       "demoUrl": "uimpactify.herokuapp.com",
       "accomplishments": [
-        "Developed in an Agile Scrum of 7 members over 4 sprints, specializing in education for the social purpose sector",
-        "Facilitated Scrum Daily Standup, Backlog Re<span class=\"space\">f</span>inement, and Software Architecture Design meetings",
-        "Developed and implemented a Discord Bot to supplement Daily Standup Meetings, reducing overall meeting time by <strong>50%</strong>"
+        "Developed in an Agile Scrum of <strong>7</strong> members over 4 sprints, specializing in education for the social purpose sector",
+        "Facilitated Daily Standup, Backlog Re<span class=\"space\">f</span>inement, and Software Architecture Design meetings following best Agile practices",
+        "Developed and implemented a Discord Bot to supplement Daily Standup Meetings, reducing overall meeting time by <strong>50%</strong>",
+        "Well received by product owners and competitors, resulting in a score of <strong>99%</strong>"
       ],
       "features": [
         "Courses",
@@ -66,8 +67,7 @@
         "Student Analytics",
         "Surveys & Ratings",
         "Realtime Chat",
-        "Volunteer & Employment Opportunities",
-        "Community-driven Donation System"
+        "Volunteer & Employment Opportunities and a Community-driven Donation System"
       ],
       "technology": [
         "MongoDB",
@@ -93,10 +93,9 @@
       "features": [
         "Creating and following user pro<span class=\"space\">f</span>iles",
         "Uploading and liking songs",
-        "Playlist generation",
-        "Querying liked songs from followers"
+        "Playlist generation and Querying liked songs from followers"
       ],
-      "technology": ["Java", "Spring Boot", "MongoDB", "Neo4j"]
+      "technology": ["Java", "Spring Boot", "MongoDB", "Neo4j", "Microservices architecture"]
     },
     {
       "name": "Ritrovo",
@@ -123,18 +122,21 @@
       "date": "May 2020",
       "shortDesc": "Cloud Based Grade Management Application",
       "repoUrl": "https://github.com/navn-r/noten",
-      "demoUrl": "ply.gl/com.noten",
-      "accomplishments": [],
+      "demoUrl": "play.google.com/store/apps/details?id=com.noten",
+      "accomplishments": [
+        "Developed using a single codebase, deployable to both <strong>iOS</strong> and <strong>Android</strong>",
+        "Implemented a flattened data store, resulting in <strong>4x</strong> fewer database queries for standard CRUD operations on grades"
+      ],
       "features": [
         "Multi-Semester and Course Management",
         "Grade Prediction Calculator",
         "Pass/Fail Courses",
-        "Multiple Grade Scales <br /> and Incognito Grades"
+        "Multiple Grade Scales and Incognito Grades (Ignore Grade during GPA calculations)"
       ],
       "technology": [
         "React Native",
         "Firebase Realtime Database",
-        "Google OAuth 2.0"
+        "Firebase Authentication with Google OAuth 2.0"
       ]
     }
   ]
