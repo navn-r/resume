@@ -56,7 +56,7 @@ export class Resume extends LitElement {
       grid-template-columns: 2.5rem auto;
       align-items: flex-end;
       border-bottom: 0.25rem var(--primary) solid;
-      margin: 1rem 2rem;
+      margin: 1rem 1.625rem;
       padding-bottom: 0.5rem;
     }
 
@@ -66,9 +66,8 @@ export class Resume extends LitElement {
     }
 
     .body {
-      margin-top: 0.5rem;
+      margin-top: 0.625rem;
       font-size: 1.1rem;
-      padding-right: 2rem;
     }
 
     .education {
@@ -78,10 +77,6 @@ export class Resume extends LitElement {
 
     .space {
       margin-right: 0.25px;
-    }
-
-    #uni-awards {
-      margin-top: 0.5rem;
     }
 
     ul {
@@ -113,9 +108,9 @@ export class Resume extends LitElement {
           ${data.education.map(({school, degree, location, duration, cgpa, courses, awards}) => html`
           <experience-card name="${school}" subtitle="${degree}" location="${location}" time="${duration}">
             <div slot="body" class="body education">
-              Cumulative GPA: <strong>${unsafeHTML(cgpa)}</strong> <br />
-              Notable Courses: ${unsafeHTML(courses.join(', '))} <br />
-              Awards: ${unsafeHTML(awards.join(', '))}
+              <strong>Cumulative GPA:</strong> ${unsafeHTML(cgpa)} <br />
+              <strong>Notable Courses:</strong> ${unsafeHTML(courses.join(', '))} <br />
+              <strong>Awards:</strong> <em>${unsafeHTML(awards.join(', '))}</em>
             </div>
           </experience-card>
           `)}
@@ -126,7 +121,7 @@ export class Resume extends LitElement {
             <h2>SKILLS</h2>
           </div>
           <div id="skills">
-            ${data.skills.map(skill => html`<div class="category">${unsafeHTML(skill)}</div>`)}
+            ${Object.keys(data.skills).map(skill => html`<div class="category"><strong>${skill}:</strong> ${unsafeHTML((data.skills as any)[skill].join(', '))}</div>`)}
           </div>
         </div>
         <div class="section">
@@ -134,10 +129,10 @@ export class Resume extends LitElement {
             <fa-icon class="fas fa-briefcase"></fa-icon>
             <h2>EXPERIENCE</h2>
           </div>
-          ${data.experience.map(({position, employer, location, duration, accomplishments}) => html`
+          ${data.experience.map(({position, employer, location, duration, info}) => html`
           <experience-card name="${position}" subtitle="${employer}" location="${location}" time="${duration}">
             <div slot="body" class="body">
-              <ul>${accomplishments.map(accomplishment => html`<li>${unsafeHTML(accomplishment)}</li>`)}</ul>
+              <ul>${info.map(i => html`<li>${unsafeHTML(i)}</li>`)}</ul>
             </div>
           </experience-card>
           `)}
@@ -147,12 +142,12 @@ export class Resume extends LitElement {
             <fa-icon class="fas fa-code"></fa-icon>
             <h2>PROJECTS</h2>
           </div>
-          ${data.projects.map(({name, date, shortDesc, repoUrl, demoUrl, accomplishments, features, technology}) => html`
+          ${data.projects.map(({name, date, shortDesc, repoUrl, demoUrl, info, features, technology}) => html`
           <experience-card name="${name}" subtitle="${shortDesc}" location="${demoUrl}" time="${date}" repo="${repoUrl}" isProject="true">
             <div slot="body" class="body">
               <ul>
-                ${accomplishments.map(accomplishment => html`<li>${unsafeHTML(accomplishment)}</li>`)}
-                <li><strong>Core features:</strong> ${unsafeHTML(features.join(', '))}</li>
+                ${info.map(i => html`<li>${unsafeHTML(i)}</li>`)}
+                ${!!features && html`<li><strong>Core features:</strong> ${unsafeHTML(features.join(', '))}</li></li>` || ``}
                 <li><strong>Technology:</strong> ${unsafeHTML(technology.join(', '))}</li>
               </ul>
             </div>

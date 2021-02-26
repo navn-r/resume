@@ -26,7 +26,9 @@ My goal was to abstract all the personal resume data *outside* the main web code
       "github": ""
     }
   },
-  "skills": [],
+  "skills": {
+    "": []
+  },
   "education": [
     {
       "school": "",
@@ -44,7 +46,7 @@ My goal was to abstract all the personal resume data *outside* the main web code
       "employer": "",
       "location": "",
       "duration": "",
-      "accomplishments": []
+      "info": []
     }
   ],
   "projects": [
@@ -54,7 +56,7 @@ My goal was to abstract all the personal resume data *outside* the main web code
       "shortDesc": "",
       "repoUrl": "",
       "demoUrl": "",
-      "accomplishments": [],
+      "info": [],
       "features": [],
       "technology": []
     }

@@ -22,12 +22,12 @@ export class ExperienceCard extends LitElement {
   repo = '';
 
   static styles = css`
-    #card {
-      margin: 0 2rem;
+    .card {
+      margin: 0 1.625rem;
       color: var(--text);
     }
 
-    #title-container {
+    .title-container {
       display: grid;
       justify-content: space-between;
       row-gap: 0.25rem;
@@ -36,24 +36,24 @@ export class ExperienceCard extends LitElement {
         'subtitle time';
     }
 
-    #subtitle {
+    .subtitle {
       margin: 0;
       grid-area: subtitle;
     }
 
-    #title {
+    .title {
       grid-area: title;
       margin: 0;
       font-weight: 600;
       font-size: 1.45rem;
     }
 
-    #time {
+    .time {
       grid-area: time;
       text-align: right;
     }
-    
-    #location {
+
+    .location {
       grid-area: location;
       text-align: right;
       font-size: 1.25rem;
@@ -61,34 +61,45 @@ export class ExperienceCard extends LitElement {
 
     a {
       text-decoration: none;
+      font-weight: 500;
       color: var(--text);
     }
   `;
 
   render() {
     return html`
-      <div id="card">
-        <div id="title-container">
-          ${this.getTitle()}
-          <h4 id="subtitle">${unsafeHTML(this.subtitle)}</h4>
+      <div class="card">
+        <div class="title-container">
+          <h3 class="title">${this.name}</h3>
+          <h4 class="subtitle">${unsafeHTML(this.subtitle)}</h4>
           ${this.getInfo()}
-          <span id="time">${this.time}</span>
+          <span class="time">${this.time}</span>
         </div>
         <slot name="body"></slot>
       </div>
     `;
   }
 
-  getInfo() {
-    return !!this.isProject
-      ? html`<a href="https://${this.location}" id="location">${this.location}</a>`
-      : html`<span id="location">${this.location}</span>`;
+  getLocationText() {
+    return this.location.includes('play.google.com') ? 'Google Play' : 
+    // temporary for api fix
+    this.location.includes('api') ? 'Documentation' :
+    'Website';
   }
 
-  getTitle() {
-    return !!this.isProject && !!this.repo
-      ? html`<a href="${this.repo}"><h3 id="title">${this.name}</h3></a>`
-      : html`<h3 id="title">${this.name}</h3>`;
+  getRepoText() {
+    return this.repo.includes('github.com') ? 'GitHub' : 'Repo';
+  }
+
+  getInfo() {
+    return !!this.isProject
+      ? html`<div class="location">
+          (<a href="${this.location}">${this.getLocationText()}</a>)&nbsp;(<a
+            href="${this.repo}"
+            >${this.getRepoText()}</a
+          >)
+        </div>`
+      : html`<span class="location">${this.location}</span>`;
   }
 }
 

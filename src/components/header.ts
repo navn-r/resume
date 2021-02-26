@@ -59,6 +59,13 @@ export class Header extends LitElement {
       color: #fff;
     }
 
+    a {
+      text-decoration: none;
+      color: var(--accent);
+      outline: none;
+      border: 0;
+    }
+
     .footer {
       width: 100%;
       display: flex;
@@ -176,7 +183,9 @@ export class Header extends LitElement {
           <em>Updated: ${this.time.toDateString()}</em>
         </div>
         <div>
-          Made with <fa-icon class="far fa-heart"></fa-icon>
+          <a href="./RavindaranNavinn_Resume.pdf" target="_blank">
+            Download PDF <fa-icon class="fas fa-download"></fa-icon>
+          </a>
         </div>
       </div>
     `;
