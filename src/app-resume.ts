@@ -130,7 +130,7 @@ export class Resume extends LitElement {
             <h2>EXPERIENCE</h2>
           </div>
           ${data.experience.map(({position, employer, location, duration, info}) => html`
-          <experience-card name="${position}" subtitle="${employer}" location="${location}" time="${duration}">
+          <experience-card name="${employer}" subtitle="${position}" location="${location}" time="${duration}">
             <div slot="body" class="body">
               <ul>${info.map(i => html`<li>${unsafeHTML(i)}</li>`)}</ul>
             </div>
