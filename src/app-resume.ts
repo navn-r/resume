@@ -12,22 +12,6 @@ export class Resume extends LitElement {
       font-family: 'IBM Plex Sans', sans-serif;
     }
 
-    @media screen {
-      :host {
-        display: grid;
-        grid-template-areas:
-          'header header header header'
-          '. content content .';
-        margin-bottom: 5rem;
-      }
-
-      @media (max-width: 900px) {
-        :host {
-          grid-template-areas: 'header' 'content';
-        }
-      }
-    }
-
     #content {
       margin-top: 0.75rem;
       grid-area: content;
@@ -56,7 +40,7 @@ export class Resume extends LitElement {
       grid-template-columns: 2.5rem auto;
       align-items: flex-end;
       border-bottom: 0.25rem var(--primary) solid;
-      margin: 1rem 1.625rem;
+      margin: 0.5rem 1.625rem 1rem 1.625rem;
       padding-bottom: 0.5rem;
     }
 
@@ -93,6 +77,30 @@ export class Resume extends LitElement {
       margin-left: 2rem;
       font-size: 1.1rem;
       margin-bottom: 1rem;
+    }
+
+    @media screen {
+      :host {
+        display: grid;
+        grid-template-areas:
+          'header header header header'
+          '. content content .';
+        margin-bottom: 5rem;
+      }
+
+      .title {
+        margin: 1rem 1.625rem 0 1.625rem;
+      }
+
+      #skills {
+        margin-top: 1rem;
+      }
+
+      @media (max-width: 900px) {
+        :host {
+          grid-template-areas: 'header' 'content';
+        }
+      }
     }
   `;
 
@@ -142,8 +150,8 @@ export class Resume extends LitElement {
             <fa-icon class="fas fa-code"></fa-icon>
             <h2>PROJECTS</h2>
           </div>
-          ${data.projects.map(({name, date, shortDesc, repoUrl, demoUrl, info, features, technology}) => html`
-          <experience-card name="${name}" subtitle="${shortDesc}" location="${demoUrl}" time="${date}" repo="${repoUrl}" isProject="true">
+          ${data.projects.map(({name, shortDesc, repoUrl, demoUrl, info, features, technology}) => html`
+          <experience-card name="${name}" subtitle="${shortDesc}" location="${demoUrl}" repo="${repoUrl}" isProject="true">
             <div slot="body" class="body">
               <ul>
                 ${info.map(i => html`<li>${unsafeHTML(i)}</li>`)}

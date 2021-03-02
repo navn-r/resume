@@ -19,7 +19,7 @@ export class Header extends LitElement {
       background-color: var(--primary);
       display: grid;
       grid-template-columns: 2fr 1fr;
-      padding: 2rem;
+      padding: 1.5rem;
       color: #fff;
     }
 

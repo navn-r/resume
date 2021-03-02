@@ -39,6 +39,7 @@ export class ExperienceCard extends LitElement {
     .subtitle {
       margin: 0;
       grid-area: subtitle;
+      font-size: 1.125rem;
     }
 
     .title {
@@ -59,10 +60,21 @@ export class ExperienceCard extends LitElement {
       font-size: 1.25rem;
     }
 
+    .link {
+      font-size: 1.1875rem;
+    }
+
     a {
       text-decoration: none;
       font-weight: 500;
       color: var(--text);
+    }
+
+    @media screen {
+      .card {
+        margin: 1rem 1.625rem;
+
+      }
     }
   `;
 
@@ -73,7 +85,11 @@ export class ExperienceCard extends LitElement {
           <h3 class="title">${this.name}</h3>
           <h4 class="subtitle">${unsafeHTML(this.subtitle)}</h4>
           ${this.getInfo()}
-          <span class="time">${this.time}</span>
+          ${!this.isProject
+            ? html`<span class="time">${this.time}</span>`
+            : html`<div class="time link">
+                (<a href="${this.location}">${this.getLocationText()}</a>)
+              </div>`}
         </div>
         <slot name="body"></slot>
       </div>
@@ -81,10 +97,12 @@ export class ExperienceCard extends LitElement {
   }
 
   getLocationText() {
-    return this.location.includes('play.google.com') ? 'Google Play' : 
-    // temporary for api fix
-    this.location.includes('api') ? 'Documentation' :
-    'Website';
+    return this.location.includes('play.google.com')
+      ? 'Google Play'
+      : // temporary for api fix
+      this.location.includes('api')
+      ? 'Documentation'
+      : 'Website';
   }
 
   getRepoText() {
@@ -93,11 +111,8 @@ export class ExperienceCard extends LitElement {
 
   getInfo() {
     return !!this.isProject
-      ? html`<div class="location">
-          (<a href="${this.location}">${this.getLocationText()}</a>)&nbsp;(<a
-            href="${this.repo}"
-            >${this.getRepoText()}</a
-          >)
+      ? html`<div class="location link">
+          (<a href="${this.repo}">${this.getRepoText()}</a>)
         </div>`
       : html`<span class="location">${this.location}</span>`;
   }
