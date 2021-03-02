@@ -66,7 +66,7 @@ class y{constructor(t,e,i){this.t=[],this.template=t,this.processor=e,this.optio
      * Code distributed by Google as part of the polymer project is also
      * subject to an additional IP rights grant found at
      * http://polymer.github.io/PATENTS.txt
-     */const x=t=>null===t||!("object"==typeof t||"function"==typeof t),$=t=>Array.isArray(t)||!(!t||!t[Symbol.iterator]);class A{constructor(t,e,i){this.dirty=!0,this.element=t,this.name=e,this.strings=i,this.parts=[];for(let t=0;t<i.length-1;t++)this.parts[t]=this._createPart()}_createPart(){return new C(this)}_getValue(){const t=this.strings,e=t.length-1,i=this.parts;if(1===e&&""===t[0]&&""===t[1]){const t=i[0].value;if("symbol"==typeof t)return String(t);if("string"==typeof t||!$(t))return t}let s="";for(let n=0;n<e;n++){s+=t[n];const e=i[n];if(void 0!==e){const t=e.value;if(x(t)||!$(t))s+="string"==typeof t?t:String(t);else for(const e of t)s+="string"==typeof e?e:String(e)}}return s+=t[e],s}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class C{constructor(t){this.value=void 0,this.committer=t}setValue(t){t===g||x(t)&&t===this.value||(this.value=t,f(t)||(this.committer.dirty=!0))}commit(){for(;f(this.value);){const t=this.value;this.value=g,t(this)}this.value!==g&&this.committer.commit()}}class P{constructor(t){this.value=void 0,this.i=void 0,this.options=t}appendInto(t){this.startNode=t.appendChild(l()),this.endNode=t.appendChild(l())}insertAfterNode(t){this.startNode=t,this.endNode=t.nextSibling}appendIntoPart(t){t.s(this.startNode=l()),t.s(this.endNode=l())}insertAfterPart(t){t.s(this.startNode=l()),this.endNode=t.endNode,t.endNode=this.startNode}setValue(t){this.i=t}commit(){if(null===this.startNode.parentNode)return;for(;f(this.i);){const t=this.i;this.i=g,t(this)}const t=this.i;t!==g&&(x(t)?t!==this.value&&this.o(t):t instanceof S?this.l(t):t instanceof Node?this.h(t):$(t)?this.u(t):t===v?(this.value=v,this.clear()):this.o(t))}s(t){this.endNode.parentNode.insertBefore(t,this.endNode)}h(t){this.value!==t&&(this.clear(),this.s(t),this.value=t)}o(t){const e=this.startNode.nextSibling,i="string"==typeof(t=null==t?"":t)?t:String(t);e===this.endNode.previousSibling&&3===e.nodeType?e.data=i:this.h(document.createTextNode(i)),this.value=t}l(t){const e=this.options.templateFactory(t);if(this.value instanceof y&&this.value.template===e)this.value.update(t.values);else{const i=new y(e,t.processor,this.options),s=i._clone();i.update(t.values),this.h(s),this.value=i}}u(t){Array.isArray(this.value)||(this.value=[],this.clear());const e=this.value;let i,s=0;for(const n of t)i=e[s],void 0===i&&(i=new P(this.options),e.push(i),0===s?i.appendIntoPart(this):i.insertAfterPart(e[s-1])),i.setValue(n),i.commit(),s++;s<e.length&&(e.length=s,this.clear(i&&i.endNode))}clear(t=this.startNode){i(this.startNode.parentNode,t.nextSibling,this.endNode)}}class j{constructor(t,e,i){if(this.value=void 0,this.i=void 0,2!==i.length||""!==i[0]||""!==i[1])throw new Error("Boolean attributes can only contain a single expression");this.element=t,this.name=e,this.strings=i}setValue(t){this.i=t}commit(){for(;f(this.i);){const t=this.i;this.i=g,t(this)}if(this.i===g)return;const t=!!this.i;this.value!==t&&(t?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=t),this.i=g}}class M extends A{constructor(t,e,i){super(t,e,i),this.single=2===i.length&&""===i[0]&&""===i[1]}_createPart(){return new D(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class D extends C{}let _=!1;(()=>{try{const t={get capture(){return _=!0,!1}};window.addEventListener("test",t,t),window.removeEventListener("test",t,t)}catch(t){}})();class k{constructor(t,e,i){this.value=void 0,this.i=void 0,this.element=t,this.eventName=e,this.eventContext=i,this.p=t=>this.handleEvent(t)}setValue(t){this.i=t}commit(){for(;f(this.i);){const t=this.i;this.i=g,t(this)}if(this.i===g)return;const t=this.i,e=this.value,i=null==t||null!=e&&(t.capture!==e.capture||t.once!==e.once||t.passive!==e.passive),s=null!=t&&(null==e||i);i&&this.element.removeEventListener(this.eventName,this.p,this.m),s&&(this.m=T(t),this.element.addEventListener(this.eventName,this.p,this.m)),this.value=t,this.i=g}handleEvent(t){"function"==typeof this.value?this.value.call(this.eventContext||this.element,t):this.value.handleEvent(t)}}const T=t=>t&&(_?{capture:t.capture,passive:t.passive,once:t.once}:t.capture)
+     */const x=t=>null===t||!("object"==typeof t||"function"==typeof t),$=t=>Array.isArray(t)||!(!t||!t[Symbol.iterator]);class A{constructor(t,e,i){this.dirty=!0,this.element=t,this.name=e,this.strings=i,this.parts=[];for(let t=0;t<i.length-1;t++)this.parts[t]=this._createPart()}_createPart(){return new C(this)}_getValue(){const t=this.strings,e=t.length-1,i=this.parts;if(1===e&&""===t[0]&&""===t[1]){const t=i[0].value;if("symbol"==typeof t)return String(t);if("string"==typeof t||!$(t))return t}let s="";for(let n=0;n<e;n++){s+=t[n];const e=i[n];if(void 0!==e){const t=e.value;if(x(t)||!$(t))s+="string"==typeof t?t:String(t);else for(const e of t)s+="string"==typeof e?e:String(e)}}return s+=t[e],s}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class C{constructor(t){this.value=void 0,this.committer=t}setValue(t){t===g||x(t)&&t===this.value||(this.value=t,f(t)||(this.committer.dirty=!0))}commit(){for(;f(this.value);){const t=this.value;this.value=g,t(this)}this.value!==g&&this.committer.commit()}}class P{constructor(t){this.value=void 0,this.i=void 0,this.options=t}appendInto(t){this.startNode=t.appendChild(l()),this.endNode=t.appendChild(l())}insertAfterNode(t){this.startNode=t,this.endNode=t.nextSibling}appendIntoPart(t){t.s(this.startNode=l()),t.s(this.endNode=l())}insertAfterPart(t){t.s(this.startNode=l()),this.endNode=t.endNode,t.endNode=this.startNode}setValue(t){this.i=t}commit(){if(null===this.startNode.parentNode)return;for(;f(this.i);){const t=this.i;this.i=g,t(this)}const t=this.i;t!==g&&(x(t)?t!==this.value&&this.o(t):t instanceof S?this.l(t):t instanceof Node?this.h(t):$(t)?this.u(t):t===v?(this.value=v,this.clear()):this.o(t))}s(t){this.endNode.parentNode.insertBefore(t,this.endNode)}h(t){this.value!==t&&(this.clear(),this.s(t),this.value=t)}o(t){const e=this.startNode.nextSibling,i="string"==typeof(t=null==t?"":t)?t:String(t);e===this.endNode.previousSibling&&3===e.nodeType?e.data=i:this.h(document.createTextNode(i)),this.value=t}l(t){const e=this.options.templateFactory(t);if(this.value instanceof y&&this.value.template===e)this.value.update(t.values);else{const i=new y(e,t.processor,this.options),s=i._clone();i.update(t.values),this.h(s),this.value=i}}u(t){Array.isArray(this.value)||(this.value=[],this.clear());const e=this.value;let i,s=0;for(const n of t)i=e[s],void 0===i&&(i=new P(this.options),e.push(i),0===s?i.appendIntoPart(this):i.insertAfterPart(e[s-1])),i.setValue(n),i.commit(),s++;s<e.length&&(e.length=s,this.clear(i&&i.endNode))}clear(t=this.startNode){i(this.startNode.parentNode,t.nextSibling,this.endNode)}}class j{constructor(t,e,i){if(this.value=void 0,this.i=void 0,2!==i.length||""!==i[0]||""!==i[1])throw new Error("Boolean attributes can only contain a single expression");this.element=t,this.name=e,this.strings=i}setValue(t){this.i=t}commit(){for(;f(this.i);){const t=this.i;this.i=g,t(this)}if(this.i===g)return;const t=!!this.i;this.value!==t&&(t?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=t),this.i=g}}class k extends A{constructor(t,e,i){super(t,e,i),this.single=2===i.length&&""===i[0]&&""===i[1]}_createPart(){return new M(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class M extends C{}let D=!1;(()=>{try{const t={get capture(){return D=!0,!1}};window.addEventListener("test",t,t),window.removeEventListener("test",t,t)}catch(t){}})();class _{constructor(t,e,i){this.value=void 0,this.i=void 0,this.element=t,this.eventName=e,this.eventContext=i,this.p=t=>this.handleEvent(t)}setValue(t){this.i=t}commit(){for(;f(this.i);){const t=this.i;this.i=g,t(this)}if(this.i===g)return;const t=this.i,e=this.value,i=null==t||null!=e&&(t.capture!==e.capture||t.once!==e.once||t.passive!==e.passive),s=null!=t&&(null==e||i);i&&this.element.removeEventListener(this.eventName,this.p,this.m),s&&(this.m=T(t),this.element.addEventListener(this.eventName,this.p,this.m)),this.value=t,this.i=g}handleEvent(t){"function"==typeof this.value?this.value.call(this.eventContext||this.element,t):this.value.handleEvent(t)}}const T=t=>t&&(D?{capture:t.capture,passive:t.passive,once:t.once}:t.capture)
 /**
      * @license
      * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -106,7 +106,7 @@ class y{constructor(t,e,i){this.t=[],this.template=t,this.processor=e,this.optio
      * subject to an additional IP rights grant found at
      * http://polymer.github.io/PATENTS.txt
      */
-class{handleAttributeExpressions(t,e,i,s){const n=e[0];if("."===n){return new M(t,e.slice(1),i).parts}return"@"===n?[new k(t,e.slice(1),s.eventContext)]:"?"===n?[new j(t,e.slice(1),i)]:new A(t,e,i).parts}handleTextExpression(t){return new P(t)}};
+class{handleAttributeExpressions(t,e,i,s){const n=e[0];if("."===n){return new k(t,e.slice(1),i).parts}return"@"===n?[new _(t,e.slice(1),s.eventContext)]:"?"===n?[new j(t,e.slice(1),i)]:new A(t,e,i).parts}handleTextExpression(t){return new P(t)}};
 /**
      * @license
      * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -220,7 +220,7 @@ const W=t=>e=>"function"==typeof e?((t,e)=>(window.customElements.define(t,e),e)
       background-color: var(--primary);
       display: grid;
       grid-template-columns: 2fr 1fr;
-      padding: 2rem;
+      padding: 1.5rem;
       color: #fff;
     }
 
@@ -349,15 +349,14 @@ const at=new WeakMap,ct=(lt=t=>e=>{if(!(e instanceof P))throw new Error("unsafeH
           <h3 class="title">${this.name}</h3>
           <h4 class="subtitle">${ct(this.subtitle)}</h4>
           ${this.getInfo()}
-          <span class="time">${this.time}</span>
+          ${this.isProject?R`<div class="time link">
+                (<a href="${this.location}">${this.getLocationText()}</a>)
+              </div>`:R`<span class="time">${this.time}</span>`}
         </div>
         <slot name="body"></slot>
       </div>
-    `}getLocationText(){return this.location.includes("play.google.com")?"Google Play":this.location.includes("api")?"Documentation":"Website"}getRepoText(){return this.repo.includes("github.com")?"GitHub":"Repo"}getInfo(){return this.isProject?R`<div class="location">
-          (<a href="${this.location}">${this.getLocationText()}</a>)&nbsp;(<a
-            href="${this.repo}"
-            >${this.getRepoText()}</a
-          >)
+    `}getLocationText(){return this.location.includes("play.google.com")?"Google Play":this.location.includes("api")?"Documentation":"Website"}getRepoText(){return this.repo.includes("github.com")?"GitHub":"Repo"}getInfo(){return this.isProject?R`<div class="location link">
+          (<a href="${this.repo}">${this.getRepoText()}</a>)
         </div>`:R`<span class="location">${this.location}</span>`}};dt.styles=tt`
     .card {
       margin: 0 1.625rem;
@@ -376,6 +375,7 @@ const at=new WeakMap,ct=(lt=t=>e=>{if(!(e instanceof P))throw new Error("unsafeH
     .subtitle {
       margin: 0;
       grid-area: subtitle;
+      font-size: 1.125rem;
     }
 
     .title {
@@ -396,10 +396,21 @@ const at=new WeakMap,ct=(lt=t=>e=>{if(!(e instanceof P))throw new Error("unsafeH
       font-size: 1.25rem;
     }
 
+    .link {
+      font-size: 1.1875rem;
+    }
+
     a {
       text-decoration: none;
       font-weight: 500;
       color: var(--text);
+    }
+
+    @media screen {
+      .card {
+        margin: 1rem 1.625rem;
+
+      }
     }
   `,ht([Q({type:String})],dt.prototype,"name",void 0),ht([Q({type:String})],dt.prototype,"subtitle",void 0),ht([Q({type:String})],dt.prototype,"location",void 0),ht([Q({type:String})],dt.prototype,"time",void 0),ht([Q({type:String})],dt.prototype,"isProject",void 0),ht([Q({type:String})],dt.prototype,"repo",void 0),dt=ht([W("experience-card")],dt);var ut={firstName:"Navinn",lastName:"Ravindaran",contact:{portfolio:"navn.me",email:"navinn.ravindaran@mail.utoronto.ca",linkedIn:"navn-r",github:"navn-r"}},pt={Programming:["HTML","CSS","TypeScript","JavaScript","Java","C","Python","Shell","LaTeX"],"Frameworks and Tools":["Angular","React","React Native","Node.js","Express.js","Jira","Git","GitHub Actions","TravisCI","MongoDB","Firebase"],"Development Methodologies":["Agile Scrum","Agile Kanban","Test Driven Development"]},mt=[{school:"University of Toronto",degree:"Honours Bachelor of Science, Computer Science & Statistics Co-op",location:"Toronto, ON",duration:"Sept. 2019 — Apr. 2023 (Expected)",cgpa:"3.78 / 4.00",courses:["Software Design","Intro to Software Engineering","Principles of Programming Languages","Software Tools and Systems Programming"],awards:["Dean's List of Academic Excellence (2019-20)","University of Toronto Scholar ($7500)"]}],ft=[{position:"Software Developer &bull; Co-op",employer:"CaseWare International Inc.",location:"Toronto, ON",duration:"Sept. 2020 — Apr. 2021",info:["Active contributor in an <strong>Agile Scrum</strong> of <strong>11</strong> members, closely collaborating with developers, manual & automation QA and product owners","Facilitated <strong>Daily Standup</strong> meetings using various Sprint, Regression, and On Call <strong>Jira</strong> Boards","Decreased developer & QA regression efforts by <strong>60%</strong> by converting manual tests to unit tests with <strong>Karma/Jasmine</strong> and <strong>TypeScript</strong>",'Developed major features and hot<span class="space">f</span>ixes using <strong>Angular, AngularJS, RxJS</strong> and <strong>NGXS</strong> improving the end-user experience for <strong>60+</strong> international distributors']}],gt=[{name:"UImpactify",date:"Sept. 2020 — Dec. 2020",shortDesc:"Online Learning Platform",repoUrl:"https://github.com/navn-r/uimpactify",demoUrl:"https://uimpactify.herokuapp.com",info:["Developed in an Agile Scrum of <strong>7</strong> members over <strong>4</strong> sprints, specializing in education for the social purpose sector",'Facilitated Daily Standup, Backlog Re<span class="space">f</span>inement, and Software Architecture Design meetings <strong>following best Agile practices<strong>',"Reduced meeting times by <strong>50%</strong> by developing and deploying a <strong>Discord Bot</strong> to supplement Daily Standup meetings"],features:["Course Creation and Enrollment","Recorded Lectures and Graded Assessments","Student Analytics","Course Surveys & Ratings","Realtime Chat","Volunteer & Employment Opportunities and a Community-driven Donation System"],technology:["MongoDB","Express.js","Angular","Node.js","Clarity Design","Socket.io","Chart.js","Multer","GridFS","Figma","Jira"]},{name:"Spotify API Clone",date:"Nov. 2020 — Dec. 2020",shortDesc:"Social-centric Music Player REST API",repoUrl:"https://github.com/navn-r/spotify-api-clone",demoUrl:"https://navn.me/spotify-api-clone",info:[],features:['Creating and following user pro<span class="space">f</span>iles',"Uploading and liking songs","Playlist generation and Querying liked songs from followers"],technology:["Java","Spring Boot","MongoDB","Neo4j","Microservices Architecture"]},{name:"Ritrovo",date:"Sept. 2020",shortDesc:"Full-Stack Social Platform",repoUrl:"https://github.com/navn-r/ritrovo",demoUrl:"https://ritrovo.herokuapp.com",info:["Built a <strong>REST API</strong> and Frontend for creating posts and collaborating with users in a community dashboard with <strong>Hashed Password Authentication</strong>"],technology:["MongoDB","Express.js","Angular","Node.js","bcrypt","Mongoose","Markdown","Heroku"]},{name:"Noten",date:"May 2020",shortDesc:"Cloud Based Grade Management Application",repoUrl:"https://github.com/navn-r/noten",demoUrl:"https://play.google.com/store/apps/details?id=com.noten",info:["Developed using a single codebase, deployable to both <strong>iOS</strong> and <strong>Android</strong>","Implemented a flattened data store, resulting in <strong>4x</strong> fewer database queries on all <strong>CRUD</strong> operations on grades"],features:["Multi-Semester and Course Management","Grade Prediction Calculator","Pass/Fail Courses","Multiple Grade Scales and Incognito Grades (Ignores Grade during GPA calculations)"],technology:["React Native","Firebase Realtime Database","Firebase Authentication with Google OAuth 2.0"]}],vt=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};t.Resume=class extends it{render(){return R`
       <app-header .about="${ut}"></app-header>
@@ -446,13 +457,13 @@ const at=new WeakMap,ct=(lt=t=>e=>{if(!(e instanceof P))throw new Error("unsafeH
             <fa-icon class="fas fa-code"></fa-icon>
             <h2>PROJECTS</h2>
           </div>
-          ${gt.map(({name:t,date:e,shortDesc:i,repoUrl:s,demoUrl:n,info:o,features:r,technology:a})=>R`
-          <experience-card name="${t}" subtitle="${i}" location="${n}" time="${e}" repo="${s}" isProject="true">
+          ${gt.map(({name:t,shortDesc:e,repoUrl:i,demoUrl:s,info:n,features:o,technology:r})=>R`
+          <experience-card name="${t}" subtitle="${e}" location="${s}" repo="${i}" isProject="true">
             <div slot="body" class="body">
               <ul>
-                ${o.map(t=>R`<li>${ct(t)}</li>`)}
-                ${!!r&&R`<li><strong>Core features:</strong> ${ct(r.join(", "))}</li></li>`||""}
-                <li><strong>Technology:</strong> ${ct(a.join(", "))}</li>
+                ${n.map(t=>R`<li>${ct(t)}</li>`)}
+                ${!!o&&R`<li><strong>Core features:</strong> ${ct(o.join(", "))}</li></li>`||""}
+                <li><strong>Technology:</strong> ${ct(r.join(", "))}</li>
               </ul>
             </div>
           </experience-card>
@@ -462,22 +473,6 @@ const at=new WeakMap,ct=(lt=t=>e=>{if(!(e instanceof P))throw new Error("unsafeH
     `}},t.Resume.styles=tt`
     :host {
       font-family: 'IBM Plex Sans', sans-serif;
-    }
-
-    @media screen {
-      :host {
-        display: grid;
-        grid-template-areas:
-          'header header header header'
-          '. content content .';
-        margin-bottom: 5rem;
-      }
-
-      @media (max-width: 900px) {
-        :host {
-          grid-template-areas: 'header' 'content';
-        }
-      }
     }
 
     #content {
@@ -508,7 +503,7 @@ const at=new WeakMap,ct=(lt=t=>e=>{if(!(e instanceof P))throw new Error("unsafeH
       grid-template-columns: 2.5rem auto;
       align-items: flex-end;
       border-bottom: 0.25rem var(--primary) solid;
-      margin: 1rem 1.625rem;
+      margin: 0.5rem 1.625rem 1rem 1.625rem;
       padding-bottom: 0.5rem;
     }
 
@@ -545,5 +540,29 @@ const at=new WeakMap,ct=(lt=t=>e=>{if(!(e instanceof P))throw new Error("unsafeH
       margin-left: 2rem;
       font-size: 1.1rem;
       margin-bottom: 1rem;
+    }
+
+    @media screen {
+      :host {
+        display: grid;
+        grid-template-areas:
+          'header header header header'
+          '. content content .';
+        margin-bottom: 5rem;
+      }
+
+      .title {
+        margin: 1rem 1.625rem 0 1.625rem;
+      }
+
+      #skills {
+        margin-top: 1rem;
+      }
+
+      @media (max-width: 900px) {
+        :host {
+          grid-template-areas: 'header' 'content';
+        }
+      }
     }
   `,t.Resume=vt([W("app-resume")],t.Resume)}({});
