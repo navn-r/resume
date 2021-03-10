@@ -350,7 +350,7 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
 
     #lower-row {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 2fr 3fr 2fr;
     }
 
     .contact {
@@ -358,6 +358,10 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
       grid-template-columns: 2rem auto;
       align-items: center;
       column-gap: 0.5rem;
+    }
+
+    #lower-row .contact {
+      justify-content: center;
     }
 
     a {
