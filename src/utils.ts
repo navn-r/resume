@@ -1,7 +1,11 @@
 import {unsafeHTML} from 'lit-html/directives/unsafe-html';
 
 export const parse = (input: string) =>
-  unsafeHTML(input.replace(/(\*\*|__)(.*?)\1/gim, '<strong>$2</strong>'));
+  unsafeHTML(
+    input
+      .replace(/fi/g, '<span style="margin-right: 0.25px">f</span>i')
+      .replace(/(\*\*|__)(.*?)\1/gim, '<strong>$2</strong>')
+  );
 
 export const formatDate = (
   date: string,

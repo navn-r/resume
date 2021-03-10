@@ -1,6 +1,6 @@
 import {css, customElement, html, LitElement, property} from 'lit-element';
 import {Education} from '../models';
-import {formatDate} from '../utils';
+import {formatDate, parse} from '../utils';
 import {listParagraphStyle, titleCardStyle} from './card.style';
 
 @customElement('education-card')
@@ -40,9 +40,9 @@ export class EducationCard extends LitElement {
         <div class="body">
           <p><strong>Cumulative GPA:</strong> ${this.education.score}</p>
           <p>
-            <strong>Notable Courses:</strong> ${this.education.courses.join(
+            <strong>Notable Courses:</strong> ${parse(this.education.courses.join(
               ', '
-            )}
+            ))}
           </p>
           <p>
             <strong>Awards:</strong>

@@ -15,7 +15,7 @@ export class Resume extends LitElement {
 
     .section {
       width: 95%;
-      margin: 1.375rem auto 0.5rem auto;
+      margin: 1.5rem auto 0.5rem auto;
     }
 
     .title {
