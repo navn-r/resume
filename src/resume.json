@@ -1,30 +1,58 @@
 {
-  "about": {
-    "firstName": "Navinn",
-    "lastName": "Ravindaran",
-    "contact": {
-      "portfolio": "navn.me",
-      "email": "navinn.ravindaran@mail.utoronto.ca",
-      "linkedIn": "navn-r",
-      "github": "navn-r"
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Navinn Ravindaran",
+    "label": "Developer, Learner",
+    "email": "navinn.ravindaran@mail.utoronto.ca",
+    "url": "https://navn.me",
+    "location": {
+      "city": "Toronto",
+      "region": "Ontario",
+      "countryCode": "CA"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "navn-r",
+        "url": "https://github.com/navn-r"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "navn-r",
+        "url": "https://www.linkedin.com/in/navn-r"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "CaseWare International Inc.",
+      "location": "Toronto, ON",
+      "position": "Software Developer Co-op",
+      "url": "https://www.caseware.com/ca",
+      "startDate": "2020-09-08",
+      "endDate": "2021-04-30",
+      "highlights": [
+        "Active contributor in an **Agile Scrum** of **11** members, closely collaborating with developers, manual & automation QA and product owners",
+        "Facilitated **Daily Standup** meetings using various Sprint, Regression, and On Call **Jira** Boards",
+        "Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with **Karma, Jasmine** and **TypeScript**",
+        "Developed major features and hotfixes using **Angular, AngularJS, RxJS** and **NGXS** improving the end-user experience for **60+** international distributors"
+      ]
     }
-  },
-  "skills": {
-    "Programming": [ "HTML", "CSS", "TypeScript", "JavaScript", "Java", "C", "Python", "Shell", "LaTeX" ],
-    "Frameworks and Tools": ["Angular", "React", "React Native", "Node.js", "Express.js", "Jira", "Git", "GitHub Actions", "TravisCI", "MongoDB", "Firebase"],
-    "Development Methodologies": ["Agile Scrum", "Agile Kanban", "Test Driven Development"]
-  },
+  ],
   "education": [
     {
-      "school": "University of Toronto",
-      "degree": "Honours Bachelor of Science, Computer Science & Statistics Co-op",
+      "institution": "University of Toronto",
       "location": "Toronto, ON",
-      "duration": "Sept. 2019 — Apr. 2023 (Expected)",
-      "cgpa": "3.78 / 4.00",
+      "url": "https://www.utoronto.ca/",
+      "area": "Computer Science & Statistics Co-op",
+      "studyType": "Honours Bachelor of Science",
+      "startDate": "2019-09-08",
+      "endDate": "2023-04-30",
+      "score": "3.78 / 4.00",
       "courses": [
         "Software Design",
-        "Intro to Software Engineering",
-        "Principles of Programming Languages",
+        "Software Engineering",
+        "Programming Languages",
         "Software Tools and Systems Programming"
       ],
       "awards": [
@@ -33,39 +61,63 @@
       ]
     }
   ],
-  "experience": [
+  "skills": [
     {
-      "position": "Software Developer &bull; Co-op",
-      "employer": "CaseWare International Inc.",
-      "location": "Toronto, ON",
-      "duration": "Sept. 2020 — Apr. 2021",
-      "info": [
-        "Active contributor in an <strong>Agile Scrum</strong> of <strong>11</strong> members, closely collaborating with developers, manual & automation QA and product owners",
-        "Facilitated <strong>Daily Standup</strong> meetings using various Sprint, Regression, and On Call <strong>Jira</strong> Boards",
-        "Decreased developer & QA regression efforts by <strong>60%</strong> by converting manual tests to unit tests with <strong>Karma/Jasmine</strong> and <strong>TypeScript</strong>",
-        "Developed major features and hot<span class=\"space\">f</span>ixes using <strong>Angular, AngularJS, RxJS</strong> and <strong>NGXS</strong> improving the end-user experience for <strong>60+</strong> international distributors"
+      "name": "Programming",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "JavaScript",
+        "Java",
+        "C",
+        "Python",
+        "Shell",
+        "LaTeX"
       ]
+    },
+    {
+      "name": "Frameworks and Tools",
+      "keywords": [
+        "Angular",
+        "React",
+        "React Native",
+        "Node.js",
+        "Express.js",
+        "JIRA",
+        "GitHub Actions",
+        "TravisCI",
+        "MongoDB",
+        "Firebase"
+      ]
+    },
+    {
+      "name": "Development Methodologies",
+      "keywords": ["Agile Scrum", "Agile Kanban", "Test Driven Development"]
     }
   ],
   "projects": [
     {
       "name": "UImpactify",
-      "date": "Sept. 2020 — Dec. 2020",
-      "shortDesc": "Online Learning Platform",
-      "repoUrl": "https://github.com/navn-r/uimpactify",
-      "demoUrl": "https://uimpactify.herokuapp.com",
-      "info": [
-        "Developed in an Agile Scrum of <strong>7</strong> members over <strong>4</strong> sprints, specializing in education for the social purpose sector",
-        "Facilitated Daily Standup, Backlog Re<span class=\"space\">f</span>inement, and Software Architecture Design meetings <strong>following best Agile practices<strong>",
-        "Reduced meeting times by <strong>50%</strong> by developing and deploying a <strong>Discord Bot</strong> to supplement Daily Standup meetings"
+      "description": "Online Learning Platform",
+      "highlights": [
+        "Engaged in an Agile Scrum of **7** members over **4** sprints, specializing in education for the social purpose sector",
+        "Facilitated Daily Standup, Backlog Refinement, and Architecture Design meetings **following best Agile practices**",
+        "Developed and deployed a **Discord Bot** to supplement Daily Standup meetings, reducing overall time by **50%**"
       ],
+      "startDate": "2020-09",
+      "endDate": "2020-12",
+      "repo": "https://github.com/navn-r/uimpactify",
+      "url": "https://uimpactify.herokuapp.com",
+      "type": "Website",
       "features": [
-        "Course Creation and Enrollment",
-        "Recorded Lectures and Graded Assessments",
+        "Course Enrollment",
+        "Lectures & Assessments",
         "Student Analytics",
-        "Course Surveys & Ratings",
+        "Course Surveys",
         "Realtime Chat",
-        "Volunteer & Employment Opportunities and a Community-driven Donation System"
+        "Volunteer Opportunities",
+        "Donation System"
       ],
       "technology": [
         "MongoDB",
@@ -78,32 +130,43 @@
         "Multer",
         "GridFS",
         "Figma",
-        "Jira"
+        "JIRA"
       ]
     },
     {
       "name": "Spotify API Clone",
-      "date": "Nov. 2020 — Dec. 2020",
-      "shortDesc": "Social-centric Music Player REST API",
-      "repoUrl": "https://github.com/navn-r/spotify-api-clone",
-      "demoUrl": "https://navn.me/spotify-api-clone",
-      "info": [],
+      "description": "Social-centric Music Player REST API",
+      "highlights": [],
+      "startDate": "2020-11",
+      "endDate": "2020-12",
+      "repo": "https://github.com/navn-r/spotify-api-clone",
+      "url": "https://navn.me/spotify-api-clone",
+      "type": "Documentation",
       "features": [
-        "Creating and following user pro<span class=\"space\">f</span>iles",
-        "Uploading and liking songs",
-        "Playlist generation and Querying liked songs from followers"
+        "Create and follow user profiles",
+        "Upload and like songs",
+        "Playlist generation",
+        "Query liked songs from followers"
       ],
-      "technology": ["Java", "Spring Boot", "MongoDB", "Neo4j", "Microservices Architecture"]
+      "technology": [
+        "Java",
+        "Spring Boot",
+        "MongoDB",
+        "Neo4j",
+        "Microservices Architecture"
+      ]
     },
     {
       "name": "Ritrovo",
-      "date": "Sept. 2020",
-      "shortDesc": "Full-Stack Social Platform",
-      "repoUrl": "https://github.com/navn-r/ritrovo",
-      "demoUrl": "https://ritrovo.herokuapp.com",
-      "info": [
-        "Built a <strong>REST API</strong> and Frontend for creating posts and collaborating with users in a community dashboard with <strong>Hashed Password Authentication</strong>"
+      "description": "Full-Stack Social Platform",
+      "highlights": [
+        "Built a **REST API** and community dashboard for creating posts and collaborating with users authenticated with **Password Hashing**"
       ],
+      "startDate": "2020-09",
+      "endDate": "2020-09",
+      "repo": "https://github.com/navn-r/ritrovo",
+      "url": "https://ritrovo.herokuapp.com",
+      "type": "Website",
       "technology": [
         "MongoDB",
         "Express.js",
@@ -117,19 +180,22 @@
     },
     {
       "name": "Noten",
-      "date": "May 2020",
-      "shortDesc": "Cloud Based Grade Management Application",
-      "repoUrl": "https://github.com/navn-r/noten",
-      "demoUrl": "https://play.google.com/store/apps/details?id=com.noten",
-      "info": [
-        "Developed using a single codebase, deployable to both <strong>iOS</strong> and <strong>Android</strong>",
-        "Implemented a flattened data store, resulting in <strong>4x</strong> fewer database queries on all <strong>CRUD</strong> operations on grades"
+      "description": "Cloud Based Grade Management Application",
+      "highlights": [
+        "Developed using a single codebase, deployable to both **iOS** and **Android**",
+        "Implemented a flattened data store, resulting in **4x** fewer database queries on all **CRUD** operations on grades"
       ],
+      "startDate": "2020-04",
+      "endDate": "2020-05",
+      "repo": "https://github.com/navn-r/noten",
+      "url": "https://play.google.com/store/apps/details?id=com.noten",
+      "type": "Google Play Store",
       "features": [
-        "Multi-Semester and Course Management",
-        "Grade Prediction Calculator",
+        "Multi-Semester & Course Management",
+        "Grade Prediction",
         "Pass/Fail Courses",
-        "Multiple Grade Scales and Incognito Grades (Ignores Grade during GPA calculations)"
+        "Multiple Grade Scales",
+        "Selective Grade Calculation"
       ],
       "technology": [
         "React Native",

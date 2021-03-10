@@ -9,61 +9,8 @@ Built with:
 
 ## Schema
 
-This resume was inspired by the [JSON Resume](https://jsonresume.org/schema/) initiative. As such, all the data found in the resume is located in [`resume.json`](/src/resume.json).  
+This resume uses the schema from the [JSON Resume](https://jsonresume.org/schema/) initiative. As such, all information found in the resume is located in [`resume.json`](/src/resume.json). TypeScript models (interfaces) for each property in the Resume schema is located in [`models.ts`](/src/models.ts).
 
-My goal was to abstract all the personal resume data *outside* the main web code and into a reusable and easily customizable format. So if anyone wants to use the same resume style, they can just change the JSON.
-
-##### Empty Schema Example
-```json
-{
-  "about": {
-    "firstName": "",
-    "lastName": "",
-    "contact": {
-      "portfolio": "",
-      "email": "",
-      "linkedIn": "",
-      "github": ""
-    }
-  },
-  "skills": {
-    "": []
-  },
-  "education": [
-    {
-      "school": "",
-      "degree": "",
-      "location": "",
-      "duration": "",
-      "cgpa": "",
-      "courses": [],
-      "awards": []
-    }
-  ],
-  "experience": [
-    {
-      "position": "",
-      "employer": "",
-      "location": "",
-      "duration": "",
-      "info": []
-    }
-  ],
-  "projects": [
-    {
-      "name": "",
-      "date": "",
-      "shortDesc": "",
-      "repoUrl": "",
-      "demoUrl": "",
-      "info": [],
-      "features": [],
-      "technology": []
-    }
-  ]
-}
-```
-  
 ## Get Started
 
 ### Install Dependencies

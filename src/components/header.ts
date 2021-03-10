@@ -1,131 +1,79 @@
 import './icon';
+import {Basics} from '../models';
 import {css, customElement, html, LitElement, property} from 'lit-element';
-
-export interface About {
-  firstName: string;
-  lastName: string;
-  contact: {
-    portfolio: string;
-    email: string;
-    linkedIn: string;
-    github: string;
-  }
-}
+import {getIcon} from '../utils';
 
 @customElement('app-header')
 export class Header extends LitElement {
   static styles = css`
     #header {
-      background-color: var(--primary);
+      display: grid;
+      background-color: var(--gray);
+      color: var(--bg);
       display: grid;
       grid-template-columns: 2fr 1fr;
-      padding: 1.5rem;
-      color: #fff;
+      padding: 2.5rem;
     }
 
     fa-icon {
-      font-size: 1.5rem;
-      margin-right: 1rem;
-      color: var(--accent);
+      font-size: 1.25rem;
+      text-align: right;
     }
 
-    #name h1 {
+    #name {
+      font-family: var(--title);
       font-size: 3.5rem;
-      font-weight: 400;
-      font-style: italic;
+      margin: auto 0;
       text-align: center;
-    }
-
-    #lastName {
       font-weight: 600;
-      color: var(--accent);
     }
 
     #contact-container {
       display: grid;
-      grid-template-rows: auto;
-      row-gap: 10px;
+      row-gap: 1rem;
+    }
+
+    #lower-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
     }
 
     .contact {
-      display: flex;
-      justify-content: flex-start;
+      display: grid;
+      grid-template-columns: 2rem auto;
       align-items: center;
-      width: 100%;
-    }
-
-    .contact a {
-      text-decoration: none;
-      color: #fff;
+      column-gap: 0.5rem;
     }
 
     a {
       text-decoration: none;
-      color: var(--accent);
       outline: none;
       border: 0;
+      color: var(--off-white);
+    }
+
+    .contact a {
+      color: var(--bg);
     }
 
     .footer {
       width: 100%;
       display: flex;
       justify-content: space-evenly;
-      background-color: var(--text);
-      color: var(--accent);
+      align-items: center;
+      background-color: var(--dark-gray);
+      color: var(--off-white);
       padding: 1rem 0;
+      font-family: var(--main);
     }
 
     .footer fa-icon {
       font-size: 1rem;
     }
 
-    
     @media print {
       .footer {
         display: none;
-      }
-    }
-
-    @media screen and (max-width: 900px) {
-      @media (max-width: 900px) {
-        #header {
-          grid-template-columns: auto;
-          justify-content: center;
-        }
-
-        #contact-container {
-          grid-template-columns: repeat(4, 1fr);
-        }
-
-        .contact {
-          justify-content: center;
-          padding: 0 1rem;
-        }
-      }
-
-      @media (max-width: 600px) {
-        #header {
-          padding: 1rem;
-        }
-
-        #contact-container {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .contact {
-          justify-content: flex-start;
-        }
-
-        #name h1 {
-          font-size: 2.5rem;
-        }
-      }
-
-      @media (max-width: 375px) {
-        #contact-container {
-          grid-template-columns: auto;
-          margin-bottom: 1.5rem;
-        }
       }
     }
   `;
@@ -134,11 +82,11 @@ export class Header extends LitElement {
   time: Date = new Date(Date.now());
 
   @property({type: Object})
-  about!: About;
+  basics!: Basics;
 
   constructor() {
     super();
-    this.getRecentCommit();
+    // this.getRecentCommit(); // FIXME
   }
 
   getRecentCommit(): void {
@@ -149,44 +97,47 @@ export class Header extends LitElement {
       });
   }
 
+  renderName() {
+    const [first, last] = this.basics.name.split(" ");
+    return html`<h1 id="name">${first} <strong>${last}</strong></h1>`
+  }
+
   render() {
     return html`
       <div id="header">
-        <div id="name">
-          <h1>${this.about.firstName} <span id="lastName">${this.about.lastName}</span></h1>
-        </div>
+        <h1 id="name">${this.basics.name}</h1>
         <div id="contact-container">
           <div class="contact">
-            <fa-icon class="fas fa-link"></fa-icon>
-            <a href="https://${this.about.contact.portfolio}">${this.about.contact.portfolio}</a>
+            <fa-icon class="fas fa-map-marker-alt"></fa-icon>
+            ${Object.values(this.basics.location).join(", ")}
           </div>
           <div class="contact">
             <fa-icon class="fas fa-paper-plane"></fa-icon>
-            <a href="mailto:${this.about.contact.email}"
-              >${this.about.contact.email}</a
-            >
+            <a href="mailto:${this.basics.email}">${this.basics.email}</a>
           </div>
-          <div class="contact">
-            <fa-icon class="fab fa-linkedin"></fa-icon>
-            <a href="https://linkedin.com/in/${this.about.contact.linkedIn}"
-              >${this.about.contact.linkedIn}</a
-            >
-          </div>
-          <div class="contact">
-            <fa-icon class="fab fa-github"></fa-icon>
-            <a href="https://github.com/${this.about.contact.github}">${this.about.contact.github}</a>
+          <div id="lower-row">
+            <div class="contact">
+              <fa-icon class="fas fa-link"></fa-icon>
+              <a href="${this.basics.url}"
+                >${this.basics.url.replace('https://', '')}</a
+              >
+            </div>
+            ${this.basics.profiles.map(
+              ({network, url, username}) => html`
+                <div class="contact">
+                  <fa-icon class="${getIcon(network)}"></fa-icon>
+                  <a href="${url}">${username}</a>
+                </div>
+              `
+            )}
           </div>
         </div>
       </div>
       <div class="footer">
-        <div style="display: flex; align-items: center;">
-          <em>Updated: ${this.time.toDateString()}</em>
-        </div>
-        <div>
-          <a href="./RavindaranNavinn_Resume.pdf" target="_blank">
-            Download PDF <fa-icon class="fas fa-download"></fa-icon>
-          </a>
-        </div>
+        <em>Last Updated: ${this.time.toDateString()}</em>
+        <a href="./RavindaranNavinn_Resume.pdf" target="_blank">
+          Download PDF <fa-icon class="fas fa-download"></fa-icon>
+        </a>
       </div>
     `;
   }

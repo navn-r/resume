@@ -1,0 +1,19 @@
+import {unsafeHTML} from 'lit-html/directives/unsafe-html';
+
+export const parse = (input: string) =>
+  unsafeHTML(input.replace(/(\*\*|__)(.*?)\1/gim, '<strong>$2</strong>'));
+
+export const formatDate = (
+  date: string,
+  format = {month: 'short', year: 'numeric'}
+) => new Date(date).toLocaleString('default', format);
+
+export const getIcon = (input: string) => {
+  switch (input) {
+    case 'GitHub':
+      return 'fab fa-github';
+    case 'LinkedIn':
+      return 'fab fa-linkedin';
+  }
+  return 'fas fa-link';
+};
