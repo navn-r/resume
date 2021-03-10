@@ -184,7 +184,7 @@ const q=t=>e=>"function"==typeof e?((t,e)=>(window.customElements.define(t,e),e)
      * subject to an additional IP rights grant found at
      * http://polymer.github.io/PATENTS.txt
      */
-const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeHTML can only be used in text bindings");const i=st.get(e);if(void 0!==i&&$(t)&&t===i.value&&e.value===i.fragment)return;const s=document.createElement("template");s.innerHTML=t;const n=document.importNode(s.content,!0);e.setValue(n),st.set(e,{value:t,fragment:n})},(...t)=>{const e=ot(...t);return f.set(e,!0),e});var ot;const rt=t=>nt(t.replace(/(\*\*|__)(.*?)\1/gim,"<strong>$2</strong>")),at=(t,e={month:"short",year:"numeric"})=>new Date(t).toLocaleString("default",e),ct=tt`
+const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeHTML can only be used in text bindings");const i=st.get(e);if(void 0!==i&&$(t)&&t===i.value&&e.value===i.fragment)return;const s=document.createElement("template");s.innerHTML=t;const n=document.importNode(s.content,!0);e.setValue(n),st.set(e,{value:t,fragment:n})},(...t)=>{const e=ot(...t);return f.set(e,!0),e});var ot;const rt=t=>nt(t.replace(/fi/g,'<span style="margin-right: 0.25px">f</span>i').replace(/(\*\*|__)(.*?)\1/gim,"<strong>$2</strong>")),at=(t,e={month:"short",year:"numeric"})=>new Date(t).toLocaleString("default",e),ct=tt`
   .title-container {
     display: grid;
     justify-content: space-between;
@@ -260,7 +260,7 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
         <div class="body">
           <p><strong>Cumulative GPA:</strong> ${this.education.score}</p>
           <p>
-            <strong>Notable Courses:</strong> ${this.education.courses.join(", ")}
+            <strong>Notable Courses:</strong> ${rt(this.education.courses.join(", "))}
           </p>
           <p>
             <strong>Awards:</strong>
@@ -395,7 +395,7 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
       <div class="project-card">
         <div class="title-container">
           <p>
-            <strong>${this.project.name}</strong> — ${this.project.description}
+            <strong>${this.project.name}</strong> — ${rt(this.project.description)}
           </p>
           ${this.project.repo&&this.project.url?U`
                 <p>
@@ -409,10 +409,10 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
         <ul>
           ${this.project.highlights.map(t=>U`<li>${rt(t)}</li>`)}
           ${this.project.features?U`<li>
-                <strong>Core Features:</strong> ${this.project.features.join(", ")}
+                <strong>Core Features:</strong> ${rt(this.project.features.join(", "))}
               </li>`:""}
           <li>
-            <strong>Technology:</strong> ${this.project.technology.join(", ")}
+            <strong>Technology:</strong> ${rt(this.project.technology.join(", "))}
           </li>
         </ul>
       </div>
@@ -450,16 +450,18 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
     `],gt([K({type:Object})],vt.prototype,"project",void 0),vt=gt([q("project-card")],vt);var wt=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let yt=class extends it{render(){return U`
       <div class="skills-card">
         ${this.skills.map(t=>U`
-          <p><strong>${t.name}:</strong> ${t.keywords.join(", ")}</p>
-        `)}
+            <p>
+              <strong>${t.name}:</strong> ${rt(t.keywords.join(", "))}
+            </p>
+          `)}
       </div>
     `}};yt.styles=[lt,tt`
-    .skills-card {
-      display: grid;
-      grid-template-rows: auto;
-      row-gap: 0.5rem;
-    }
-  `],wt([K({type:Array})],yt.prototype,"skills",void 0),yt=wt([q("skills-card")],yt);var bt=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let St=class extends it{render(){return U`
+      .skills-card {
+        display: grid;
+        grid-template-rows: auto;
+        row-gap: 0.5rem;
+      }
+    `],wt([K({type:Array})],yt.prototype,"skills",void 0),yt=wt([q("skills-card")],yt);var bt=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let St=class extends it{render(){return U`
       <div class="work-card">
         <div class="title-container">
           <a href="${this.work.url}">${this.work.name}</a>
@@ -496,7 +498,7 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
 
     .section {
       width: 95%;
-      margin: 1.375rem auto 0.5rem auto;
+      margin: 1.5rem auto 0.5rem auto;
     }
 
     .title {
