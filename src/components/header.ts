@@ -35,7 +35,7 @@ export class Header extends LitElement {
 
     #lower-row {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 2fr 3fr 2fr;
     }
 
     .contact {
@@ -43,6 +43,10 @@ export class Header extends LitElement {
       grid-template-columns: 2rem auto;
       align-items: center;
       column-gap: 0.5rem;
+    }
+
+    #lower-row .contact {
+      justify-content: center;
     }
 
     a {
