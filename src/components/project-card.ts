@@ -49,7 +49,7 @@ export class ProjectCard extends LitElement {
       <div class="project-card">
         <div class="title-container">
           <p>
-            <strong>${this.project.name}</strong> — ${this.project.description}
+            <strong>${this.project.name}</strong> — ${parse(this.project.description)}
           </p>
           ${this.project.repo && this.project.url
             ? html`
@@ -66,13 +66,15 @@ export class ProjectCard extends LitElement {
           ${this.project.highlights.map((h) => html`<li>${parse(h)}</li>`)}
           ${this.project.features
             ? html`<li>
-                <strong>Core Features:</strong> ${this.project.features.join(
-                  ', '
+                <strong>Core Features:</strong> ${parse(
+                  this.project.features.join(', ')
                 )}
               </li>`
             : ''}
           <li>
-            <strong>Technology:</strong> ${this.project.technology.join(', ')}
+            <strong>Technology:</strong> ${parse(
+              this.project.technology.join(', ')
+            )}
           </li>
         </ul>
       </div>
