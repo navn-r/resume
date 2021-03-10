@@ -86,7 +86,7 @@ export class Header extends LitElement {
 
   constructor() {
     super();
-    // this.getRecentCommit(); // FIXME
+    this.getRecentCommit();
   }
 
   getRecentCommit(): void {
@@ -95,11 +95,6 @@ export class Header extends LitElement {
       .then((repo) => {
         this.time = new Date(repo.pushed_at);
       });
-  }
-
-  renderName() {
-    const [first, last] = this.basics.name.split(" ");
-    return html`<h1 id="name">${first} <strong>${last}</strong></h1>`
   }
 
   render() {
