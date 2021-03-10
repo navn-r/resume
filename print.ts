@@ -12,7 +12,7 @@ const puppeteer = require('puppeteer');
     format: 'Letter',
     printBackground: true,
     displayHeaderFooter: false,
-    scale: 0.8,
+    scale: 1,
   });
   await browser.close();
 })();
