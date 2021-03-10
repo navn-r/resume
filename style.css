@@ -48,23 +48,50 @@ table {
 }
 
 :root {
-	--primary: #5E1F16;
-	--text: #34110C;
-	--accent: #f8be3d;
-	--bg: #FFF7F5;
+	--main: "IBM Plex Sans", "sans-serif";
+  --title: "IBM Plex Serif", "serif";
+	--code: "monospace";
+	--text: #000000;
+	--bg: #FFFFFF;
+
+	--light-gray: #808080;
+  --off-white: #b2b2b2;
+  --dark-gray: #0f1417;
+  --gray: #272B2E;
+  --red: #db4817;
+  --orange: #e0a632;
+  --aqua: #04868a;
+  --green: #a8e4a0;
+  --blue: #46c2ff;
 }
 
 body {
 	background-color: var(--bg);
+	color: var(--text);
+}
+
+@media screen and (min-width: 11.5in) {
+	body {
+		background-color: var(--light-gray);
+	}
+	.wrapper {
+		background-color: var(--bg);
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    max-width: 11.5in;
+    margin: 0.5in auto;
+    height: 14.5in;
+	}
 }
 
 @media print {
 	@page {
 		margin: 0mm;
 	}
+
 	html {
-		font-size: 83.5%;
+		font-size: 78%;
 	}
+
 	body {
 		margin: 0;
 		overflow: hidden;
