@@ -134,6 +134,31 @@
       ]
     },
     {
+      "name": "Noten",
+      "description": "Cloud Based Grade Management Application",
+      "highlights": [
+        "Developed using a single codebase, deployable to both **iOS** and **Android**",
+        "Implemented a flattened data store, resulting in **4x** fewer database queries on all **CRUD** operations on grades"
+      ],
+      "startDate": "2020-04",
+      "endDate": "2020-05",
+      "repo": "https://github.com/navn-r/noten",
+      "url": "https://play.google.com/store/apps/details?id=com.noten",
+      "type": "Google Play Store",
+      "features": [
+        "Multi-Semester & Course Management",
+        "Grade Prediction",
+        "Pass/Fail Courses",
+        "Multiple Grade Scales",
+        "Selective Grade Calculation"
+      ],
+      "technology": [
+        "React Native",
+        "Firebase Realtime Database",
+        "Firebase Authentication with Google OAuth 2.0"
+      ]
+    },
+    {
       "name": "Spotify API Clone",
       "description": "Social-centric Music Player REST API",
       "highlights": [],
@@ -176,31 +201,6 @@
         "Mongoose",
         "Markdown",
         "Heroku"
-      ]
-    },
-    {
-      "name": "Noten",
-      "description": "Cloud Based Grade Management Application",
-      "highlights": [
-        "Developed using a single codebase, deployable to both **iOS** and **Android**",
-        "Implemented a flattened data store, resulting in **4x** fewer database queries on all **CRUD** operations on grades"
-      ],
-      "startDate": "2020-04",
-      "endDate": "2020-05",
-      "repo": "https://github.com/navn-r/noten",
-      "url": "https://play.google.com/store/apps/details?id=com.noten",
-      "type": "Google Play Store",
-      "features": [
-        "Multi-Semester & Course Management",
-        "Grade Prediction",
-        "Pass/Fail Courses",
-        "Multiple Grade Scales",
-        "Selective Grade Calculation"
-      ],
-      "technology": [
-        "React Native",
-        "Firebase Realtime Database",
-        "Firebase Authentication with Google OAuth 2.0"
       ]
     }
   ]
