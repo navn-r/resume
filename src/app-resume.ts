@@ -15,7 +15,7 @@ export class Resume extends LitElement {
 
     .section {
       width: 95%;
-      margin: 1.5rem auto 0.5rem auto;
+      margin: 1.5rem auto;
     }
 
     .title {
@@ -25,6 +25,7 @@ export class Resume extends LitElement {
       text-transform: uppercase;
       padding-bottom: 2px;
       border-bottom: 1.5px solid var(--text);
+      margin-bottom: 1rem;
     }
   `;
 
