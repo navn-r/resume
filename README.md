@@ -1,5 +1,5 @@
 # Resume
-> Microsoft Word was too bloated
+> An over-engineered JSON resume, because Microsoft Word was too bloated.
 
 Built with:  
   - Web Components using `lit-element` + TypeScript  
@@ -14,32 +14,30 @@ This resume uses the schema from the [JSON Resume](https://jsonresume.org/schema
 ## Get Started
 
 ### Install Dependencies
-```bash
-npm ci
+```sh
+npm i
 ```
 
 ### Development
+```sh
+npm run dev           # dev server starts on http://localhost:8000/src
 ```
-npm run build:watch   # watches && compiles ts files
-npm run serve         # serves static (should be done on another shell instance/tab)
-                      # dev server starts on http://localhost:8000/src
+
+### Formatting with Prettier
+```sh
+npm run format        # formats /src
 ```
 
 ### Deployment
-```
+```sh
 npm run deploy        # located at /docs
+npm run clean         # removes /out and /docs (optional)
 npm run clean:build   # removes the /out dir (optional)
 ```
 
 ### Printing to PDF (optional)  
-> Follow **Deployment** before proceeding
-```
-npm run print:pdf
+```sh
+npm run print:pdf     # located at /docs/RavindaranNavinn_Resume.pdf
+npm run build:pdf     # alt: runs deployment, then prints
 ```  
-
-We use `ts-node` to run the print script since `node.js` scripts wouldn't work on TravisCI, if you would like to use `node.js` ...  
-  1. Remove the `ts-lint` comments in [`print.ts`](https://github.com/navn-r/resume/blob/develop/print.ts) and rename it to `print.js`  
-  2. Replace the `print:pdf` script in [`package.json`](https://github.com/navn-r/resume/blob/develop/package.json) with    
-  ```json
-  "print:pdf": "rm -rf ./docs/RavindaranNavinn_Resume.pdf && node print.js",
-  ```
+The printing script is located at [`print.ts`](https://github.com/navn-r/resume/blob/develop/print.ts)

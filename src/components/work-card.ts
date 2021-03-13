@@ -1,7 +1,7 @@
-import { customElement, html, LitElement, property} from 'lit-element';
-import { Work } from '../models';
-import { formatDate, parse } from '../utils';
-import { titleCardStyle, listParagraphStyle } from './card.style';
+import {customElement, html, LitElement, property} from 'lit-element';
+import {Work} from '../models';
+import {formatDate, parse} from '../utils';
+import {titleCardStyle, listParagraphStyle} from './card.style';
 
 @customElement('work-card')
 export class WorkCard extends LitElement {
@@ -17,7 +17,10 @@ export class WorkCard extends LitElement {
           <a href="${this.work.url}">${this.work.name}</a>
           <h4>${this.work.position}</h4>
           <h4>${this.work.location}</h4>
-          <h4>${formatDate(this.work.startDate)} — ${formatDate(this.work.endDate)}</h4>
+          <h4>
+            ${formatDate(this.work.startDate)} —
+            ${formatDate(this.work.endDate)}
+          </h4>
         </div>
         <ul class="body">
           ${this.work.highlights.map((h) => html`<li>${parse(h)}</li>`)}

@@ -49,7 +49,8 @@ export class ProjectCard extends LitElement {
       <div class="project-card">
         <div class="title-container">
           <p>
-            <strong>${this.project.name}</strong> — ${parse(this.project.description)}
+            <strong>${this.project.name}</strong> —
+            ${parse(this.project.description)}
           </p>
           ${this.project.repo && this.project.url
             ? html`

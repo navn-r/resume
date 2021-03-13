@@ -40,9 +40,9 @@ export class EducationCard extends LitElement {
         <div class="body">
           <p><strong>Cumulative GPA:</strong> ${this.education.score}</p>
           <p>
-            <strong>Notable Courses:</strong> ${parse(this.education.courses.join(
-              ', '
-            ))}
+            <strong>Notable Courses:</strong> ${parse(
+              this.education.courses.join(', ')
+            )}
           </p>
           <p>
             <strong>Awards:</strong>
