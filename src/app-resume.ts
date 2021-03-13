@@ -1,9 +1,9 @@
 import './components';
 import {css, customElement, html, LitElement} from 'lit-element';
 import {Resume as ResumeSchema} from './models';
-import data from './resume.json';
+import * as data from './resume.json';
 
-// for type safety 
+// for type safety
 const resume: ResumeSchema = data;
 
 @customElement('app-resume')

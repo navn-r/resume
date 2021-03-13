@@ -1,8 +1,8 @@
-import { customElement, html, LitElement, property } from 'lit-element';
+import {customElement, html, LitElement, property} from 'lit-element';
 @customElement('fa-icon')
 export class Icon extends LitElement {
   @property({type: String})
-  class="fas fa-coffee"
+  class = 'fas fa-coffee';
 
   render() {
     return html`

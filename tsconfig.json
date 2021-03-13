@@ -26,6 +26,6 @@
       }
     ]
   },
-  "include": ["src/**/*.ts", "assets/resume.json"],
+  "include": ["src/**/*.ts", "src/resume.json"],
   "exclude": []
 }

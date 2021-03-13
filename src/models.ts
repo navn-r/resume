@@ -1,10 +1,10 @@
 export interface Resume {
   $schema: string;
   basics: Basics;
-  work: Work[],
-  education: Education[],
-  skills: Skill[],
-  projects: Project[],
+  work: Work[];
+  education: Education[];
+  skills: Skill[];
+  projects: Project[];
 }
 
 export interface Basics {
@@ -16,8 +16,8 @@ export interface Basics {
     city: string;
     region: string;
     countryCode: string;
-  }
-  profiles: Profile[]
+  };
+  profiles: Profile[];
 }
 
 export interface Profile {

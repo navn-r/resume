@@ -108,7 +108,7 @@ export class Header extends LitElement {
         <div id="contact-container">
           <div class="contact">
             <fa-icon class="fas fa-map-marker-alt"></fa-icon>
-            ${Object.values(this.basics.location).join(", ")}
+            ${Object.values(this.basics.location).join(', ')}
           </div>
           <div class="contact">
             <fa-icon class="fas fa-paper-plane"></fa-icon>
