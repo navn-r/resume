@@ -82,9 +82,9 @@ body {
   .wrapper {
     background-color: var(--bg);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    max-width: 11.5in;
+    max-width: 11in;
     margin: 0.5in auto;
-    height: 14.5in;
+    height: calc(14.5in + 2rem);
   }
 }
 
