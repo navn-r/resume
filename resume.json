@@ -173,11 +173,12 @@
       "technology": [
         "React",
         "Next.js",
+        "TypeScript",
         "Apollo",
         "MongoDB",
         "Mongoose",
         "JSON Web Tokens",
-        "TypeScript"
+        "Vercel"
       ]
     },
     {
