@@ -1,17 +1,14 @@
 import {css, customElement, html, LitElement, property} from 'lit-element';
 import {Project} from '../models';
 import {parse} from '../utils';
-import {listParagraphStyle} from './card.style';
+import {cardStyle, listParagraphStyle} from './card.style';
 
 @customElement('project-card')
 export class ProjectCard extends LitElement {
   static styles = [
+    cardStyle,
     listParagraphStyle,
     css`
-      .project-card {
-        margin-bottom: 1.125rem;
-      }
-
       .title-container {
         display: flex;
         justify-content: space-between;
@@ -46,7 +43,7 @@ export class ProjectCard extends LitElement {
 
   render() {
     return html`
-      <div class="project-card">
+      <div class="card">
         <div class="title-container">
           <p>
             <strong>${this.project.name}</strong> —

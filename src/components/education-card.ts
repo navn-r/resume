@@ -1,11 +1,12 @@
 import {css, customElement, html, LitElement, property} from 'lit-element';
 import {Education} from '../models';
 import {formatDate, parse} from '../utils';
-import {listParagraphStyle, titleCardStyle} from './card.style';
+import {cardStyle, listParagraphStyle, titleCardStyle} from './card.style';
 
 @customElement('education-card')
 export class EducationCard extends LitElement {
   static styles = [
+    cardStyle,
     titleCardStyle,
     listParagraphStyle,
     css`
@@ -27,7 +28,7 @@ export class EducationCard extends LitElement {
 
   render() {
     return html`
-      <div class="education-card">
+      <div class="card">
         <div class="title-container">
           <a href="${this.education.url}">${this.education.institution}</a>
           <h4>${this.education.studyType}, ${this.education.area}</h4>

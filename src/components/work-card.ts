@@ -1,18 +1,18 @@
 import {customElement, html, LitElement, property} from 'lit-element';
 import {Work} from '../models';
 import {formatDate, parse} from '../utils';
-import {titleCardStyle, listParagraphStyle} from './card.style';
+import {titleCardStyle, listParagraphStyle, cardStyle} from './card.style';
 
 @customElement('work-card')
 export class WorkCard extends LitElement {
-  static styles = [titleCardStyle, listParagraphStyle];
+  static styles = [cardStyle, titleCardStyle, listParagraphStyle];
 
   @property({type: Object})
   work!: Work;
 
   render() {
     return html`
-      <div class="work-card">
+      <div class="card">
         <div class="title-container">
           <a href="${this.work.url}">${this.work.name}</a>
           <h4>${this.work.position}</h4>

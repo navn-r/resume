@@ -75,6 +75,13 @@ body {
   color: var(--text);
 }
 
+@keyframes fade {
+  100% {
+    opacity: 100%;
+    visibility: visible;
+  }
+}
+
 @media screen and (min-width: 11.5in) {
   body {
     background-color: var(--light-gray);
@@ -84,7 +91,10 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     max-width: 11in;
     margin: 0.5in auto;
-    height: calc(14.5in + 2rem);
+    height: max-content;
+    padding-bottom: 2rem;
+    visibility: hidden;
+    opacity: 0;
   }
 }
 

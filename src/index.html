@@ -23,5 +23,17 @@
     <div class="wrapper">
       <app-resume></app-resume>
     </div>
+    <script>
+      const onLoad = () => {
+        document.querySelector('.wrapper').style.cssText +=
+          'animation: fade 1s forwards';
+      };
+      if ('complete' === document.readyState) {
+        onLoad();
+      } else {
+        window.addEventListener('load', onLoad);
+        document.removeEventListener('load', onLoad);
+      }
+    </script>
   </body>
 </html>

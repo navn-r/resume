@@ -1,5 +1,18 @@
 import {css} from 'lit-element';
 
+export const cardStyle = css`
+  .card {
+    margin-bottom: 1.375rem;
+  }
+
+  @media screen {
+    a:hover {
+      background: rgba(255, 255, 0, 0.2) !important;
+      box-shadow: 0px 2px 10px rgba(255, 255, 0, 0.2) !important;
+    }
+  }
+`;
+
 export const titleCardStyle = css`
   .title-container {
     display: grid;

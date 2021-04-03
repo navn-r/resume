@@ -2,11 +2,9 @@ language: node_js
 node_js:
 - node
 install:
-- npm ci
+- npm i
 script:
-- npm run deploy
-- npm run clean:build
-- npm run print:pdf
+- npm run build:pdf
 deploy:
   provider: pages
   skip_cleanup: true

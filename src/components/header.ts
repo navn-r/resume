@@ -80,6 +80,13 @@ export class Header extends LitElement {
         display: none;
       }
     }
+
+    @media screen {
+      #contact-container a:hover {
+        background: rgba(255, 255, 0, 0.2) !important;
+        box-shadow: 0px 2px 10px rgba(255, 255, 0, 0.2) !important;
+      }
+    }
   `;
 
   @property({attribute: false})
