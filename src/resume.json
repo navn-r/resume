@@ -25,17 +25,25 @@
   },
   "work": [
     {
-      "name": "CaseWare International Inc.",
+      "name": "Halo",
+      "location": "Chicago, IL",
+      "position": "Full-Stack Software Engineer Intern",
+      "url": "https://halo.science",
+      "startDate": "2021-05-03",
+      "endDate": "2021-08-31",
+      "highlights": ["Incoming Summer 2021 intern - React + Ruby on Rails"]
+    },
+    {
+      "name": "CaseWare International",
       "location": "Toronto, ON",
-      "position": "Software Developer Co-op",
+      "position": "Front-End Software Developer Co-op",
       "url": "https://www.caseware.com/ca",
       "startDate": "2020-09-08",
       "endDate": "2021-04-30",
       "highlights": [
-        "Active contributor in an **Agile Scrum** of **11** members, closely collaborating with developers, manual & automation QA and product owners",
-        "Facilitated **Daily Standup** meetings using various Sprint, Regression, and On Call **Jira** Boards",
-        "Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with **Karma, Jasmine** and **TypeScript**",
-        "Developed major features and hotfixes using **Angular, AngularJS, RxJS** and **NGXS** improving the end-user experience for **60+** international distributors"
+        "Active contributor in an **Agile Scrum** of **11** members, facilitating **Daily Standup** meetings using multiple **JIRA** Boards",
+        "Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with **Karma** and **Jasmine**",
+        "Developed major features and critical hotfixes using **Angular** and **AngularJS**, improving the end-user experience for **65+** international distributors"
       ]
     }
   ],
@@ -63,25 +71,25 @@
   ],
   "skills": [
     {
-      "name": "Programming",
+      "name": "Languages",
       "keywords": [
-        "HTML",
-        "CSS",
         "TypeScript",
         "JavaScript",
         "Java",
+        "HTML",
+        "CSS",
         "C",
         "Python",
-        "Shell",
-        "LaTeX"
+        "SQL",
+        "Shell"
       ]
     },
     {
-      "name": "Frameworks and Tools",
+      "name": "Frameworks & Tools",
       "keywords": [
-        "Angular",
         "React",
         "React Native",
+        "Angular",
         "Node.js",
         "Express.js",
         "JIRA",
@@ -92,8 +100,12 @@
       ]
     },
     {
-      "name": "Development Methodologies",
-      "keywords": ["Agile Scrum", "Agile Kanban", "Test Driven Development"]
+      "name": "Concepts",
+      "keywords": [
+        "APIs (REST, GraphQL)",
+        "Agile Methodologies (Scrum, Kanban, Test Driven Development)",
+        "CI/CD"
+      ]
     }
   ],
   "projects": [
@@ -101,9 +113,9 @@
       "name": "UImpactify",
       "description": "Online Learning Platform",
       "highlights": [
-        "Engaged in an Agile Scrum of **7** members over **4** sprints, specializing in education for the social purpose sector",
+        "Engaged in an Agile Scrum of **7** over **4** sprints, battling the lack of specialized education in the social purpose sector",
         "Facilitated Daily Standup, Backlog Refinement, and Architecture Design meetings **following best Agile practices**",
-        "Developed and deployed a **Discord Bot** to supplement Daily Standup meetings, reducing overall time by **50%**"
+        "Developed and deployed a <a href=\"https://github.com/navn-r/standup-bot\">**Discord Bot**</a> to supplement Daily Standup meetings, reducing overall time by **50%**"
       ],
       "startDate": "2020-09",
       "endDate": "2020-12",
@@ -124,11 +136,11 @@
         "Express.js",
         "Angular",
         "Node.js",
-        "Clarity Design",
         "Socket.io",
         "Chart.js",
         "Multer",
         "GridFS",
+        "Heroku",
         "Figma",
         "JIRA"
       ]
@@ -137,7 +149,6 @@
       "name": "Noten",
       "description": "Cloud Based Grade Management Application",
       "highlights": [
-        "Developed using a single codebase, deployable to both **iOS** and **Android**",
         "Implemented a flattened data store, resulting in **4x** fewer database queries on all **CRUD** operations on grades"
       ],
       "startDate": "2020-04",
@@ -146,11 +157,10 @@
       "url": "https://play.google.com/store/apps/details?id=com.noten",
       "type": "Google Play Store",
       "features": [
-        "Multi-Semester & Course Management",
+        "Semester & Course Management",
         "Grade Prediction",
-        "Pass/Fail Courses",
         "Multiple Grade Scales",
-        "Selective Grade Calculation"
+        "Selective Course & Grade Calculation"
       ],
       "technology": [
         "React Native",
