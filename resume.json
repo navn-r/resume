@@ -25,6 +25,15 @@
   },
   "work": [
     {
+      "name": "Halo",
+      "location": "Chicago, IL",
+      "position": "Full-Stack Software Engineer Intern",
+      "url": "https://halo.science",
+      "startDate": "2021-05-03",
+      "endDate": "2021-08-31",
+      "highlights": ["Incoming Summer 2021 intern - React + Ruby on Rails"]
+    },
+    {
       "name": "CaseWare International",
       "location": "Toronto, ON",
       "position": "Front-End Software Developer Co-op",
@@ -32,10 +41,9 @@
       "startDate": "2020-09-08",
       "endDate": "2021-04-30",
       "highlights": [
-        "Active contributor in an **Agile Scrum** of **11** members, closely collaborating with developers, manual & automation QA and product owners",
-        "Facilitated **Daily Standup** meetings using various Sprint, Regression, and On Call **Jira** Boards",
-        "Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with **Karma, Jasmine** and **TypeScript**",
-        "Developed major features and hotfixes using **Angular, AngularJS, RxJS** and **NGXS** improving the end-user experience for **60+** international distributors"
+        "Active contributor in an **Agile Scrum** of **11** members, facilitating **Daily Standup** meetings using multiple **JIRA** Boards",
+        "Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with **Karma** and **Jasmine**",
+        "Developed major features and critical hotfixes using **Angular** and **AngularJS**, improving the end-user experience for **65+** international distributors"
       ]
     }
   ],
@@ -141,7 +149,6 @@
       "name": "Noten",
       "description": "Cloud Based Grade Management Application",
       "highlights": [
-        "Developed using a single codebase, deployable to both **iOS** and **Android**",
         "Implemented a flattened data store, resulting in **4x** fewer database queries on all **CRUD** operations on grades"
       ],
       "startDate": "2020-04",
