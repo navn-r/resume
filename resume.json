@@ -42,8 +42,8 @@
       "endDate": "2021-04-30",
       "highlights": [
         "Facilitated **Daily Standup** meetings using multiple **JIRA** project boards in an **Agile Scrum** of **12** members",
-        "Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with **Karma** and **Jasmine**",
-        "Developed major features and critical hotfixes using **Angular** and **AngularJS**, improving the end-user experience for **65+** international distributors"
+        "Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with **Karma**, **Jest** and **Jasmine**",
+        "Developed major features and critical hotfixes using **Angular** and **AngularJS**, improving the end-user experience for **130+** international accounting firms"
       ]
     }
   ],
