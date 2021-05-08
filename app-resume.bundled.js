@@ -1,190 +1,49 @@
 !function(t){
 /**
      * @license
-     * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
+     * Copyright 2019 Google LLC
+     * SPDX-License-Identifier: BSD-3-Clause
      */
-const e="undefined"!=typeof window&&null!=window.customElements&&void 0!==window.customElements.polyfillWrapFlushCallback,i=(t,e,i=null)=>{for(;e!==i;){const i=e.nextSibling;t.removeChild(e),e=i}},s=`{{lit-${String(Math.random()).slice(2)}}}`,n=`\x3c!--${s}--\x3e`,o=new RegExp(`${s}|${n}`);class r{constructor(t,e){this.parts=[],this.element=e;const i=[],n=[],r=document.createTreeWalker(e.content,133,null,!1);let c=0,d=-1,u=0;const{strings:p,values:{length:f}}=t;for(;u<f;){const t=r.nextNode();if(null!==t){if(d++,1===t.nodeType){if(t.hasAttributes()){const e=t.attributes,{length:i}=e;let s=0;for(let t=0;t<i;t++)a(e[t].name,"$lit$")&&s++;for(;s-- >0;){const e=p[u],i=h.exec(e)[2],s=i.toLowerCase()+"$lit$",n=t.getAttribute(s);t.removeAttribute(s);const r=n.split(o);this.parts.push({type:"attribute",index:d,name:i,strings:r}),u+=r.length-1}}"TEMPLATE"===t.tagName&&(n.push(t),r.currentNode=t.content)}else if(3===t.nodeType){const e=t.data;if(e.indexOf(s)>=0){const s=t.parentNode,n=e.split(o),r=n.length-1;for(let e=0;e<r;e++){let i,o=n[e];if(""===o)i=l();else{const t=h.exec(o);null!==t&&a(t[2],"$lit$")&&(o=o.slice(0,t.index)+t[1]+t[2].slice(0,-"$lit$".length)+t[3]),i=document.createTextNode(o)}s.insertBefore(i,t),this.parts.push({type:"node",index:++d})}""===n[r]?(s.insertBefore(l(),t),i.push(t)):t.data=n[r],u+=r}}else if(8===t.nodeType)if(t.data===s){const e=t.parentNode;null!==t.previousSibling&&d!==c||(d++,e.insertBefore(l(),t)),c=d,this.parts.push({type:"node",index:d}),null===t.nextSibling?t.data="":(i.push(t),d--),u++}else{let e=-1;for(;-1!==(e=t.data.indexOf(s,e+1));)this.parts.push({type:"node",index:-1}),u++}}else r.currentNode=n.pop()}for(const t of i)t.parentNode.removeChild(t)}}const a=(t,e)=>{const i=t.length-e.length;return i>=0&&t.slice(i)===e},c=t=>-1!==t.index,l=()=>document.createComment(""),h=/([ \x09\x0a\x0c\x0d])([^\0-\x1F\x7F-\x9F "'>=/]+)([ \x09\x0a\x0c\x0d]*=[ \x09\x0a\x0c\x0d]*(?:[^ \x09\x0a\x0c\x0d"'`<>=]*|"[^"]*|'[^']*))$/;function d(t,e){const{element:{content:i},parts:s}=t,n=document.createTreeWalker(i,133,null,!1);let o=p(s),r=s[o],a=-1,c=0;const l=[];let h=null;for(;n.nextNode();){a++;const t=n.currentNode;for(t.previousSibling===h&&(h=null),e.has(t)&&(l.push(t),null===h&&(h=t)),null!==h&&c++;void 0!==r&&r.index===a;)r.index=null!==h?-1:r.index-c,o=p(s,o),r=s[o]}l.forEach(t=>t.parentNode.removeChild(t))}const u=t=>{let e=11===t.nodeType?0:1;const i=document.createTreeWalker(t,133,null,!1);for(;i.nextNode();)e++;return e},p=(t,e=-1)=>{for(let i=e+1;i<t.length;i++){const e=t[i];if(c(e))return i}return-1};
+const i=window.ShadowRoot&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,e=Symbol();class s{constructor(t,i){if(i!==e)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t}get styleSheet(){return i&&void 0===this.t&&(this.t=new CSSStyleSheet,this.t.replaceSync(this.cssText)),this.t}toString(){return this.cssText}}const n=new Map,o=t=>{let i=n.get(t);return void 0===i&&n.set(t,i=new s(t,e)),i},r=(t,...i)=>{const e=1===t.length?t[0]:i.reduce((i,e,n)=>i+(t=>{if(t instanceof s)return t.cssText;if("number"==typeof t)return t;throw Error("Value passed to 'css' function must be a 'css' function result: "+t+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(e)+t[n+1],t[0]);return o(e)},a=(t,e)=>{i?t.adoptedStyleSheets=e.map(t=>t instanceof CSSStyleSheet?t:t.styleSheet):e.forEach(i=>{const e=document.createElement("style");e.textContent=i.cssText,t.appendChild(e)})},l=i?t=>t:t=>t instanceof CSSStyleSheet?(t=>{let i="";for(const e of t.cssRules)i+=e.cssText;return(t=>o("string"==typeof t?t:t+""))(i)})(t):t
 /**
      * @license
-     * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
+     * Copyright 2017 Google LLC
+     * SPDX-License-Identifier: BSD-3-Clause
+     */;var c,h,d,u;const v={toAttribute(t,i){switch(i){case Boolean:t=t?"":null;break;case Object:case Array:t=null==t?t:JSON.stringify(t)}return t},fromAttribute(t,i){let e=t;switch(i){case Boolean:e=null!==t;break;case Number:e=null===t?null:Number(t);break;case Object:case Array:try{e=JSON.parse(t)}catch(t){e=null}}return e}},p=(t,i)=>i!==t&&(i==i||t==t),f={attribute:!0,type:String,converter:v,reflect:!1,hasChanged:p};class g extends HTMLElement{constructor(){super(),this.Πi=new Map,this.Πo=void 0,this.Πl=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this.Πh=null,this.u()}static addInitializer(t){var i;null!==(i=this.v)&&void 0!==i||(this.v=[]),this.v.push(t)}static get observedAttributes(){this.finalize();const t=[];return this.elementProperties.forEach((i,e)=>{const s=this.Πp(e,i);void 0!==s&&(this.Πm.set(s,e),t.push(s))}),t}static createProperty(t,i=f){if(i.state&&(i.attribute=!1),this.finalize(),this.elementProperties.set(t,i),!i.noAccessor&&!this.prototype.hasOwnProperty(t)){const e="symbol"==typeof t?Symbol():"__"+t,s=this.getPropertyDescriptor(t,e,i);void 0!==s&&Object.defineProperty(this.prototype,t,s)}}static getPropertyDescriptor(t,i,e){return{get(){return this[i]},set(s){const n=this[t];this[i]=s,this.requestUpdate(t,n,e)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)||f}static finalize(){if(this.hasOwnProperty("finalized"))return!1;this.finalized=!0;const t=Object.getPrototypeOf(this);if(t.finalize(),this.elementProperties=new Map(t.elementProperties),this.Πm=new Map,this.hasOwnProperty("properties")){const t=this.properties,i=[...Object.getOwnPropertyNames(t),...Object.getOwnPropertySymbols(t)];for(const e of i)this.createProperty(e,t[e])}return this.elementStyles=this.finalizeStyles(this.styles),!0}static finalizeStyles(t){const i=[];if(Array.isArray(t)){const e=new Set(t.flat(1/0).reverse());for(const t of e)i.unshift(l(t))}else void 0!==t&&i.push(l(t));return i}static"Πp"(t,i){const e=i.attribute;return!1===e?void 0:"string"==typeof e?e:"string"==typeof t?t.toLowerCase():void 0}u(){var t;this.Πg=new Promise(t=>this.enableUpdating=t),this.L=new Map,this.Π_(),this.requestUpdate(),null===(t=this.constructor.v)||void 0===t||t.forEach(t=>t(this))}addController(t){var i,e;(null!==(i=this.ΠU)&&void 0!==i?i:this.ΠU=[]).push(t),void 0!==this.renderRoot&&this.isConnected&&(null===(e=t.hostConnected)||void 0===e||e.call(t))}removeController(t){var i;null===(i=this.ΠU)||void 0===i||i.splice(this.ΠU.indexOf(t)>>>0,1)}"Π_"(){this.constructor.elementProperties.forEach((t,i)=>{this.hasOwnProperty(i)&&(this.Πi.set(i,this[i]),delete this[i])})}createRenderRoot(){var t;const i=null!==(t=this.shadowRoot)&&void 0!==t?t:this.attachShadow(this.constructor.shadowRootOptions);return a(i,this.constructor.elementStyles),i}connectedCallback(){var t;void 0===this.renderRoot&&(this.renderRoot=this.createRenderRoot()),this.enableUpdating(!0),null===(t=this.ΠU)||void 0===t||t.forEach(t=>{var i;return null===(i=t.hostConnected)||void 0===i?void 0:i.call(t)}),this.Πl&&(this.Πl(),this.Πo=this.Πl=void 0)}enableUpdating(t){}disconnectedCallback(){var t;null===(t=this.ΠU)||void 0===t||t.forEach(t=>{var i;return null===(i=t.hostDisconnected)||void 0===i?void 0:i.call(t)}),this.Πo=new Promise(t=>this.Πl=t)}attributeChangedCallback(t,i,e){this.K(t,e)}"Πj"(t,i,e=f){var s,n;const o=this.constructor.Πp(t,e);if(void 0!==o&&!0===e.reflect){const r=(null!==(n=null===(s=e.converter)||void 0===s?void 0:s.toAttribute)&&void 0!==n?n:v.toAttribute)(i,e.type);this.Πh=t,null==r?this.removeAttribute(o):this.setAttribute(o,r),this.Πh=null}}K(t,i){var e,s,n;const o=this.constructor,r=o.Πm.get(t);if(void 0!==r&&this.Πh!==r){const t=o.getPropertyOptions(r),a=t.converter,l=null!==(n=null!==(s=null===(e=a)||void 0===e?void 0:e.fromAttribute)&&void 0!==s?s:"function"==typeof a?a:null)&&void 0!==n?n:v.fromAttribute;this.Πh=r,this[r]=l(i,t.type),this.Πh=null}}requestUpdate(t,i,e){let s=!0;void 0!==t&&(((e=e||this.constructor.getPropertyOptions(t)).hasChanged||p)(this[t],i)?(this.L.has(t)||this.L.set(t,i),!0===e.reflect&&this.Πh!==t&&(void 0===this.Πk&&(this.Πk=new Map),this.Πk.set(t,e))):s=!1),!this.isUpdatePending&&s&&(this.Πg=this.Πq())}async"Πq"(){this.isUpdatePending=!0;try{for(await this.Πg;this.Πo;)await this.Πo}catch(t){Promise.reject(t)}const t=this.performUpdate();return null!=t&&await t,!this.isUpdatePending}performUpdate(){var t;if(!this.isUpdatePending)return;this.hasUpdated,this.Πi&&(this.Πi.forEach((t,i)=>this[i]=t),this.Πi=void 0);let i=!1;const e=this.L;try{i=this.shouldUpdate(e),i?(this.willUpdate(e),null===(t=this.ΠU)||void 0===t||t.forEach(t=>{var i;return null===(i=t.hostUpdate)||void 0===i?void 0:i.call(t)}),this.update(e)):this.Π$()}catch(t){throw i=!1,this.Π$(),t}i&&this.E(e)}willUpdate(t){}E(t){var i;null===(i=this.ΠU)||void 0===i||i.forEach(t=>{var i;return null===(i=t.hostUpdated)||void 0===i?void 0:i.call(t)}),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}"Π$"(){this.L=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this.Πg}shouldUpdate(t){return!0}update(t){void 0!==this.Πk&&(this.Πk.forEach((t,i)=>this.Πj(i,this[i],t)),this.Πk=void 0),this.Π$()}updated(t){}firstUpdated(t){}}
+/**
+     * @license
+     * Copyright 2017 Google LLC
+     * SPDX-License-Identifier: BSD-3-Clause
      */
-const f=new WeakMap,m=t=>"function"==typeof t&&f.has(t),g={},v={};
+var m,y,b,w;g.finalized=!0,g.elementProperties=new Map,g.elementStyles=[],g.shadowRootOptions={mode:"open"},null===(h=(c=globalThis).reactiveElementPlatformSupport)||void 0===h||h.call(c,{ReactiveElement:g}),(null!==(d=(u=globalThis).reactiveElementVersions)&&void 0!==d?d:u.reactiveElementVersions=[]).push("1.0.0-rc.2");const S=globalThis.trustedTypes,$=S?S.createPolicy("lit-html",{createHTML:t=>t}):void 0,k=`lit$${(Math.random()+"").slice(9)}$`,x="?"+k,j=`<${x}>`,C=document,D=(t="")=>C.createComment(t),A=t=>null===t||"object"!=typeof t&&"function"!=typeof t,O=Array.isArray,T=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,M=/-->/g,R=/>/g,E=/>|[ 	\n\r](?:([^\s"'>=/]+)([ 	\n\r]*=[ 	\n\r]*(?:[^ 	\n\r"'`<>=]|("|')|))|$)/g,I=/'/g,P=/"/g,N=/^(?:script|style|textarea)$/i,z=(t=>(i,...e)=>({_$litType$:t,strings:i,values:e}))(1),L=Symbol.for("lit-noChange"),U=Symbol.for("lit-nothing"),_=new WeakMap,F=C.createTreeWalker(C,129,null,!1);class B{constructor({strings:t,_$litType$:i},e){let s;this.parts=[];let n=0,o=0;const r=t.length-1,a=this.parts,[l,c]=((t,i)=>{const e=t.length-1,s=[];let n,o=2===i?"<svg>":"",r=T;for(let i=0;i<e;i++){const e=t[i];let a,l,c=-1,h=0;for(;h<e.length&&(r.lastIndex=h,l=r.exec(e),null!==l);)h=r.lastIndex,r===T?"!--"===l[1]?r=M:void 0!==l[1]?r=R:void 0!==l[2]?(N.test(l[2])&&(n=RegExp("</"+l[2],"g")),r=E):void 0!==l[3]&&(r=E):r===E?">"===l[0]?(r=null!=n?n:T,c=-1):void 0===l[1]?c=-2:(c=r.lastIndex-l[2].length,a=l[1],r=void 0===l[3]?E:'"'===l[3]?P:I):r===P||r===I?r=E:r===M||r===R?r=T:(r=E,n=void 0);const d=r===E&&t[i+1].startsWith("/>")?" ":"";o+=r===T?e+j:c>=0?(s.push(a),e.slice(0,c)+"$lit$"+e.slice(c)+k+d):e+k+(-2===c?(s.push(void 0),i):d)}const a=o+(t[e]||"<?>")+(2===i?"</svg>":"");return[void 0!==$?$.createHTML(a):a,s]})(t,i);if(this.el=B.createElement(l,e),F.currentNode=this.el.content,2===i){const t=this.el.content,i=t.firstChild;i.remove(),t.append(...i.childNodes)}for(;null!==(s=F.nextNode())&&a.length<r;){if(1===s.nodeType){if(s.hasAttributes()){const t=[];for(const i of s.getAttributeNames())if(i.endsWith("$lit$")||i.startsWith(k)){const e=c[o++];if(t.push(i),void 0!==e){const t=s.getAttribute(e.toLowerCase()+"$lit$").split(k),i=/([.?@])?(.*)/.exec(e);a.push({type:1,index:n,name:i[2],strings:t,ctor:"."===i[1]?Q:"?"===i[1]?q:"@"===i[1]?K:W})}else a.push({type:6,index:n})}for(const i of t)s.removeAttribute(i)}if(N.test(s.tagName)){const t=s.textContent.split(k),i=t.length-1;if(i>0){s.textContent=S?S.emptyScript:"";for(let e=0;e<i;e++)s.append(t[e],D()),F.nextNode(),a.push({type:2,index:++n});s.append(t[i],D())}}}else if(8===s.nodeType)if(s.data===x)a.push({type:2,index:n});else{let t=-1;for(;-1!==(t=s.data.indexOf(k,t+1));)a.push({type:7,index:n}),t+=k.length-1}n++}}static createElement(t,i){const e=C.createElement("template");return e.innerHTML=t,e}}function G(t,i,e=t,s){var n,o,r,a;if(i===L)return i;let l=void 0!==s?null===(n=e.Σi)||void 0===n?void 0:n[s]:e.Σo;const c=A(i)?void 0:i._$litDirective$;return(null==l?void 0:l.constructor)!==c&&(null===(o=null==l?void 0:l.O)||void 0===o||o.call(l,!1),void 0===c?l=void 0:(l=new c(t),l.T(t,e,s)),void 0!==s?(null!==(r=(a=e).Σi)&&void 0!==r?r:a.Σi=[])[s]=l:e.Σo=l),void 0!==l&&(i=G(t,l.S(t,i.values),l,s)),i}class H{constructor(t,i){this.l=[],this.N=void 0,this.D=t,this.M=i}u(t){var i;const{el:{content:e},parts:s}=this.D,n=(null!==(i=null==t?void 0:t.creationScope)&&void 0!==i?i:C).importNode(e,!0);F.currentNode=n;let o=F.nextNode(),r=0,a=0,l=s[0];for(;void 0!==l;){if(r===l.index){let i;2===l.type?i=new J(o,o.nextSibling,this,t):1===l.type?i=new l.ctor(o,l.name,l.strings,this,t):6===l.type&&(i=new V(o,this,t)),this.l.push(i),l=s[++a]}r!==(null==l?void 0:l.index)&&(o=F.nextNode(),r++)}return n}v(t){let i=0;for(const e of this.l)void 0!==e&&(void 0!==e.strings?(e.I(t,e,i),i+=e.strings.length-2):e.I(t[i])),i++}}class J{constructor(t,i,e,s){this.type=2,this.N=void 0,this.A=t,this.B=i,this.M=e,this.options=s}setConnected(t){var i;null===(i=this.P)||void 0===i||i.call(this,t)}get parentNode(){return this.A.parentNode}get startNode(){return this.A}get endNode(){return this.B}I(t,i=this){t=G(this,t,i),A(t)?t===U||null==t||""===t?(this.H!==U&&this.R(),this.H=U):t!==this.H&&t!==L&&this.m(t):void 0!==t._$litType$?this._(t):void 0!==t.nodeType?this.$(t):(t=>{var i;return O(t)||"function"==typeof(null===(i=t)||void 0===i?void 0:i[Symbol.iterator])})(t)?this.g(t):this.m(t)}k(t,i=this.B){return this.A.parentNode.insertBefore(t,i)}$(t){this.H!==t&&(this.R(),this.H=this.k(t))}m(t){const i=this.A.nextSibling;null!==i&&3===i.nodeType&&(null===this.B?null===i.nextSibling:i===this.B.previousSibling)?i.data=t:this.$(C.createTextNode(t)),this.H=t}_(t){var i;const{values:e,_$litType$:s}=t,n="number"==typeof s?this.C(t):(void 0===s.el&&(s.el=B.createElement(s.h,this.options)),s);if((null===(i=this.H)||void 0===i?void 0:i.D)===n)this.H.v(e);else{const t=new H(n,this),i=t.u(this.options);t.v(e),this.$(i),this.H=t}}C(t){let i=_.get(t.strings);return void 0===i&&_.set(t.strings,i=new B(t)),i}g(t){O(this.H)||(this.H=[],this.R());const i=this.H;let e,s=0;for(const n of t)s===i.length?i.push(e=new J(this.k(D()),this.k(D()),this,this.options)):e=i[s],e.I(n),s++;s<i.length&&(this.R(e&&e.B.nextSibling,s),i.length=s)}R(t=this.A.nextSibling,i){var e;for(null===(e=this.P)||void 0===e||e.call(this,!1,!0,i);t&&t!==this.B;){const i=t.nextSibling;t.remove(),t=i}}}class W{constructor(t,i,e,s,n){this.type=1,this.H=U,this.N=void 0,this.V=void 0,this.element=t,this.name=i,this.M=s,this.options=n,e.length>2||""!==e[0]||""!==e[1]?(this.H=Array(e.length-1).fill(U),this.strings=e):this.H=U}get tagName(){return this.element.tagName}I(t,i=this,e,s){const n=this.strings;let o=!1;if(void 0===n)t=G(this,t,i,0),o=!A(t)||t!==this.H&&t!==L,o&&(this.H=t);else{const s=t;let r,a;for(t=n[0],r=0;r<n.length-1;r++)a=G(this,s[e+r],i,r),a===L&&(a=this.H[r]),o||(o=!A(a)||a!==this.H[r]),a===U?t=U:t!==U&&(t+=(null!=a?a:"")+n[r+1]),this.H[r]=a}o&&!s&&this.W(t)}W(t){t===U?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,null!=t?t:"")}}class Q extends W{constructor(){super(...arguments),this.type=3}W(t){this.element[this.name]=t===U?void 0:t}}class q extends W{constructor(){super(...arguments),this.type=4}W(t){t&&t!==U?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name)}}class K extends W{constructor(){super(...arguments),this.type=5}I(t,i=this){var e;if((t=null!==(e=G(this,t,i,0))&&void 0!==e?e:U)===L)return;const s=this.H,n=t===U&&s!==U||t.capture!==s.capture||t.once!==s.once||t.passive!==s.passive,o=t!==U&&(s===U||n);n&&this.element.removeEventListener(this.name,this,s),o&&this.element.addEventListener(this.name,this,t),this.H=t}handleEvent(t){var i,e;"function"==typeof this.H?this.H.call(null!==(e=null===(i=this.options)||void 0===i?void 0:i.host)&&void 0!==e?e:this.element,t):this.H.handleEvent(t)}}class V{constructor(t,i,e){this.element=t,this.type=6,this.N=void 0,this.V=void 0,this.M=i,this.options=e}I(t){G(this,t)}}
 /**
      * @license
-     * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
+     * Copyright 2017 Google LLC
+     * SPDX-License-Identifier: BSD-3-Clause
      */
-class w{constructor(t,e,i){this.t=[],this.template=t,this.processor=e,this.options=i}update(t){let e=0;for(const i of this.t)void 0!==i&&i.setValue(t[e]),e++;for(const t of this.t)void 0!==t&&t.commit()}_clone(){const t=e?this.template.element.content.cloneNode(!0):document.importNode(this.template.element.content,!0),i=[],s=this.template.parts,n=document.createTreeWalker(t,133,null,!1);let o,r=0,a=0,l=n.nextNode();for(;r<s.length;)if(o=s[r],c(o)){for(;a<o.index;)a++,"TEMPLATE"===l.nodeName&&(i.push(l),n.currentNode=l.content),null===(l=n.nextNode())&&(n.currentNode=i.pop(),l=n.nextNode());if("node"===o.type){const t=this.processor.handleTextExpression(this.options);t.insertAfterNode(l.previousSibling),this.t.push(t)}else this.t.push(...this.processor.handleAttributeExpressions(l,o.name,o.strings,this.options));r++}else this.t.push(void 0),r++;return e&&(document.adoptNode(t),customElements.upgrade(t)),t}}
+var Z,X,Y,tt,it,et;null===(y=(m=globalThis).litHtmlPlatformSupport)||void 0===y||y.call(m,B,J),(null!==(b=(w=globalThis).litHtmlVersions)&&void 0!==b?b:w.litHtmlVersions=[]).push("2.0.0-rc.3"),(null!==(Z=(et=globalThis).litElementVersions)&&void 0!==Z?Z:et.litElementVersions=[]).push("3.0.0-rc.2");class st extends g{constructor(){super(...arguments),this.renderOptions={host:this},this.Φt=void 0}createRenderRoot(){var t,i;const e=super.createRenderRoot();return null!==(t=(i=this.renderOptions).renderBefore)&&void 0!==t||(i.renderBefore=e.firstChild),e}update(t){const i=this.render();super.update(t),this.Φt=((t,i,e)=>{var s,n;const o=null!==(s=null==e?void 0:e.renderBefore)&&void 0!==s?s:i;let r=o._$litPart$;if(void 0===r){const t=null!==(n=null==e?void 0:e.renderBefore)&&void 0!==n?n:null;o._$litPart$=r=new J(i.insertBefore(D(),t),t,void 0,e)}return r.I(t),r})(i,this.renderRoot,this.renderOptions)}connectedCallback(){var t;super.connectedCallback(),null===(t=this.Φt)||void 0===t||t.setConnected(!0)}disconnectedCallback(){var t;super.disconnectedCallback(),null===(t=this.Φt)||void 0===t||t.setConnected(!1)}render(){return L}}st.finalized=!0,st._$litElement$=!0,null===(Y=(X=globalThis).litElementHydrateSupport)||void 0===Y||Y.call(X,{LitElement:st}),null===(it=(tt=globalThis).litElementPlatformSupport)||void 0===it||it.call(tt,{LitElement:st});
 /**
      * @license
-     * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
-     */const y=window.trustedTypes&&trustedTypes.createPolicy("lit-html",{createHTML:t=>t}),b=` ${s} `;class S{constructor(t,e,i,s){this.strings=t,this.values=e,this.type=i,this.processor=s}getHTML(){const t=this.strings.length-1;let e="",i=!1;for(let o=0;o<t;o++){const t=this.strings[o],r=t.lastIndexOf("\x3c!--");i=(r>-1||i)&&-1===t.indexOf("--\x3e",r+1);const a=h.exec(t);e+=null===a?t+(i?b:n):t.substr(0,a.index)+a[1]+a[2]+"$lit$"+a[3]+s}return e+=this.strings[t],e}getTemplateElement(){const t=document.createElement("template");let e=this.getHTML();return void 0!==y&&(e=y.createHTML(e)),t.innerHTML=e,t}}
-/**
-     * @license
-     * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
-     */const x=t=>null===t||!("object"==typeof t||"function"==typeof t),$=t=>Array.isArray(t)||!(!t||!t[Symbol.iterator]);class k{constructor(t,e,i){this.dirty=!0,this.element=t,this.name=e,this.strings=i,this.parts=[];for(let t=0;t<i.length-1;t++)this.parts[t]=this._createPart()}_createPart(){return new j(this)}_getValue(){const t=this.strings,e=t.length-1,i=this.parts;if(1===e&&""===t[0]&&""===t[1]){const t=i[0].value;if("symbol"==typeof t)return String(t);if("string"==typeof t||!$(t))return t}let s="";for(let n=0;n<e;n++){s+=t[n];const e=i[n];if(void 0!==e){const t=e.value;if(x(t)||!$(t))s+="string"==typeof t?t:String(t);else for(const e of t)s+="string"==typeof e?e:String(e)}}return s+=t[e],s}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class j{constructor(t){this.value=void 0,this.committer=t}setValue(t){t===g||x(t)&&t===this.value||(this.value=t,m(t)||(this.committer.dirty=!0))}commit(){for(;m(this.value);){const t=this.value;this.value=g,t(this)}this.value!==g&&this.committer.commit()}}class A{constructor(t){this.value=void 0,this.i=void 0,this.options=t}appendInto(t){this.startNode=t.appendChild(l()),this.endNode=t.appendChild(l())}insertAfterNode(t){this.startNode=t,this.endNode=t.nextSibling}appendIntoPart(t){t.s(this.startNode=l()),t.s(this.endNode=l())}insertAfterPart(t){t.s(this.startNode=l()),this.endNode=t.endNode,t.endNode=this.startNode}setValue(t){this.i=t}commit(){if(null===this.startNode.parentNode)return;for(;m(this.i);){const t=this.i;this.i=g,t(this)}const t=this.i;t!==g&&(x(t)?t!==this.value&&this.o(t):t instanceof S?this.l(t):t instanceof Node?this.h(t):$(t)?this.u(t):t===v?(this.value=v,this.clear()):this.o(t))}s(t){this.endNode.parentNode.insertBefore(t,this.endNode)}h(t){this.value!==t&&(this.clear(),this.s(t),this.value=t)}o(t){const e=this.startNode.nextSibling,i="string"==typeof(t=null==t?"":t)?t:String(t);e===this.endNode.previousSibling&&3===e.nodeType?e.data=i:this.h(document.createTextNode(i)),this.value=t}l(t){const e=this.options.templateFactory(t);if(this.value instanceof w&&this.value.template===e)this.value.update(t.values);else{const i=new w(e,t.processor,this.options),s=i._clone();i.update(t.values),this.h(s),this.value=i}}u(t){Array.isArray(this.value)||(this.value=[],this.clear());const e=this.value;let i,s=0;for(const n of t)i=e[s],void 0===i&&(i=new A(this.options),e.push(i),0===s?i.appendIntoPart(this):i.insertAfterPart(e[s-1])),i.setValue(n),i.commit(),s++;s<e.length&&(e.length=s,this.clear(i&&i.endNode))}clear(t=this.startNode){i(this.startNode.parentNode,t.nextSibling,this.endNode)}}class C{constructor(t,e,i){if(this.value=void 0,this.i=void 0,2!==i.length||""!==i[0]||""!==i[1])throw new Error("Boolean attributes can only contain a single expression");this.element=t,this.name=e,this.strings=i}setValue(t){this.i=t}commit(){for(;m(this.i);){const t=this.i;this.i=g,t(this)}if(this.i===g)return;const t=!!this.i;this.value!==t&&(t?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=t),this.i=g}}class D extends k{constructor(t,e,i){super(t,e,i),this.single=2===i.length&&""===i[0]&&""===i[1]}_createPart(){return new _(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class _ extends j{}let O=!1;(()=>{try{const t={get capture(){return O=!0,!1}};window.addEventListener("test",t,t),window.removeEventListener("test",t,t)}catch(t){}})();class P{constructor(t,e,i){this.value=void 0,this.i=void 0,this.element=t,this.eventName=e,this.eventContext=i,this.p=t=>this.handleEvent(t)}setValue(t){this.i=t}commit(){for(;m(this.i);){const t=this.i;this.i=g,t(this)}if(this.i===g)return;const t=this.i,e=this.value,i=null==t||null!=e&&(t.capture!==e.capture||t.once!==e.once||t.passive!==e.passive),s=null!=t&&(null==e||i);i&&this.element.removeEventListener(this.eventName,this.p,this.m),s&&(this.m=M(t),this.element.addEventListener(this.eventName,this.p,this.m)),this.value=t,this.i=g}handleEvent(t){"function"==typeof this.value?this.value.call(this.eventContext||this.element,t):this.value.handleEvent(t)}}const M=t=>t&&(O?{capture:t.capture,passive:t.passive,once:t.once}:t.capture)
-/**
-     * @license
-     * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
-     */;function T(t){let e=E.get(t.type);void 0===e&&(e={stringsArray:new WeakMap,keyString:new Map},E.set(t.type,e));let i=e.stringsArray.get(t.strings);if(void 0!==i)return i;const n=t.strings.join(s);return i=e.keyString.get(n),void 0===i&&(i=new r(t,t.getTemplateElement()),e.keyString.set(n,i)),e.stringsArray.set(t.strings,i),i}const E=new Map,R=new WeakMap;
-/**
-     * @license
-     * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
-     */const I=new
-/**
-     * @license
-     * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
+     * Copyright 2017 Google LLC
+     * SPDX-License-Identifier: BSD-3-Clause
      */
-class{handleAttributeExpressions(t,e,i,s){const n=e[0];if("."===n){return new D(t,e.slice(1),i).parts}if("@"===n)return[new P(t,e.slice(1),s.eventContext)];if("?"===n)return[new C(t,e.slice(1),i)];return new k(t,e,i).parts}handleTextExpression(t){return new A(t)}};
+const nt=t=>i=>"function"==typeof i?((t,i)=>(window.customElements.define(t,i),i))(t,i):((t,i)=>{const{kind:e,elements:s}=i;return{kind:e,elements:s,finisher(i){window.customElements.define(t,i)}}})(t,i)
 /**
      * @license
-     * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
-     */"undefined"!=typeof window&&(window.litHtmlVersions||(window.litHtmlVersions=[])).push("1.3.0");const N=(t,...e)=>new S(t,e,"html",I)
+     * Copyright 2017 Google LLC
+     * SPDX-License-Identifier: BSD-3-Clause
+     */,ot=(t,i)=>"method"===i.kind&&i.descriptor&&!("value"in i.descriptor)?{...i,finisher(e){e.createProperty(i.key,t)}}:{kind:"field",key:Symbol(),placement:"own",descriptor:{},originalKey:i.key,initializer(){"function"==typeof i.initializer&&(this[i.key]=i.initializer.call(this))},finisher(e){e.createProperty(i.key,t)}};function rt(t){return(i,e)=>void 0!==e?((t,i,e)=>{i.constructor.createProperty(e,t)})(t,i,e):ot(t,i)
 /**
      * @license
-     * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
-     */,U=(t,e)=>`${t}--${e}`;let F=!0;void 0===window.ShadyCSS?F=!1:void 0===window.ShadyCSS.prepareTemplateDom&&(console.warn("Incompatible ShadyCSS version detected. Please update to at least @webcomponents/webcomponentsjs@2.0.2 and @webcomponents/shadycss@1.3.1."),F=!1);const L=t=>e=>{const i=U(e.type,t);let n=E.get(i);void 0===n&&(n={stringsArray:new WeakMap,keyString:new Map},E.set(i,n));let o=n.stringsArray.get(e.strings);if(void 0!==o)return o;const a=e.strings.join(s);if(o=n.keyString.get(a),void 0===o){const i=e.getTemplateElement();F&&window.ShadyCSS.prepareTemplateDom(i,t),o=new r(e,i),n.keyString.set(a,o)}return n.stringsArray.set(e.strings,o),o},z=["html","svg"],J=new Set,H=(t,e,i)=>{J.add(t);const s=i?i.element:document.createElement("template"),n=e.querySelectorAll("style"),{length:o}=n;if(0===o)return void window.ShadyCSS.prepareTemplateStyles(s,t);const r=document.createElement("style");for(let t=0;t<o;t++){const e=n[t];e.parentNode.removeChild(e),r.textContent+=e.textContent}(t=>{z.forEach(e=>{const i=E.get(U(e,t));void 0!==i&&i.keyString.forEach(t=>{const{element:{content:e}}=t,i=new Set;Array.from(e.querySelectorAll("style")).forEach(t=>{i.add(t)}),d(t,i)})})})(t);const a=s.content;i?function(t,e,i=null){const{element:{content:s},parts:n}=t;if(null==i)return void s.appendChild(e);const o=document.createTreeWalker(s,133,null,!1);let r=p(n),a=0,c=-1;for(;o.nextNode();){c++;for(o.currentNode===i&&(a=u(e),i.parentNode.insertBefore(e,i));-1!==r&&n[r].index===c;){if(a>0){for(;-1!==r;)n[r].index+=a,r=p(n,r);return}r=p(n,r)}}}(i,r,a.firstChild):a.insertBefore(r,a.firstChild),window.ShadyCSS.prepareTemplateStyles(s,t);const c=a.querySelector("style");if(window.ShadyCSS.nativeShadow&&null!==c)e.insertBefore(c.cloneNode(!0),e.firstChild);else if(i){a.insertBefore(r,a.firstChild);const t=new Set;t.add(r),d(i,t)}};window.JSCompiler_renameProperty=(t,e)=>t;const B={toAttribute(t,e){switch(e){case Boolean:return t?"":null;case Object:case Array:return null==t?t:JSON.stringify(t)}return t},fromAttribute(t,e){switch(e){case Boolean:return null!==t;case Number:return null===t?null:Number(t);case Object:case Array:return JSON.parse(t)}return t}},G=(t,e)=>e!==t&&(e==e||t==t),V={attribute:!0,type:String,converter:B,reflect:!1,hasChanged:G};class W extends HTMLElement{constructor(){super(),this.initialize()}static get observedAttributes(){this.finalize();const t=[];return this._classProperties.forEach((e,i)=>{const s=this._attributeNameForProperty(i,e);void 0!==s&&(this._attributeToPropertyMap.set(s,i),t.push(s))}),t}static _ensureClassProperties(){if(!this.hasOwnProperty(JSCompiler_renameProperty("_classProperties",this))){this._classProperties=new Map;const t=Object.getPrototypeOf(this)._classProperties;void 0!==t&&t.forEach((t,e)=>this._classProperties.set(e,t))}}static createProperty(t,e=V){if(this._ensureClassProperties(),this._classProperties.set(t,e),e.noAccessor||this.prototype.hasOwnProperty(t))return;const i="symbol"==typeof t?Symbol():"__"+t,s=this.getPropertyDescriptor(t,i,e);void 0!==s&&Object.defineProperty(this.prototype,t,s)}static getPropertyDescriptor(t,e,i){return{get(){return this[e]},set(s){const n=this[t];this[e]=s,this.requestUpdateInternal(t,n,i)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this._classProperties&&this._classProperties.get(t)||V}static finalize(){const t=Object.getPrototypeOf(this);if(t.hasOwnProperty("finalized")||t.finalize(),this.finalized=!0,this._ensureClassProperties(),this._attributeToPropertyMap=new Map,this.hasOwnProperty(JSCompiler_renameProperty("properties",this))){const t=this.properties,e=[...Object.getOwnPropertyNames(t),..."function"==typeof Object.getOwnPropertySymbols?Object.getOwnPropertySymbols(t):[]];for(const i of e)this.createProperty(i,t[i])}}static _attributeNameForProperty(t,e){const i=e.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof t?t.toLowerCase():void 0}static _valueHasChanged(t,e,i=G){return i(t,e)}static _propertyValueFromAttribute(t,e){const i=e.type,s=e.converter||B,n="function"==typeof s?s:s.fromAttribute;return n?n(t,i):t}static _propertyValueToAttribute(t,e){if(void 0===e.reflect)return;const i=e.type,s=e.converter;return(s&&s.toAttribute||B.toAttribute)(t,i)}initialize(){this._updateState=0,this._updatePromise=new Promise(t=>this._enableUpdatingResolver=t),this._changedProperties=new Map,this._saveInstanceProperties(),this.requestUpdateInternal()}_saveInstanceProperties(){this.constructor._classProperties.forEach((t,e)=>{if(this.hasOwnProperty(e)){const t=this[e];delete this[e],this._instanceProperties||(this._instanceProperties=new Map),this._instanceProperties.set(e,t)}})}_applyInstanceProperties(){this._instanceProperties.forEach((t,e)=>this[e]=t),this._instanceProperties=void 0}connectedCallback(){this.enableUpdating()}enableUpdating(){void 0!==this._enableUpdatingResolver&&(this._enableUpdatingResolver(),this._enableUpdatingResolver=void 0)}disconnectedCallback(){}attributeChangedCallback(t,e,i){e!==i&&this._attributeToProperty(t,i)}_propertyToAttribute(t,e,i=V){const s=this.constructor,n=s._attributeNameForProperty(t,i);if(void 0!==n){const t=s._propertyValueToAttribute(e,i);if(void 0===t)return;this._updateState=8|this._updateState,null==t?this.removeAttribute(n):this.setAttribute(n,t),this._updateState=-9&this._updateState}}_attributeToProperty(t,e){if(8&this._updateState)return;const i=this.constructor,s=i._attributeToPropertyMap.get(t);if(void 0!==s){const t=i.getPropertyOptions(s);this._updateState=16|this._updateState,this[s]=i._propertyValueFromAttribute(e,t),this._updateState=-17&this._updateState}}requestUpdateInternal(t,e,i){let s=!0;if(void 0!==t){const n=this.constructor;i=i||n.getPropertyOptions(t),n._valueHasChanged(this[t],e,i.hasChanged)?(this._changedProperties.has(t)||this._changedProperties.set(t,e),!0!==i.reflect||16&this._updateState||(void 0===this._reflectingProperties&&(this._reflectingProperties=new Map),this._reflectingProperties.set(t,i))):s=!1}!this._hasRequestedUpdate&&s&&(this._updatePromise=this._enqueueUpdate())}requestUpdate(t,e){return this.requestUpdateInternal(t,e),this.updateComplete}async _enqueueUpdate(){this._updateState=4|this._updateState;try{await this._updatePromise}catch(t){}const t=this.performUpdate();return null!=t&&await t,!this._hasRequestedUpdate}get _hasRequestedUpdate(){return 4&this._updateState}get hasUpdated(){return 1&this._updateState}performUpdate(){if(!this._hasRequestedUpdate)return;this._instanceProperties&&this._applyInstanceProperties();let t=!1;const e=this._changedProperties;try{t=this.shouldUpdate(e),t?this.update(e):this._markUpdated()}catch(e){throw t=!1,this._markUpdated(),e}t&&(1&this._updateState||(this._updateState=1|this._updateState,this.firstUpdated(e)),this.updated(e))}_markUpdated(){this._changedProperties=new Map,this._updateState=-5&this._updateState}get updateComplete(){return this._getUpdateComplete()}_getUpdateComplete(){return this._updatePromise}shouldUpdate(t){return!0}update(t){void 0!==this._reflectingProperties&&this._reflectingProperties.size>0&&(this._reflectingProperties.forEach((t,e)=>this._propertyToAttribute(e,this[e],t)),this._reflectingProperties=void 0),this._markUpdated()}updated(t){}firstUpdated(t){}}W.finalized=!0;
+     * Copyright 2017 Google LLC
+     * SPDX-License-Identifier: BSD-3-Clause
+     */}const at=2;
 /**
      * @license
-     * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
+     * Copyright 2017 Google LLC
+     * SPDX-License-Identifier: BSD-3-Clause
      */
-const q=t=>e=>"function"==typeof e?((t,e)=>(window.customElements.define(t,e),e))(t,e):((t,e)=>{const{kind:i,elements:s}=e;return{kind:i,elements:s,finisher(e){window.customElements.define(t,e)}}})(t,e),Q=(t,e)=>"method"===e.kind&&e.descriptor&&!("value"in e.descriptor)?Object.assign(Object.assign({},e),{finisher(i){i.createProperty(e.key,t)}}):{kind:"field",key:Symbol(),placement:"own",descriptor:{},initializer(){"function"==typeof e.initializer&&(this[e.key]=e.initializer.call(this))},finisher(i){i.createProperty(e.key,t)}};function K(t){return(e,i)=>void 0!==i?((t,e,i)=>{e.constructor.createProperty(i,t)})(t,e,i):Q(t,e)}
-/**
-    @license
-    Copyright (c) 2019 The Polymer Project Authors. All rights reserved.
-    This code may only be used under the BSD style license found at
-    http://polymer.github.io/LICENSE.txt The complete set of authors may be found at
-    http://polymer.github.io/AUTHORS.txt The complete set of contributors may be
-    found at http://polymer.github.io/CONTRIBUTORS.txt Code distributed by Google as
-    part of the polymer project is also subject to an additional IP rights grant
-    found at http://polymer.github.io/PATENTS.txt
-    */const X=window.ShadowRoot&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,Y=Symbol();class Z{constructor(t,e){if(e!==Y)throw new Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t}get styleSheet(){return void 0===this._styleSheet&&(X?(this._styleSheet=new CSSStyleSheet,this._styleSheet.replaceSync(this.cssText)):this._styleSheet=null),this._styleSheet}toString(){return this.cssText}}const tt=(t,...e)=>{const i=e.reduce((e,i,s)=>e+(t=>{if(t instanceof Z)return t.cssText;if("number"==typeof t)return t;throw new Error(`Value passed to 'css' function must be a 'css' function result: ${t}. Use 'unsafeCSS' to pass non-literal values, but\n            take care to ensure page security.`)})(i)+t[s+1],t[0]);return new Z(i,Y)};
-/**
-     * @license
-     * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
-     */
-(window.litElementVersions||(window.litElementVersions=[])).push("2.4.0");const et={};class it extends W{static getStyles(){return this.styles}static _getUniqueStyles(){if(this.hasOwnProperty(JSCompiler_renameProperty("_styles",this)))return;const t=this.getStyles();if(Array.isArray(t)){const e=(t,i)=>t.reduceRight((t,i)=>Array.isArray(i)?e(i,t):(t.add(i),t),i),i=e(t,new Set),s=[];i.forEach(t=>s.unshift(t)),this._styles=s}else this._styles=void 0===t?[]:[t];this._styles=this._styles.map(t=>{if(t instanceof CSSStyleSheet&&!X){const e=Array.prototype.slice.call(t.cssRules).reduce((t,e)=>t+e.cssText,"");return new Z(String(e),Y)}return t})}initialize(){super.initialize(),this.constructor._getUniqueStyles(),this.renderRoot=this.createRenderRoot(),window.ShadowRoot&&this.renderRoot instanceof window.ShadowRoot&&this.adoptStyles()}createRenderRoot(){return this.attachShadow({mode:"open"})}adoptStyles(){const t=this.constructor._styles;0!==t.length&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow?X?this.renderRoot.adoptedStyleSheets=t.map(t=>t instanceof CSSStyleSheet?t:t.styleSheet):this._needsShimAdoptedStyleSheets=!0:window.ShadyCSS.ScopingShim.prepareAdoptedCssText(t.map(t=>t.cssText),this.localName))}connectedCallback(){super.connectedCallback(),this.hasUpdated&&void 0!==window.ShadyCSS&&window.ShadyCSS.styleElement(this)}update(t){const e=this.render();super.update(t),e!==et&&this.constructor.render(e,this.renderRoot,{scopeName:this.localName,eventContext:this}),this._needsShimAdoptedStyleSheets&&(this._needsShimAdoptedStyleSheets=!1,this.constructor._styles.forEach(t=>{const e=document.createElement("style");e.textContent=t.cssText,this.renderRoot.appendChild(e)}))}render(){return et}}it.finalized=!0,it.render=(t,e,s)=>{if(!s||"object"!=typeof s||!s.scopeName)throw new Error("The `scopeName` option is required.");const n=s.scopeName,o=R.has(e),r=F&&11===e.nodeType&&!!e.host,a=r&&!J.has(n),c=a?document.createDocumentFragment():e;if(((t,e,s)=>{let n=R.get(e);void 0===n&&(i(e,e.firstChild),R.set(e,n=new A(Object.assign({templateFactory:T},s))),n.appendInto(e)),n.setValue(t),n.commit()})(t,c,Object.assign({templateFactory:L(n)},s)),a){const t=R.get(c);R.delete(c);const s=t.value instanceof w?t.value.template:void 0;H(n,c,s),i(e,e.firstChild),e.appendChild(c),R.set(e,t)}!o&&r&&window.ShadyCSS.styleElement(e.host)};
-/**
-     * @license
-     * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-     * This code may only be used under the BSD style license found at
-     * http://polymer.github.io/LICENSE.txt
-     * The complete set of authors may be found at
-     * http://polymer.github.io/AUTHORS.txt
-     * The complete set of contributors may be found at
-     * http://polymer.github.io/CONTRIBUTORS.txt
-     * Code distributed by Google as part of the polymer project is also
-     * subject to an additional IP rights grant found at
-     * http://polymer.github.io/PATENTS.txt
-     */
-const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeHTML can only be used in text bindings");const i=st.get(e);if(void 0!==i&&x(t)&&t===i.value&&e.value===i.fragment)return;const s=document.createElement("template");s.innerHTML=t;const n=document.importNode(s.content,!0);e.setValue(n),st.set(e,{value:t,fragment:n})},(...t)=>{const e=ot(...t);return f.set(e,!0),e});var ot;const rt=t=>nt(t.replace(/fi/g,'<span style="margin-right: 0.25px">f</span>i').replace(/(\*\*|__)(.*?)\1/gim,"<strong>$2</strong>")),at=(t,e={month:"short",year:"numeric"})=>new Date(t).toLocaleString("default",e),ct=tt`
+class lt extends class{constructor(t){}T(t,i,e){this.Σdt=t,this.M=i,this.Σct=e}S(t,i){return this.update(t,i)}update(t,i){return this.render(...i)}}{constructor(t){if(super(t),this.vt=U,t.type!==at)throw Error(this.constructor.directiveName+"() can only be used in child bindings")}render(t){if(t===U)return this.Vt=void 0,this.vt=t;if(t===L)return t;if("string"!=typeof t)throw Error(this.constructor.directiveName+"() called with a non-string value");if(t===this.vt)return this.Vt;this.vt=t;const i=[t];return i.raw=i,this.Vt={_$litType$:this.constructor.resultType,strings:i,values:[]}}}lt.directiveName="unsafeHTML",lt.resultType=1;const ct=(t=>(...i)=>({_$litDirective$:t,values:i}))(lt),ht=t=>ct(t.replace(/fi/g,'<span style="margin-right: 0.25px">f</span>i').replace(/(\*\*|__)(.*?)\1/gim,"<strong>$2</strong>")),dt=(t,i={month:"short",year:"numeric"})=>new Date(t).toLocaleString("default",i),ut=r`
   .card {
     margin-bottom: 1.375rem;
   }
@@ -195,7 +54,7 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
       box-shadow: 0px 2px 10px rgba(255, 255, 0, 0.2) !important;
     }
   }
-`,lt=tt`
+`,vt=r`
   .title-container {
     display: grid;
     justify-content: space-between;
@@ -237,7 +96,7 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
     text-align: right;
     font-size: 1.25rem;
   }
-`,ht=tt`
+`,pt=r`
   p,
   ul {
     margin: 0;
@@ -257,21 +116,21 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
   li::marker {
     font-size: 0.825rem;
   }
-`;var dt=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let ut=class extends it{render(){return N`
+`;var ft=function(t,i,e,s){for(var n,o=arguments.length,r=o<3?i:null===s?s=Object.getOwnPropertyDescriptor(i,e):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(i,e,r):n(i,e))||r);return o>3&&r&&Object.defineProperty(i,e,r),r};let gt=class extends st{render(){return z`
       <div class="card">
         <div class="title-container">
           <a href="${this.education.url}">${this.education.institution}</a>
           <h4>${this.education.studyType}, ${this.education.area}</h4>
           <h4>${this.education.location}</h4>
           <h4>
-            ${at(this.education.startDate)} —
-            ${at(this.education.endDate)} (Expected)
+            ${dt(this.education.startDate)} —
+            ${dt(this.education.endDate)} (Expected)
           </h4>
         </div>
         <div class="body">
           <p><strong>Cumulative GPA:</strong> ${this.education.score}</p>
           <p>
-            <strong>Notable Courses:</strong> ${rt(this.education.courses.join(", "))}
+            <strong>Notable Courses:</strong> ${ht(this.education.courses.join(", "))}
           </p>
           <p>
             <strong>Awards:</strong>
@@ -279,7 +138,7 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
           </p>
         </div>
       </div>
-    `}};ut.styles=[ct,lt,ht,tt`
+    `}};gt.styles=[ut,vt,pt,r`
       .body {
         display: grid;
         grid-template-rows: auto;
@@ -290,14 +149,14 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
         margin: 0;
         padding: 0;
       }
-    `],dt([K({type:Object})],ut.prototype,"education",void 0),ut=dt([q("education-card")],ut);var pt=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let ft=class extends it{constructor(){super(...arguments),this.class="fas fa-coffee"}render(){return N`
+    `],ft([rt({type:Object})],gt.prototype,"education",void 0),gt=ft([nt("education-card")],gt);var mt=function(t,i,e,s){for(var n,o=arguments.length,r=o<3?i:null===s?s=Object.getOwnPropertyDescriptor(i,e):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(i,e,r):n(i,e))||r);return o>3&&r&&Object.defineProperty(i,e,r),r};let yt=class extends st{constructor(){super(...arguments),this.class="fas fa-coffee"}render(){return z`
       <link
         rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
         crossorigin="anonymous"
       /><i class=${this.class}></i>
-    `}};pt([K({type:String})],ft.prototype,"class",void 0),ft=pt([q("fa-icon")],ft);var mt=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let gt=class extends it{constructor(){super(),this.time=new Date(Date.now()),this.getRecentCommit()}getRecentCommit(){fetch("https://api.github.com/repos/navn-r/resume").then(t=>t.json()).then(t=>{this.time=new Date(t.pushed_at)})}render(){return N`
+    `}};mt([rt({type:String})],yt.prototype,"class",void 0),yt=mt([nt("fa-icon")],yt);var bt=function(t,i,e,s){for(var n,o=arguments.length,r=o<3?i:null===s?s=Object.getOwnPropertyDescriptor(i,e):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(i,e,r):n(i,e))||r);return o>3&&r&&Object.defineProperty(i,e,r),r};let wt=class extends st{constructor(){super(),this.hideFooter=!1,this.time=new Date(Date.now()),this.getRecentCommit()}getRecentCommit(){fetch("https://api.github.com/repos/navn-r/resume").then(t=>t.json()).then(t=>{this.time=new Date(t.pushed_at)})}render(){return z`
       <div id="header">
         <h1 id="name">${this.basics.name}</h1>
         <div id="contact-container">
@@ -316,22 +175,24 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
                 >${this.basics.url.replace("https://","")}</a
               >
             </div>
-            ${this.basics.profiles.map(({network:t,url:e,username:i})=>N`
+            ${this.basics.profiles.map(({network:t,url:i,username:e})=>z`
                 <div class="contact">
                   <fa-icon class="${(t=>{switch(t){case"GitHub":return"fab fa-github";case"LinkedIn":return"fab fa-linkedin"}return"fas fa-link"})(t)}"></fa-icon>
-                  <a href="${e}">${i}</a>
+                  <a href="${i}">${e}</a>
                 </div>
               `)}
           </div>
         </div>
       </div>
-      <div class="footer">
-        <em>Last Updated: ${this.time.toDateString()}</em>
-        <a href="./RavindaranNavinn_Resume.pdf" target="_blank">
-          Download PDF <fa-icon class="fas fa-download"></fa-icon>
-        </a>
-      </div>
-    `}};gt.styles=tt`
+      ${this.hideFooter?"":z`
+            <div class="footer">
+              <em>Last Updated: ${this.time.toDateString()}</em>
+              <a href="./RavindaranNavinn_Resume.pdf" target="_blank">
+                Download PDF <fa-icon class="fas fa-download"></fa-icon>
+              </a>
+            </div>
+          `}
+    `}};wt.styles=r`
     #header {
       display: grid;
       background-color: var(--gray);
@@ -413,33 +274,33 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
         box-shadow: 0px 2px 10px rgba(255, 255, 0, 0.2) !important;
       }
     }
-  `,mt([K({attribute:!1})],gt.prototype,"time",void 0),mt([K({type:Object})],gt.prototype,"basics",void 0),gt=mt([q("app-header")],gt);var vt=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let wt=class extends it{render(){return N`
+  `,bt([rt({type:Boolean})],wt.prototype,"hideFooter",void 0),bt([rt({attribute:!1})],wt.prototype,"time",void 0),bt([rt({type:Object})],wt.prototype,"basics",void 0),wt=bt([nt("app-header")],wt);var St=function(t,i,e,s){for(var n,o=arguments.length,r=o<3?i:null===s?s=Object.getOwnPropertyDescriptor(i,e):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(i,e,r):n(i,e))||r);return o>3&&r&&Object.defineProperty(i,e,r),r};let $t=class extends st{render(){return z`
       <div class="card">
         <div class="title-container">
           <p>
             <strong>${this.project.name}</strong> —
-            ${rt(this.project.description)}
+            ${ht(this.project.description)}
           </p>
-          ${this.project.repo&&this.project.url?N`
+          ${this.project.repo&&this.project.url?z`
                 <p>
                   <a href="${this.project.url}"
                     >(<strong>${this.project.type}</strong>)</a
                   >
                   <a href="${this.project.repo}">(<strong>GitHub</strong>)</a>
                 </p>
-              `:N``}
+              `:z``}
         </div>
         <ul>
-          ${this.project.highlights.map(t=>N`<li>${rt(t)}</li>`)}
-          ${this.project.features?N`<li>
-                <strong>Core Features:</strong> ${rt(this.project.features.join(", "))}
+          ${this.project.highlights.map(t=>z`<li>${ht(t)}</li>`)}
+          ${this.project.features?z`<li>
+                <strong>Core Features:</strong> ${ht(this.project.features.join(", "))}
               </li>`:""}
           <li>
-            <strong>Technology:</strong> ${rt(this.project.technology.join(", "))}
+            <strong>Technology:</strong> ${ht(this.project.technology.join(", "))}
           </li>
         </ul>
       </div>
-    `}};wt.styles=[ct,ht,tt`
+    `}};$t.styles=[ut,pt,r`
       .title-container {
         display: flex;
         justify-content: space-between;
@@ -466,40 +327,40 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
       a strong {
         font-weight: 500;
       }
-    `],vt([K({type:Object})],wt.prototype,"project",void 0),wt=vt([q("project-card")],wt);var yt=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let bt=class extends it{render(){return N`
+    `],St([rt({type:Object})],$t.prototype,"project",void 0),$t=St([nt("project-card")],$t);var kt=function(t,i,e,s){for(var n,o=arguments.length,r=o<3?i:null===s?s=Object.getOwnPropertyDescriptor(i,e):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(i,e,r):n(i,e))||r);return o>3&&r&&Object.defineProperty(i,e,r),r};let xt=class extends st{render(){return z`
       <div class="skills-card">
-        ${this.skills.map(t=>N`
+        ${this.skills.map(t=>z`
             <p>
-              <strong>${t.name}:</strong> ${rt(t.keywords.join(", "))}
+              <strong>${t.name}:</strong> ${ht(t.keywords.join(", "))}
             </p>
           `)}
       </div>
-    `}};bt.styles=[ht,tt`
+    `}};xt.styles=[pt,r`
       .skills-card {
         display: grid;
         grid-template-rows: auto;
         row-gap: 0.5rem;
       }
-    `],yt([K({type:Array})],bt.prototype,"skills",void 0),bt=yt([q("skills-card")],bt);var St=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};let xt=class extends it{render(){return N`
+    `],kt([rt({type:Array})],xt.prototype,"skills",void 0),xt=kt([nt("skills-card")],xt);var jt=function(t,i,e,s){for(var n,o=arguments.length,r=o<3?i:null===s?s=Object.getOwnPropertyDescriptor(i,e):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(i,e,r):n(i,e))||r);return o>3&&r&&Object.defineProperty(i,e,r),r};let Ct=class extends st{render(){return z`
       <div class="card">
         <div class="title-container">
           <a href="${this.work.url}">${this.work.name}</a>
           <h4>${this.work.position}</h4>
           <h4>${this.work.location}</h4>
           <h4>
-            ${at(this.work.startDate)} —
-            ${at(this.work.endDate)}
+            ${dt(this.work.startDate)} —
+            ${dt(this.work.endDate)}
           </h4>
         </div>
         <ul class="body">
-          ${this.work.highlights.map(t=>N`<li>${rt(t)}</li>`)}
+          ${this.work.highlights.map(t=>z`<li>${ht(t)}</li>`)}
         </ul>
       </div>
-    `}};xt.styles=[ct,lt,ht],St([K({type:Object})],xt.prototype,"work",void 0),xt=St([q("work-card")],xt);var $t="https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",kt={name:"Navinn Ravindaran",label:"Developer, Learner",email:"navinn.ravindaran@mail.utoronto.ca",url:"https://navn.me",location:{city:"Toronto",region:"Ontario",countryCode:"CA"},profiles:[{network:"GitHub",username:"navn-r",url:"https://github.com/navn-r"},{network:"LinkedIn",username:"navn-r",url:"https://www.linkedin.com/in/navn-r"}]},jt=[{name:"Halo",location:"Chicago, IL",position:"Full-Stack Software Engineer Intern",url:"https://halo.science",startDate:"2021-05-03",endDate:"2021-08-31",highlights:["Incoming Summer 2021 intern - React + Ruby on Rails"]},{name:"CaseWare International",location:"Toronto, ON",position:"Front-End Software Developer Co-op",url:"https://www.caseware.com/ca",startDate:"2020-09-08",endDate:"2021-04-30",highlights:["Facilitated **Daily Standup** meetings using multiple **JIRA** project boards in an **Agile Scrum** of **12** members","Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with **Karma**, **Jest** and **Jasmine**","Developed major features and critical hotfixes using **Angular** and **AngularJS**, improving the end-user experience for **130+** international accounting firms"]}],At=[{institution:"University of Toronto",location:"Toronto, ON",url:"https://www.utoronto.ca/",area:"Computer Science & Statistics Co-op",studyType:"Honours Bachelor of Science",startDate:"2019-09-08",endDate:"2023-04-30",score:"3.77 / 4.00",courses:["Software Design","Software Engineering","Programming Languages","Software Tools and Systems Programming"],awards:["Dean's List of Academic Excellence (2019-20)","University of Toronto Scholar ($7500)"]}],Ct=[{name:"Languages",keywords:["TypeScript","JavaScript","Java","HTML","CSS","C","Python","SQL","Shell"]},{name:"Frameworks & Tools",keywords:["React","React Native","Angular","Node.js","Express.js","JIRA","GitHub Actions","TravisCI","MongoDB","Firebase"]},{name:"Concepts",keywords:["APIs (REST, GraphQL)","Agile Methodologies (Scrum, Kanban, Test Driven Development)","CI/CD"]}],Dt=[{name:"UImpactify",description:"Online Learning Platform",highlights:["Engaged in an Agile Scrum of **7** over **4** sprints, battling the lack of specialized education in the social purpose sector","Facilitated Daily Standup, Backlog Refinement, and Architecture Design meetings **following best Agile practices**",'Developed and deployed a <a href="https://github.com/navn-r/standup-bot">**Discord Bot**</a> to supplement Daily Standup meetings, reducing overall time by **50%**'],startDate:"2020-09",endDate:"2020-12",repo:"https://github.com/navn-r/uimpactify",url:"https://uimpactify.herokuapp.com",type:"Website",features:["Course Enrollment","Lectures & Assessments","Student Analytics","Course Surveys","Realtime Chat","Volunteer Opportunities","Donation System"],technology:["MongoDB","Express.js","Angular","Node.js","Socket.io","Chart.js","Multer","GridFS","Heroku","Figma","JIRA"]},{name:"Noten",description:"Cloud Based Grade Management Application",highlights:["Implemented a flattened data store, resulting in **4x** fewer database queries on all **CRUD** operations on grades"],startDate:"2020-04",endDate:"2020-05",repo:"https://github.com/navn-r/noten",url:"https://play.google.com/store/apps/details?id=com.noten",type:"Google Play Store",features:["Semester & Course Management","Grade Prediction","Multiple Grade Scales","Selective Course & Grade Calculation"],technology:["React Native","Firebase Realtime Database","Firebase Authentication with Google OAuth 2.0"]},{name:"Ritrovo",description:"Full-Stack Social Platform",highlights:["Built an authenticated **GraphQL API** and community dashboard for creating posts and collaborating with users","Eliminated code duplication by **3x** using **auto generated** schemas for database models, API queries and TypeScript interfaces"],startDate:"2020-09",endDate:"2020-09",repo:"https://github.com/navn-r/ritrovo",url:"https://ritrovo.vercel.app",type:"Website",technology:["React","Next.js","TypeScript","Apollo","MongoDB","Mongoose","JSON Web Tokens","Vercel"]},{name:"Spotify API Clone",description:"Social-centric Music Player REST API",highlights:[],startDate:"2020-11",endDate:"2020-12",repo:"https://github.com/navn-r/spotify-api-clone",url:"https://navn.me/spotify-api-clone",type:"Documentation",features:["Create and follow user profiles","Upload and like songs","Playlist generation","Query liked songs from followers"],technology:["Java","Spring Boot","MongoDB","Neo4j","Microservices Architecture"]}],_t={$schema:$t,basics:kt,work:jt,education:At,skills:Ct,projects:Dt},Ot=function(t,e,i,s){for(var n,o=arguments.length,r=o<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(e,i,r):n(e,i))||r);return o>3&&r&&Object.defineProperty(e,i,r),r};const Pt=Object.freeze({__proto__:null,$schema:$t,basics:kt,work:jt,education:At,skills:Ct,projects:Dt,default:_t});t.Resume=class extends it{render(){return N`
+    `}};Ct.styles=[ut,vt,pt],jt([rt({type:Object})],Ct.prototype,"work",void 0),Ct=jt([nt("work-card")],Ct);var Dt="https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",At={name:"Navinn Ravindaran",label:"Developer, Learner",email:"navinn.ravindaran@mail.utoronto.ca",url:"https://navn.me",location:{city:"Toronto",region:"Ontario",countryCode:"CA"},profiles:[{network:"GitHub",username:"navn-r",url:"https://github.com/navn-r"},{network:"LinkedIn",username:"navn-r",url:"https://www.linkedin.com/in/navn-r"}]},Ot=[{name:"Halo",location:"Chicago, IL",position:"Full-Stack Software Engineer Intern",url:"https://halo.science",startDate:"2021-05-03",endDate:"2021-08-31",highlights:["Incoming Summer 2021 intern - React + Ruby on Rails"]},{name:"CaseWare International",location:"Toronto, ON",position:"Front-End Software Developer Co-op",url:"https://www.caseware.com/ca",startDate:"2020-09-08",endDate:"2021-04-30",highlights:["Facilitated **Daily Standup** meetings using multiple **JIRA** project boards in an **Agile Scrum** of **12** members","Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with **Karma**, **Jest** and **Jasmine**","Developed major features and critical hotfixes using **Angular** and **AngularJS**, improving the end-user experience for **130+** international accounting firms"]}],Tt=[{institution:"University of Toronto",location:"Toronto, ON",url:"https://www.utoronto.ca/",area:"Computer Science & Statistics Co-op",studyType:"Honours Bachelor of Science",startDate:"2019-09-08",endDate:"2023-04-30",score:"3.77 / 4.00",courses:["Software Design","Software Engineering","Programming Languages","Software Tools and Systems Programming"],awards:["Dean's List of Academic Excellence (2019-20)","University of Toronto Scholar ($7500)"]}],Mt=[{name:"Languages",keywords:["TypeScript","JavaScript","Java","HTML","CSS","C","Python","SQL","Shell"]},{name:"Frameworks & Tools",keywords:["React","React Native","Angular","Node.js","Express.js","JIRA","GitHub Actions","TravisCI","MongoDB","Firebase"]},{name:"Concepts",keywords:["APIs (REST, GraphQL)","Agile Methodologies (Scrum, Kanban, Test Driven Development)","CI/CD"]}],Rt=[{name:"UImpactify",description:"Online Learning Platform",highlights:["Engaged in an Agile Scrum of **7** over **4** sprints, battling the lack of specialized education in the social purpose sector","Facilitated Daily Standup, Backlog Refinement, and Architecture Design meetings **following best Agile practices**",'Developed and deployed a <a href="https://github.com/navn-r/standup-bot">**Discord Bot**</a> to supplement Daily Standup meetings, reducing overall time by **50%**'],startDate:"2020-09",endDate:"2020-12",repo:"https://github.com/navn-r/uimpactify",url:"https://uimpactify.herokuapp.com",type:"Website",features:["Course Enrollment","Lectures & Assessments","Student Analytics","Course Surveys","Realtime Chat","Volunteer Opportunities","Donation System"],technology:["MongoDB","Express.js","Angular","Node.js","Socket.io","Chart.js","Multer","GridFS","Heroku","Figma","JIRA"]},{name:"Noten",description:"Cloud Based Grade Management Application",highlights:["Implemented a flattened data store, resulting in **4x** fewer database queries on all **CRUD** operations on grades"],startDate:"2020-04",endDate:"2020-05",repo:"https://github.com/navn-r/noten",url:"https://play.google.com/store/apps/details?id=com.noten",type:"Google Play Store",features:["Semester & Course Management","Grade Prediction","Multiple Grade Scales","Selective Course & Grade Calculation"],technology:["React Native","Firebase Realtime Database","Firebase Authentication with Google OAuth 2.0"]},{name:"Ritrovo",description:"Full-Stack Social Platform",highlights:["Built an authenticated **GraphQL API** and community dashboard for creating posts and collaborating with users","Eliminated code duplication by **3x** using **auto generated** schemas for database models, API queries and TypeScript interfaces"],startDate:"2020-09",endDate:"2020-09",repo:"https://github.com/navn-r/ritrovo",url:"https://ritrovo.vercel.app",type:"Website",technology:["React","Next.js","TypeScript","Apollo","MongoDB","Mongoose","JSON Web Tokens","Vercel"]},{name:"Spotify API Clone",description:"Social-centric Music Player REST API",highlights:[],startDate:"2020-11",endDate:"2020-12",repo:"https://github.com/navn-r/spotify-api-clone",url:"https://navn.me/spotify-api-clone",type:"Documentation",features:["Create and follow user profiles","Upload and like songs","Playlist generation","Query liked songs from followers"],technology:["Java","Spring Boot","MongoDB","Neo4j","Microservices Architecture"]}],Et={$schema:Dt,basics:At,work:Ot,education:Tt,skills:Mt,projects:Rt},It=function(t,i,e,s){for(var n,o=arguments.length,r=o<3?i:null===s?s=Object.getOwnPropertyDescriptor(i,e):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(i,e,r):n(i,e))||r);return o>3&&r&&Object.defineProperty(i,e,r),r};const Pt=Object.freeze({__proto__:null,$schema:Dt,basics:At,work:Ot,education:Tt,skills:Mt,projects:Rt,default:Et});t.Resume=class extends st{render(){return z`
       <app-header .basics="${Pt.basics}"></app-header>
       <div class="section">
         <h1 class="title">Education</h1>
-        ${Pt.education.map(t=>N`<education-card .education="${t}"></education-card>`)}
+        ${Pt.education.map(t=>z`<education-card .education="${t}"></education-card>`)}
       </div>
       <div class="section">
         <h1 class="title">Skills</h1>
@@ -507,13 +368,13 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
       </div>
       <div class="section">
         <h1 class="title">Work Experience</h1>
-        ${Pt.work.map(t=>N`<work-card .work="${t}"></work-card>`)}
+        ${Pt.work.map(t=>z`<work-card .work="${t}"></work-card>`)}
       </div>
       <div class="section">
         <h1 class="title">Projects</h1>
-        ${Pt.projects.map(t=>N`<project-card .project="${t}"></project-card>`)}
+        ${Pt.projects.map(t=>z`<project-card .project="${t}"></project-card>`)}
       </div>
-    `}},t.Resume.styles=tt`
+    `}},t.Resume.styles=r`
     :host {
       font-family: var(--main);
     }
@@ -532,4 +393,4 @@ const st=new WeakMap,nt=(ot=t=>e=>{if(!(e instanceof A))throw new Error("unsafeH
       border-bottom: 1.5px solid var(--text);
       margin-bottom: 1rem;
     }
-  `,t.Resume=Ot([q("app-resume")],t.Resume)}({});
+  `,t.Resume=It([nt("app-resume")],t.Resume)}({});
