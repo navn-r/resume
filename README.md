@@ -2,7 +2,7 @@
 > An over-engineered JSON resume, because Microsoft Word was too bloated.
 
 Built with:  
-  - Web Components using `lit-element` + TypeScript  
+  - Web Components using `lit` + TypeScript  
   - Puppeteer for automagically generating a pdf on build (view [here](https://github.com/navn-r/resume/blob/master/RavindaranNavinn_Resume.pdf))  
   - TravisCI for automated build and deployment on push `develop`
   - :heart:

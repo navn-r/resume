@@ -1,5 +1,6 @@
 import './components';
-import {css, customElement, html, LitElement} from 'lit-element';
+import {css, html, LitElement} from 'lit';
+import {customElement} from 'lit/decorators.js';
 import {Resume as ResumeSchema} from './models';
 import * as data from './resume.json';
 

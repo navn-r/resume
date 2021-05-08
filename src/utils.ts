@@ -1,4 +1,4 @@
-import {unsafeHTML} from 'lit-html/directives/unsafe-html';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 export const parse = (input: string) =>
   unsafeHTML(
@@ -9,7 +9,7 @@ export const parse = (input: string) =>
 
 export const formatDate = (
   date: string,
-  format = {month: 'short', year: 'numeric'}
+  format: Intl.DateTimeFormatOptions = {month: 'short', year: 'numeric'}
 ) => new Date(date).toLocaleString('default', format);
 
 export const getIcon = (input: string) => {

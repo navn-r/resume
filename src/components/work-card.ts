@@ -1,4 +1,5 @@
-import {customElement, html, LitElement, property} from 'lit-element';
+import {html, LitElement} from 'lit';
+import {property, customElement} from 'lit/decorators.js';
 import {Work} from '../models';
 import {formatDate, parse} from '../utils';
 import {titleCardStyle, listParagraphStyle, cardStyle} from './card.style';
