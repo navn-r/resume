@@ -89,6 +89,9 @@ export class Header extends LitElement {
     }
   `;
 
+  @property({type: Boolean})
+  hideFooter: boolean = false;
+
   @property({attribute: false})
   time: Date = new Date(Date.now());
 
@@ -139,12 +142,14 @@ export class Header extends LitElement {
           </div>
         </div>
       </div>
+      ${this.hideFooter ? '' : html`
       <div class="footer">
         <em>Last Updated: ${this.time.toDateString()}</em>
         <a href="./RavindaranNavinn_Resume.pdf" target="_blank">
           Download PDF <fa-icon class="fas fa-download"></fa-icon>
         </a>
       </div>
+      `}
     `;
   }
 }
