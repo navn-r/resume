@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/style.css" rel="stylesheet" />
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <script type="module" src="/out/letter/index.js"></script>
+    <link rel="icon" href="favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Navinn Ravindaran - Cover Letter</title>
+  </head>
+  <body>
+    <div class="wrapper" id="cover-letter">
+      <cover-letter>
+        <div id="letter-body" slot="body"></div>
+      </cover-letter>
+    </div>
+    <script>
+      const onLoad = async () => {
+        const converter = new showdown.Converter({ simpleLineBreaks: true, openLinksInNewWindow: true, metadata: true, literalMidWordUnderscores: true});
+        const text = await fetch(window.location.hostname === 'localhost' ? "index.md" : "index.example.md").then((res) => res.text());
+        let html = converter.makeHtml(text);
+        Object.entries(converter.getMetadata()).forEach(([k, v]) => html = html.replace(new RegExp(`{{${k}}}`, "g"), v));
+        document.getElementById("letter-body").innerHTML = html;
+        document.querySelector('.wrapper').style.cssText += 'animation: fade 1s forwards';
+      };
+      if ('complete' === document.readyState) {
+        onLoad();
+      } else {
+        window.addEventListener('load', onLoad);
+        document.removeEventListener('load', onLoad);
+      }
+    </script>
+  </body>
+</html>
