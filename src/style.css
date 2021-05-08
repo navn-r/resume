@@ -78,7 +78,7 @@ body {
 #letter-body {
   margin: 0.5in 1in;
   font-size: 1.0625rem;
-  line-height: 1.25
+  line-height: 1.25;
 }
 
 #letter-body * {
@@ -113,7 +113,7 @@ body {
   }
 
   #cover-letter {
-    height: 14.5in;
+    height: 13in;
   }
 }
 
