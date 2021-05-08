@@ -1,6 +1,7 @@
 import './icon';
 import {Basics} from '../models';
-import {css, customElement, html, LitElement, property} from 'lit-element';
+import {css, html, LitElement} from 'lit';
+import {property, customElement} from 'lit/decorators.js';
 import {getIcon} from '../utils';
 
 @customElement('app-header')

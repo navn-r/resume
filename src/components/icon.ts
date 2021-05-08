@@ -1,4 +1,6 @@
-import {customElement, html, LitElement, property} from 'lit-element';
+import {html, LitElement} from 'lit';
+import {property, customElement} from 'lit/decorators.js';
+
 @customElement('fa-icon')
 export class Icon extends LitElement {
   @property({type: String})
