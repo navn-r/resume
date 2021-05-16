@@ -15,11 +15,12 @@
     "clean:build": "rm -rf out",
     "dev": "concurrently \"npm run build:watch\" \"npm run serve\"",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
-    "lint:eslint": "eslint 'src/**/*.ts'",
+    "lint:eslint": "eslint 'src/**/*.ts' --fix",
     "lint:lit-analyzer": "lit-analyzer",
     "format": "prettier src/* --write",
     "serve": "wds",
-    "checksize": "rollup -c ; cat app-resume.bundled.js | gzip -9 | wc -c ; rm app-resume.bundled.js"
+    "checksize": "rollup -c ; cat app-resume.bundled.js | gzip -9 | wc -c ; rm app-resume.bundled.js",
+    "prepare": "husky install"
   },
   "keywords": [
     "web-components",
@@ -43,6 +44,7 @@
     "concurrently": "^6.0.0",
     "deepmerge": "^4.2.2",
     "eslint": "^6.8.0",
+    "husky": "^6.0.0",
     "lit-analyzer": "^1.2.1",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",

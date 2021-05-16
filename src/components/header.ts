@@ -91,7 +91,7 @@ export class Header extends LitElement {
   `;
 
   @property({type: Boolean})
-  hideFooter: boolean = false;
+  hideFooter = false;
 
   @property({attribute: false})
   time: Date = new Date(Date.now());
