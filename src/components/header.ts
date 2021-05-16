@@ -80,6 +80,10 @@ export class Header extends LitElement {
       .footer {
         display: none;
       }
+
+      #contact-container > .contact:first-child {
+        display: none;
+      }
     }
 
     @media screen {
