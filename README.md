@@ -1,10 +1,12 @@
 # Resume
 > An over-engineered JSON resume, because Microsoft Word was too bloated.
 
+[![Node.js CI](https://github.com/navn-r/resume/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/navn-r/resume/actions/workflows/main.yml)
+
 Built with:  
   - Web Components using `lit` + TypeScript  
   - Puppeteer for automagically generating a pdf on build (view [here](https://github.com/navn-r/resume/blob/master/RavindaranNavinn_Resume.pdf))  
-  - TravisCI for automated build and deployment on push `develop`
+  - GitHub Actions on push to Github Pages
   - :heart:
 
 ## Schema
@@ -20,24 +22,25 @@ yarn
 
 ### Development
 ```sh
-npm run dev           # dev server starts on http://localhost:8000/src
+yarn run dev           # dev server starts on http://localhost:8000/src
 ```
 
 ### Formatting with Prettier
+> Husky pre-commit with linting and formatting
 ```sh
-npm run format        # formats /src
+yarn run format        # formats /src
 ```
 
 ### Deployment
 ```sh
-npm run deploy        # located at /docs
-npm run clean         # removes /out and /docs (optional)
-npm run clean:build   # removes the /out dir (optional)
+yarn run deploy        # located at /docs
+yarn run clean         # removes /out and /docs (optional)
+yarn run clean:build   # removes the /out dir (optional)
 ```
 
 ### Printing to PDF (optional)  
 ```sh
-npm run print:pdf     # located at /docs/RavindaranNavinn_Resume.pdf
-npm run build:pdf     # alt: runs deployment, then prints
+yarn run print:pdf     # located at /docs/RavindaranNavinn_Resume.pdf
+yarn run build:pdf     # alt: runs deployment, then prints
 ```  
 The printing script is located at [`print.ts`](https://github.com/navn-r/resume/blob/develop/print.ts)
