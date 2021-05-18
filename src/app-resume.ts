@@ -45,7 +45,7 @@ export class Resume extends LitElement {
         <skills-card .skills="${resume.skills}"></skills-card>
       </div>
       <div class="section">
-        <h1 class="title">Work Experience</h1>
+        <h1 class="title">Experiences</h1>
         ${resume.work.map(
           (value) => html`<work-card .work="${value}"></work-card>`
         )}
