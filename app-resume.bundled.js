@@ -371,7 +371,7 @@ class lt extends class{constructor(t){}T(t,i,e){this.Σdt=t,this.M=i,this.Σct=e
         <skills-card .skills="${Pt.skills}"></skills-card>
       </div>
       <div class="section">
-        <h1 class="title">Work Experience</h1>
+        <h1 class="title">Experiences</h1>
         ${Pt.work.map(t=>N`<work-card .work="${t}"></work-card>`)}
       </div>
       <div class="section">
