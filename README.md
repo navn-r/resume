@@ -1,7 +1,7 @@
 # Resume
 > An over-engineered JSON resume, because Microsoft Word was too bloated.
 
-[![Node.js CI](https://github.com/navn-r/resume/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/navn-r/resume/actions/workflows/main.yml)
+[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)[![Node.js CI](https://github.com/navn-r/resume/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/navn-r/resume/actions/workflows/main.yml)
 
 Built with:  
   - Web Components using `lit` + TypeScript  
