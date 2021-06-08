@@ -156,7 +156,7 @@ class lt extends class{constructor(t){}T(t,i,e){this.Σdt=t,this.M=i,this.Σct=e
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
         crossorigin="anonymous"
       /><i class=${this.class}></i>
-    `}};mt([rt({type:String})],yt.prototype,"class",void 0),yt=mt([nt("fa-icon")],yt);var bt=function(t,i,e,s){for(var n,o=arguments.length,r=o<3?i:null===s?s=Object.getOwnPropertyDescriptor(i,e):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(i,e,r):n(i,e))||r);return o>3&&r&&Object.defineProperty(i,e,r),r};let wt=class extends st{constructor(){super(),this.hideFooter=!1,this.time=new Date(Date.now()),this.getRecentCommit()}getRecentCommit(){fetch("https://api.github.com/repos/navn-r/resume").then(t=>t.json()).then(t=>{this.time=new Date(t.pushed_at)})}render(){return N`
+    `}};mt([rt({type:String})],yt.prototype,"class",void 0),yt=mt([nt("fa-icon")],yt);var bt=function(t,i,e,s){for(var n,o=arguments.length,r=o<3?i:null===s?s=Object.getOwnPropertyDescriptor(i,e):s,a=t.length-1;a>=0;a--)(n=t[a])&&(r=(o<3?n(r):o>3?n(i,e,r):n(i,e))||r);return o>3&&r&&Object.defineProperty(i,e,r),r};let wt=class extends st{constructor(){super(),this.hideFooter=!1,this.time=new Date(Date.now()),this.getRecentCommit()}getRecentCommit(){fetch("https://api.github.com/repos/navn-r/resume").then(t=>t.json()).then(t=>{this.time=new Date(t.pushed_at)})}getNetworkIcon(t){var i;return null!==(i={GitHub:"fab fa-github",LinkedIn:"fab fa-linkedin"}[t])&&void 0!==i?i:"fas-fa-link"}render(){return N`
       <div id="header">
         <h1 id="name">${this.basics.name}</h1>
         <div id="contact-container">
@@ -177,7 +177,7 @@ class lt extends class{constructor(t){}T(t,i,e){this.Σdt=t,this.M=i,this.Σct=e
             </div>
             ${this.basics.profiles.map(({network:t,url:i,username:e})=>N`
                 <div class="contact">
-                  <fa-icon class="${(t=>{switch(t){case"GitHub":return"fab fa-github";case"LinkedIn":return"fab fa-linkedin"}return"fas fa-link"})(t)}"></fa-icon>
+                  <fa-icon class="${this.getNetworkIcon(t)}"></fa-icon>
                   <a href="${i}">${e}</a>
                 </div>
               `)}
