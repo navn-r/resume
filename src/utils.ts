@@ -10,4 +10,4 @@ export const parse = (input: string) =>
 export const formatDate = (
   date: string,
   format: Intl.DateTimeFormatOptions = {month: 'short', year: 'numeric'}
-) => new Date(date).toLocaleString('default', format);
+): string => new Date(date).toLocaleString('default', format);

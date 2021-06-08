@@ -1,7 +1,7 @@
 # Resume
 > An over-engineered JSON resume, because Microsoft Word was too bloated.
 
-[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)[![Node.js CI](https://github.com/navn-r/resume/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/navn-r/resume/actions/workflows/main.yml)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/) [![Node.js CI](https://github.com/navn-r/resume/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/navn-r/resume/actions/workflows/main.yml) [![CodeFactor](https://www.codefactor.io/repository/github/navn-r/resume/badge/develop)](https://www.codefactor.io/repository/github/navn-r/resume/overview/develop)
 
 Built with:  
   - Web Components using `lit` + TypeScript  
