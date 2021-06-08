@@ -2,7 +2,6 @@ import './icon';
 import {Basics} from '../models';
 import {css, html, LitElement} from 'lit';
 import {property, customElement} from 'lit/decorators.js';
-import {getIcon} from '../utils';
 
 @customElement('app-header')
 export class Header extends LitElement {
@@ -116,6 +115,15 @@ export class Header extends LitElement {
       });
   }
 
+  getNetworkIcon(input: string): string {
+    const ICONS: Record<string, string> = {
+      GitHub: 'fab fa-github',
+      LinkedIn: 'fab fa-linkedin',
+    };
+
+    return ICONS[input] ?? 'fas-fa-link';
+  }
+
   render() {
     return html`
       <div id="header">
@@ -139,7 +147,7 @@ export class Header extends LitElement {
             ${this.basics.profiles.map(
               ({network, url, username}) => html`
                 <div class="contact">
-                  <fa-icon class="${getIcon(network)}"></fa-icon>
+                  <fa-icon class="${this.getNetworkIcon(network)}"></fa-icon>
                   <a href="${url}">${username}</a>
                 </div>
               `
