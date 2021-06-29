@@ -107,12 +107,18 @@ export class Header extends LitElement {
     this.getRecentCommit();
   }
 
-  getRecentCommit(): void {
-    fetch('https://api.github.com/repos/navn-r/resume')
-      .then((res) => res.json())
-      .then((repo) => {
-        this.time = new Date(repo.pushed_at);
-      });
+  async getRecentCommit(): Promise<void> {
+    const res = await fetch(
+      'https://api.github.com/repos/navn-r/resume/commits?per_page=1&path=src/resume.json'
+    );
+    const [
+      {
+        commit: {
+          author: {date},
+        },
+      },
+    ] = await res.json();
+    this.time = new Date(date as string);
   }
 
   getNetworkIcon(input: string): string {
