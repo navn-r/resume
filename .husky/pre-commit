@@ -1,6 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-yarn run lint
-yarn run format
-git add -A .
+yarn run pre-commit

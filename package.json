@@ -20,7 +20,8 @@
     "format": "prettier src/* --write",
     "serve": "wds",
     "checksize": "rollup -c ; cat app-resume.bundled.js | gzip -9 | wc -c ; rm app-resume.bundled.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "keywords": [
     "web-components",
@@ -45,6 +46,7 @@
     "deepmerge": "^4.2.2",
     "eslint": "^6.8.0",
     "husky": "^6.0.0",
+    "lint-staged": ">=10",
     "lit-analyzer": "^1.2.1",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
@@ -55,5 +57,11 @@
     "ts-node": "^9.1.1",
     "typescript": "^3.9.7",
     "web-component-analyzer": "^1.1.6"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "yarn run lint",
+      "yarn run format"
+    ]
   }
 }
