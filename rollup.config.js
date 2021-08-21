@@ -13,16 +13,16 @@
  */
 
 import filesize from 'rollup-plugin-filesize';
-import {terser} from 'rollup-plugin-terser';
-import resolve from 'rollup-plugin-node-resolve';
+import { terser } from 'rollup-plugin-terser';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
-import json from "@rollup/plugin-json";
+import json from '@rollup/plugin-json';
 
 export default {
   input: './out/app-resume.js',
   output: {
     file: './docs/app-resume.bundled.js',
-    format: 'iife'
+    format: 'iife',
   },
   onwarn(warning) {
     if (warning.code !== 'THIS_IS_UNDEFINED') {
@@ -30,9 +30,9 @@ export default {
     }
   },
   plugins: [
-    replace({'Reflect.decorate': 'undefined'}),
+    replace({ 'Reflect.decorate': 'undefined' }),
     json(),
-    resolve(),
+    nodeResolve(),
     terser({
       module: true,
       warnings: true,

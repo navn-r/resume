@@ -1,7 +1,7 @@
 import './icon';
-import {Basics} from '../models';
-import {css, html, LitElement} from 'lit';
-import {property, customElement} from 'lit/decorators.js';
+import { Resume } from '../types';
+import { css, html, LitElement } from 'lit';
+import { property, customElement, state } from 'lit/decorators.js';
 
 @customElement('app-header')
 export class Header extends LitElement {
@@ -93,41 +93,59 @@ export class Header extends LitElement {
     }
   `;
 
-  @property({type: Boolean})
+  @property({ type: Boolean })
   hideFooter = false;
 
-  @property({attribute: false})
+  @state()
   time: Date = new Date(Date.now());
 
-  @property({type: Object})
-  basics!: Basics;
+  @property({ type: Object })
+  basics!: Resume.IBasics;
 
   constructor() {
     super();
-    this.getRecentCommit();
+
+    if (window.location.hostname !== 'localhost') {
+      this._getRecentCommit();
+    }
   }
 
-  async getRecentCommit(): Promise<void> {
-    const res = await fetch(
-      'https://api.github.com/repos/navn-r/resume/commits?per_page=1&path=src/resume.json'
-    );
+  private async _getRecentCommit(): Promise<void> {
     const [
       {
         commit: {
-          author: {date},
+          author: { date },
         },
       },
-    ] = await res.json();
+    ] = await fetch(
+      'https://api.github.com/repos/navn-r/resume/commits?per_page=1&path=src/resume.json'
+    ).then((res) => res.json());
+
     this.time = new Date(date as string);
   }
 
-  getNetworkIcon(input: string): string {
+  private _getIcon(input: string): string {
     const ICONS: Record<string, string> = {
       GitHub: 'fab fa-github',
       LinkedIn: 'fab fa-linkedin',
     };
 
     return ICONS[input] ?? 'fas-fa-link';
+  }
+
+  private _renderFooter() {
+    if (this.hideFooter) {
+      return null;
+    }
+
+    return html`
+      <div class="footer">
+        <em>Last Updated: ${this.time.toDateString()}</em>
+        <a href="./RavindaranNavinn_Resume.pdf" target="_blank">
+          Download PDF <fa-icon class="fas fa-download"></fa-icon>
+        </a>
+      </div>
+    `;
   }
 
   render() {
@@ -151,9 +169,9 @@ export class Header extends LitElement {
               >
             </div>
             ${this.basics.profiles.map(
-              ({network, url, username}) => html`
+              ({ network, url, username }) => html`
                 <div class="contact">
-                  <fa-icon class="${this.getNetworkIcon(network)}"></fa-icon>
+                  <fa-icon class="${this._getIcon(network)}"></fa-icon>
                   <a href="${url}">${username}</a>
                 </div>
               `
@@ -161,16 +179,7 @@ export class Header extends LitElement {
           </div>
         </div>
       </div>
-      ${this.hideFooter
-        ? ''
-        : html`
-            <div class="footer">
-              <em>Last Updated: ${this.time.toDateString()}</em>
-              <a href="./RavindaranNavinn_Resume.pdf" target="_blank">
-                Download PDF <fa-icon class="fas fa-download"></fa-icon>
-              </a>
-            </div>
-          `}
+      ${this._renderFooter()}
     `;
   }
 }

@@ -1,15 +1,15 @@
-import {html, LitElement} from 'lit';
-import {property, customElement} from 'lit/decorators.js';
-import {Work} from '../models';
-import {formatDate, parse} from '../utils';
-import {titleCardStyle, listParagraphStyle, cardStyle} from './card.style';
+import { html, LitElement } from 'lit';
+import { property, customElement } from 'lit/decorators.js';
+import { Resume } from '../types';
+import { formatDate, parse } from '../utils';
+import { titleCardStyle, listParagraphStyle, cardStyle } from './card.style';
 
 @customElement('work-card')
 export class WorkCard extends LitElement {
   static styles = [cardStyle, titleCardStyle, listParagraphStyle];
 
-  @property({type: Object})
-  work!: Work;
+  @property({ type: Object })
+  work!: Resume.IWork;
 
   render() {
     return html`

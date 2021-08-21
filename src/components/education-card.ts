@@ -1,8 +1,8 @@
-import {css, html, LitElement} from 'lit';
-import {property, customElement} from 'lit/decorators.js';
-import {Education} from '../models';
-import {formatDate, parse} from '../utils';
-import {cardStyle, listParagraphStyle, titleCardStyle} from './card.style';
+import { css, html, LitElement } from 'lit';
+import { property, customElement } from 'lit/decorators.js';
+import { Resume } from '../types';
+import { formatDate, parse } from '../utils';
+import { cardStyle, listParagraphStyle, titleCardStyle } from './card.style';
 
 @customElement('education-card')
 export class EducationCard extends LitElement {
@@ -24,8 +24,8 @@ export class EducationCard extends LitElement {
     `,
   ];
 
-  @property({type: Object})
-  education!: Education;
+  @property({ type: Object })
+  education!: Resume.IEducation;
 
   render() {
     return html`

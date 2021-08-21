@@ -1,15 +1,7 @@
----
-created_at: Month DD, YYYY
-recipient_name: Recipient Name
-recipient_position: Position
-recipient_company_name: Company Name
-recipient_company_address: Company Address, City Postal Code
----
+{{ created_at }}
 
-{{created_at}}
-
-<strong style="font-family: var(--title); font-size: 1.25rem;">{{recipient_name}}</strong>
-{{recipient_position}}, {{recipient_company_name}}
+<strong style="font-family: var(--title); font-size: 1.25rem;">{{recipient_name}}</strong>  
+{{recipient_position}}, {{recipient_company_name}}  
 {{recipient_company_address}}
 
 Dear {{recipient_name}},

@@ -1,8 +1,8 @@
-import {css, html, LitElement} from 'lit';
-import {property, customElement} from 'lit/decorators.js';
-import {Skill} from '../models';
-import {parse} from '../utils';
-import {listParagraphStyle} from './card.style';
+import { css, html, LitElement } from 'lit';
+import { property, customElement } from 'lit/decorators.js';
+import { Resume } from '../types';
+import { parse } from '../utils';
+import { listParagraphStyle } from './card.style';
 
 @customElement('skills-card')
 export class SkillsCard extends LitElement {
@@ -17,8 +17,8 @@ export class SkillsCard extends LitElement {
     `,
   ];
 
-  @property({type: Array})
-  skills!: Skill[];
+  @property({ type: Array })
+  skills!: Resume.ISkill[];
 
   render() {
     return html`

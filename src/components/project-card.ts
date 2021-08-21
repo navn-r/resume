@@ -1,8 +1,8 @@
-import {css, html, LitElement} from 'lit';
-import {property, customElement} from 'lit/decorators.js';
-import {Project} from '../models';
-import {parse} from '../utils';
-import {cardStyle, listParagraphStyle} from './card.style';
+import { css, html, LitElement } from 'lit';
+import { property, customElement } from 'lit/decorators.js';
+import { Resume } from '../types';
+import { parse } from '../utils';
+import { cardStyle, listParagraphStyle } from './card.style';
 
 @customElement('project-card')
 export class ProjectCard extends LitElement {
@@ -39,8 +39,8 @@ export class ProjectCard extends LitElement {
     `,
   ];
 
-  @property({type: Object})
-  project!: Project;
+  @property({ type: Object })
+  project!: Resume.IProject;
 
   render() {
     return html`

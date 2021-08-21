@@ -8,7 +8,7 @@
     "build": "tsc",
     "bundle": "rollup -c",
     "build:watch": "tsc --watch",
-    "deploy": "npm run build && npm run bundle && mkdir -p docs && cp src/style.css docs/style.css && cp src/index.html docs/index.html && cp src/resume.json docs/resume.json && cp src/favicon.png docs/favicon.png && sed -i '7s@.*@    <script src=\"app-resume.bundled.js\"></script>@' docs/index.html && sed -i '6s@.*@    <link href=\"style.css\" rel=\"stylesheet\" />@' docs/index.html",
+    "deploy": "npm run build && npm run bundle && mkdir -p docs && cp src/style.css docs/style.css && cp src/letter.md docs/letter.md && cp src/index.html docs/index.html && cp src/resume.json docs/resume.json && cp src/favicon.png docs/favicon.png && sed -i '7s@.*@    <script src=\"app-resume.bundled.js\"></script>@' docs/index.html && sed -i '6s@.*@    <link href=\"style.css\" rel=\"stylesheet\" />@' docs/index.html",
     "print:pdf": "rm -rf ./docs/RavindaranNavinn_Resume.pdf && ts-node print.ts",
     "build:pdf": "npm run deploy && npm run print:pdf",
     "clean": "rm -rf out docs",
@@ -18,7 +18,7 @@
     "lint:eslint": "eslint 'src/**/*.ts' --fix",
     "lint:lit-analyzer": "lit-analyzer",
     "format": "prettier src/* --write",
-    "serve": "wds",
+    "serve": "wds --node-resolve",
     "checksize": "rollup -c ; cat app-resume.bundled.js | gzip -9 | wc -c ; rm app-resume.bundled.js",
     "prepare": "husky install",
     "pre-commit": "lint-staged"
@@ -33,11 +33,13 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "lit": "^2.0.0-rc.2",
-    "puppeteer": "^5.5.0"
+    "marked": "^3.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-replace": "^2.3.4",
+    "@types/marked": "^2.0.4",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "@web/dev-server": "^0.1.8",
@@ -49,10 +51,10 @@
     "lint-staged": ">=10",
     "lit-analyzer": "^1.2.1",
     "prettier": "^2.2.1",
+    "puppeteer": "^10.2.0",
     "rimraf": "^3.0.2",
     "rollup": "^1.32.1",
     "rollup-plugin-filesize": "^7.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.3.1",
     "ts-node": "^9.1.1",
     "typescript": "^3.9.7",
