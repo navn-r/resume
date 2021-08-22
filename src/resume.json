@@ -26,37 +26,40 @@
   "work": [
     {
       "name": "Major League Hacking",
-      "location": "Remote",
-      "position": "MLH Fellowship — Open Source Track",
+      "location": "Remote, N.A.",
+      "position": "Open Source Fellow",
       "url": "https://fellowship.mlh.io",
       "startDate": "2021-06-05",
-      "endDate": "2021-08-30",
+      "endDate": "2021-08-31",
       "highlights": [
-        "Summer 2021 fellow — Contributing to open source software using **TypeScript** and **JavaScript**"
+        "Selected as one of **30** fellows from over **5000+** international applicants, under the guidance of MLH mentors and coaches",
+        "Implemented and demoed Git merge conflict resolution in the Jupyterlab IDE using **React**, **TypeScript** and **Python**, allowing data scientists to preview and fix **Jupyter Notebook** conflicts **without a terminal**"
       ]
     },
     {
-      "name": "Halo",
+      "name": "Halo Science",
       "location": "Chicago, IL",
       "position": "Full-Stack Software Engineer Intern",
       "url": "https://www.halo.science",
       "startDate": "2021-05-03",
       "endDate": "2021-08-31",
       "highlights": [
-        "Developing a marketplace connecting scientists to funding and research opportunities using **React** and **Ruby on Rails**"
+        "Eliminated redundant manual user tests by creating an **End-to-End automation suite** with **Jest** and **Playwright**",
+        "Reduced developer setup from **2 hours** to **10 minutes** by Dockerizing the **React** and **Rails** codebase with **Docker Compose**",
+        "Built a **33%** faster database seeding script with **auto-generated data** using **Faker**, replacing outdated migration scripts"
       ]
     },
     {
       "name": "CaseWare International",
       "location": "Toronto, ON",
-      "position": "Front-End Software Developer Co-op",
+      "position": "Software Developer Co-op",
       "url": "https://www.caseware.com/ca",
       "startDate": "2020-09-08",
       "endDate": "2021-04-30",
       "highlights": [
-        "Facilitated **Daily Standup** meetings using multiple **JIRA** project boards in an **Agile Scrum** of **12** members",
-        "Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with **Karma**, **Jest** and **Jasmine**",
-        "Developed major features and critical hotfixes using **Angular** and **AngularJS**, improving the end-user experience for **130+** international accounting firms"
+        "Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with **Karma** and **Jasmine**",
+        "Refactored **700+** lines of legacy **AngularJS** plugins to **Angular**, improving code modularity using dependency injection",
+        "Developed the foundation of an audit trail used by **130+** international accounting firms, preventing asset misappropriation"
       ]
     }
   ],
@@ -77,7 +80,7 @@
         "Software Tools and Systems Programming"
       ],
       "awards": [
-        "Dean's List of Academic Excellence (2019-20)",
+        "Dean's List of Academic Excellence",
         "University of Toronto Scholar ($7500)"
       ]
     }
@@ -88,12 +91,13 @@
       "keywords": [
         "TypeScript",
         "JavaScript",
-        "Java",
         "HTML",
         "CSS",
-        "C",
+        "Java",
         "Python",
+        "Ruby",
         "SQL",
+        "C",
         "Shell"
       ]
     },
@@ -101,14 +105,14 @@
       "name": "Frameworks & Tools",
       "keywords": [
         "React",
-        "React Native",
         "Angular",
         "Node.js",
-        "Express.js",
+        "Ruby on Rails",
+        "Docker",
         "JIRA",
         "GitHub Actions",
-        "TravisCI",
         "MongoDB",
+        "PostgreSQL",
         "Firebase"
       ]
     },
@@ -116,7 +120,8 @@
       "name": "Concepts",
       "keywords": [
         "APIs (REST, GraphQL)",
-        "Agile Methodologies (Scrum, Kanban, Test Driven Development)",
+        "Agile Methodologies (Scrum, Kanban)",
+        "Test Driven Development",
         "CI/CD"
       ]
     }
@@ -124,33 +129,21 @@
   "projects": [
     {
       "name": "UImpactify",
-      "description": "Online Learning Platform",
+      "description": "An online learning and crowdfunding platform to provide accessible specialized education in the social purpose sector",
       "highlights": [
-        "Engaged in an Agile Scrum of **7** over **4** sprints, battling the lack of specialized education in the social purpose sector",
-        "Developed and deployed a <a href=\"https://github.com/navn-r/standup-bot\">**Discord Bot**</a> to supplement Daily Standup meetings, reducing overall time by **50%**"
+        "Spearheaded the design and development of course creation, realtime chat, assessment uploading and donation systems to effectively engage student and instructor collaboration"
       ],
       "startDate": "2020-09",
       "endDate": "2020-12",
       "repo": "https://github.com/navn-r/uimpactify",
       "url": "https://uimpactify.herokuapp.com",
       "type": "Website",
-      "features": [
-        "Courses",
-        "Lectures & Assessments",
-        "Analytics",
-        "Realtime Chat",
-        "Volunteer & Employment",
-        "Donation System"
-      ],
       "technology": [
         "MongoDB",
         "Express.js",
         "Angular",
         "Node.js",
-        "Socket.io",
-        "Chart.js",
-        "Multer",
-        "GridFS",
+        "WebSockets",
         "Heroku",
         "Figma",
         "JIRA"
@@ -158,72 +151,30 @@
     },
     {
       "name": "Noten",
-      "description": "Cloud Based Grade Management Application",
-      "highlights": [
-        "Implemented a flattened data store, resulting in **4x** fewer database queries on all **CRUD** operations on grades"
-      ],
+      "description": "An open source grade tracker app with **75+ installs** featuring multi-semester management, grade prediction, multiple grade scales, and selective course + grade calculation",
+      "highlights": [],
       "startDate": "2020-04",
       "endDate": "2020-05",
       "repo": "https://github.com/navn-r/noten",
       "url": "https://play.google.com/store/apps/details?id=com.noten",
       "type": "Google Play Store",
-      "features": [
-        "Semester & Course Management",
-        "Grade Prediction",
-        "Multiple Grade Scales",
-        "Selective Course & Grade Calculation"
-      ],
+      "features": [],
       "technology": [
-        "React Native",
-        "Firebase Realtime Database",
-        "Firebase Authentication with Google OAuth 2.0"
-      ]
-    },
-    {
-      "name": "Ritrovo",
-      "description": "Full-Stack Social Platform",
-      "highlights": [
-        "Built an authenticated **GraphQL API** and community dashboard for creating posts and collaborating with users",
-        "Eliminated code duplication by **3x** using **auto generated** schemas for database models, API queries and TypeScript interfaces"
-      ],
-      "startDate": "2020-09",
-      "endDate": "2020-09",
-      "repo": "https://github.com/navn-r/ritrovo",
-      "url": "https://ritrovo.vercel.app",
-      "type": "Website",
-      "technology": [
+        "Ionic",
         "React",
-        "Next.js",
         "TypeScript",
-        "Apollo",
-        "MongoDB",
-        "Mongoose",
-        "JSON Web Tokens",
-        "Vercel"
+        "Firebase Realtime Database + Authentication"
       ]
     },
     {
       "name": "Spotify API Clone",
-      "description": "Social-centric Music Player REST API",
-      "highlights": [],
+      "description": "A microservices **REST API** backend to create and follow user profiles, upload and like songs, generate and query playlists",
       "startDate": "2020-11",
       "endDate": "2020-12",
       "repo": "https://github.com/navn-r/spotify-api-clone",
       "url": "https://navn.me/spotify-api-clone",
       "type": "Documentation",
-      "features": [
-        "Create and follow user profiles",
-        "Upload and like songs",
-        "Playlist generation",
-        "Query liked songs from followers"
-      ],
-      "technology": [
-        "Java",
-        "Spring Boot",
-        "MongoDB",
-        "Neo4j",
-        "Microservices Architecture"
-      ]
+      "technology": ["Java", "Spring Boot", "MongoDB", "Neo4j"]
     }
   ]
 }

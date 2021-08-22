@@ -14,7 +14,7 @@ export class EducationCard extends LitElement {
       .body {
         display: grid;
         grid-template-rows: auto;
-        row-gap: 0.375rem;
+        row-gap: 0.5rem;
       }
 
       .body p {
@@ -36,7 +36,7 @@ export class EducationCard extends LitElement {
           <h4>${this.education.location}</h4>
           <h4>
             ${formatDate(this.education.startDate)} —
-            ${formatDate(this.education.endDate)} (Expected)
+            ${formatDate(this.education.endDate)}
           </h4>
         </div>
         <div class="body">

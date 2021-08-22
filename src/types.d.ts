@@ -58,7 +58,7 @@ export namespace Resume {
   export interface IProject {
     name: string;
     description: string;
-    highlights: string[];
+    highlights?: string[];
     startDate: string;
     endDate: string;
     repo?: string;

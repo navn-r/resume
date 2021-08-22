@@ -31,11 +31,12 @@ export class Header extends LitElement {
     #contact-container {
       display: grid;
       row-gap: 1rem;
+      max-width: 20rem;
     }
 
     #lower-row {
       display: grid;
-      grid-template-columns: 2fr 3fr 2fr;
+      grid-template-columns: 1fr 1fr 1fr;
     }
 
     .contact {
@@ -45,7 +46,7 @@ export class Header extends LitElement {
       column-gap: 0.5rem;
     }
 
-    #lower-row .contact {
+    #lower-row .contact:nth-child(2) {
       justify-content: center;
     }
 
@@ -105,7 +106,7 @@ export class Header extends LitElement {
   constructor() {
     super();
 
-    if (window.location.hostname !== 'localhost') {
+    if (!this.hideFooter && window.location.hostname !== 'localhost') {
       this._getRecentCommit();
     }
   }

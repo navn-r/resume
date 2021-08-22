@@ -20,7 +20,7 @@ export class ProjectCard extends LitElement {
         font-size: 1.125rem;
       }
 
-      .title-container p:first-child > strong {
+      .title-container > p > strong:first-of-type {
         font-size: 1.25rem;
         font-family: var(--title);
         font-weight: 600;
@@ -42,14 +42,19 @@ export class ProjectCard extends LitElement {
   @property({ type: Object })
   project!: Resume.IProject;
 
+  private _renderList(name: string, list?: string[]) {
+    if (!list?.length) {
+      return null;
+    }
+
+    return html`<li><strong>${name}:</strong> ${parse(list.join(', '))}</li>`;
+  }
+
   render() {
     return html`
       <div class="card">
         <div class="title-container">
-          <p>
-            <strong>${this.project.name}</strong> —
-            ${parse(this.project.description)}
-          </p>
+          <p><strong>${this.project.name}</strong></p>
           ${this.project.repo && this.project.url
             ? html`
                 <p>
@@ -59,22 +64,13 @@ export class ProjectCard extends LitElement {
                   <a href="${this.project.repo}">(<strong>GitHub</strong>)</a>
                 </p>
               `
-            : html``}
+            : null}
         </div>
         <ul>
-          ${this.project.highlights.map((h) => html`<li>${parse(h)}</li>`)}
-          ${this.project.features
-            ? html`<li>
-                <strong>Core Features:</strong> ${parse(
-                  this.project.features.join(', ')
-                )}
-              </li>`
-            : ''}
-          <li>
-            <strong>Technology:</strong> ${parse(
-              this.project.technology.join(', ')
-            )}
-          </li>
+          <li>${parse(this.project.description)}</li>
+          ${this.project.highlights?.map((h) => html`<li>${parse(h)}</li>`)}
+          ${this._renderList('Core Features', this.project.features)}
+          ${this._renderList('Technology', this.project.technology)}
         </ul>
       </div>
     `;
