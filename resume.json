@@ -26,13 +26,14 @@
   "work": [
     {
       "name": "Major League Hacking",
-      "location": "Remote",
-      "position": "MLH Fellowship — Open Source Track",
+      "location": "Remote, NA",
+      "position": "Open Source Fellow",
       "url": "https://fellowship.mlh.io",
       "startDate": "2021-06-05",
       "endDate": "2021-08-31",
       "highlights": [
-        "Summer 2021 Fellow — Contributing to the open source JupyterLab project using **React**, **TypeScript** and **Python**"
+        "Contributed to major issues in the open source JupyterLab project using **React**, **TypeScript** and **Python**",
+        "Selected as one of **60** fellows from over **5000+** international applicants, under the guidance of MLH mentors and coaches"
       ]
     },
     {
@@ -43,16 +44,15 @@
       "startDate": "2021-05-03",
       "endDate": "2021-08-31",
       "highlights": [
-        "Reduced developer environment setup by **80%** by containerizing the app with **Docker** and **Docker Compose**",
-        "Eliminated repetitive manual tests by spearheading the creation of an **E2E automation suite** with **Jest** and **Playwright**",
-        "Built a database seeding script with auto-generated data using **Faker** and **Ruby**, replacing outdated migration scripts",
-        "Developed core features using **React**, **Ruby on Rails**, and **PostgreSQL**, used by industry leaders including **P&G** and **Pfizer**"
+        "Eliminated redundant manual user tests by creating an **End-to-End automation suite** with **Jest** and **Playwright**",
+        "Reduced developer setup from **hours** to **minutes** by Dockerizing the **React** and **Rails** codebase with **Docker Compose**",
+        "Built a **40%** faster database seeding script with **auto-generated data** using **Faker**, replacing outdated migration scripts"
       ]
     },
     {
       "name": "CaseWare International",
       "location": "Toronto, ON",
-      "position": "Front-End Software Developer Co-op",
+      "position": "Software Developer Co-op",
       "url": "https://www.caseware.com/ca",
       "startDate": "2020-09-08",
       "endDate": "2021-04-30",
@@ -80,7 +80,7 @@
         "Software Tools and Systems Programming"
       ],
       "awards": [
-        "Dean's List of Academic Excellence (2019-20)",
+        "Dean's List of Academic Excellence",
         "University of Toronto Scholar ($7500)"
       ]
     }
@@ -180,7 +180,7 @@
         "React",
         "TypeScript",
         "Firebase Realtime Database",
-        "Firebase Authentication with Google OAuth 2.0"
+        "Firebase Authentication"
       ]
     },
     {
