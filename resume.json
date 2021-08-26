@@ -58,7 +58,7 @@
       "endDate": "2021-04-30",
       "highlights": [
         "Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with **Karma** and **Jasmine**",
-        "Refactored **800+** lines of legacy **AngularJS** plugins to **Angular**, improving code modularity using dependency injection",
+        "Refactored **700+** lines of legacy **AngularJS** plugins to **Angular**, improving code modularity using dependency injection",
         "Developed the foundation of an audit trail used by **130+** international accounting firms, preventing asset misappropriation"
       ]
     }
