@@ -1,4 +1,6 @@
 const puppeteer = require('puppeteer');
+const exiftool = require('node-exiftool');
+const ep = new exiftool.ExiftoolProcess();
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -20,4 +22,36 @@ const puppeteer = require('puppeteer');
   });
 
   await browser.close();
+
+  await ep.open();
+
+  await ep.writeMetadata(
+    'docs/RavindaranNavinn_Resume.pdf',
+    {
+      all: '', // remove existing tags
+      Title: 'Navinn Ravindaran - Resume',
+      Subject: 'Resume',
+      Author: 'Navinn Ravindaran',
+      Creator: 'Chromium (Puppeteer)',
+      Producer: 'github.com/navn-r/resume',
+      'Keywords+': [
+        'Navinn',
+        'Ravindaran',
+        'Resume',
+        'Canada',
+        'Computer Science',
+        'SWE',
+        'Software Engineering',
+        'Developer',
+        'Student',
+        'Coder',
+        'Full Stack',
+        'Frontend',
+        'Backend',
+      ],
+    },
+    ['overwrite_original']
+  );
+
+  await ep.close();
 })();

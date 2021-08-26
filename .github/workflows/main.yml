@@ -28,7 +28,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: yarn
+        run: yarn && sudo apt install exiftool
 
       - name: Build
         run: yarn run build:pdf
