@@ -72,7 +72,7 @@
       "studyType": "Honours Bachelor of Science",
       "startDate": "2019-09-08",
       "endDate": "2023-04-30",
-      "score": "3.77 / 4.00",
+      "score": "3.58 / 4.00",
       "courses": [
         "Software Design",
         "Software Engineering",
@@ -131,7 +131,7 @@
       "name": "UImpactify",
       "description": "An online learning and crowdfunding platform to provide accessible specialized education in the social purpose sector",
       "highlights": [
-        "Spearheaded the design and development of course creation, realtime chat, assessment uploading and donation systems to effectively engage student and instructor collaboration"
+        "Spearheaded the design and development of course creation, realtime chat, assessment analytics and donation systems to effectively engage student and instructor collaboration"
       ],
       "startDate": "2020-09",
       "endDate": "2020-12",
