@@ -73,12 +73,7 @@
       "startDate": "2019-09-08",
       "endDate": "2023-04-30",
       "score": "3.58 / 4.00",
-      "courses": [
-        "Software Design",
-        "Software Engineering",
-        "Programming Languages",
-        "Software Tools and Systems Programming"
-      ],
+      "courses": ["Software Design (CSCB07)"],
       "awards": [
         "Dean's List of Academic Excellence",
         "University of Toronto Scholar ($7500)"
