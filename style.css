@@ -52,7 +52,6 @@ table {
   --main: 'IBM Plex Sans', 'sans-serif';
   --title: 'IBM Plex Serif', 'serif';
   --code: 'monospace';
-  --text: var(--gray);
   --bg: #ffffff;
 
   --light-gray: #808080;
@@ -66,11 +65,10 @@ table {
   --blue: #46c2ff;
 }
 
-
 body {
   line-height: 1;
   background-color: var(--bg);
-  color: var(--text);
+  color: var(--gray);
 }
 
 .footer {
@@ -95,7 +93,7 @@ body {
     background-color: var(--gray);
     transform: translateY(-2.5rem);
   }
-  
+
   .footer a {
     text-decoration: none;
     font-family: var(--main);
@@ -105,7 +103,7 @@ body {
 
   .footer a:hover {
     background: rgba(255, 255, 0, 0.2) !important;
-    box-shadow: 0px 2px 10px rgba(255, 255, 0, 0.2) !important;
+    box-shadow: 0 2px 10px rgba(255, 255, 0, 0.2) !important;
   }
 
   .footer fa-icon {

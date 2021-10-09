@@ -56,7 +56,7 @@ class ye extends class{constructor(t){}T(t,e,i){this.Σdt=t,this.M=e,this.Σct=i
   @media screen {
     a:hover {
       background: rgba(255, 255, 0, 0.2) !important;
-      box-shadow: 0px 2px 10px rgba(255, 255, 0, 0.2) !important;
+      box-shadow: 0 2px 10px rgba(255, 255, 0, 0.2) !important;
     }
   }
 `,_e=o`
@@ -81,7 +81,7 @@ class ye extends class{constructor(t){}T(t,e,i){this.Σdt=t,this.M=e,this.Σct=i
     text-decoration: none;
     outline: none;
     border: 0;
-    color: var(--text);
+    color: var(--gray);
   }
 
   h4 {
@@ -192,7 +192,7 @@ class ye extends class{constructor(t){}T(t,e,i){this.Σdt=t,this.M=e,this.Σct=i
     `}};Oe.styles=o`
     #header {
       display: grid;
-      color: var(--text);
+      color: var(--gray);
       background-color: var(--bg);
       display: grid;
       grid-template-columns: auto max-content;
@@ -242,13 +242,13 @@ class ye extends class{constructor(t){}T(t,e,i){this.Σdt=t,this.M=e,this.Σct=i
     }
 
     .contact a {
-      color: var(--text);
+      color: var(--gray);
     }
 
     @media screen {
       #contact-container a:hover {
         background: rgba(255, 255, 0, 0.2) !important;
-        box-shadow: 0px 2px 10px rgba(255, 255, 0, 0.2) !important;
+        box-shadow: 0 2px 10px rgba(255, 255, 0, 0.2) !important;
       }
     }
   `,Te([ot({type:Boolean})],Oe.prototype,"hideFooter",void 0),Te([at()],Oe.prototype,"time",void 0),Te([ot({type:Object})],Oe.prototype,"basics",void 0),Oe=Te([nt("app-header")],Oe);var Ee=function(t,e,i,s){for(var n,r=arguments.length,o=r<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,i):s,a=t.length-1;a>=0;a--)(n=t[a])&&(o=(r<3?n(o):r>3?n(e,i,o):n(e,i))||o);return r>3&&o&&Object.defineProperty(e,i,o),o};let Ie=class extends st{_renderList(t,e){return(null==e?void 0:e.length)?L`<li><strong>${t}:</strong> ${$e(e.join(", "))}</li>`:null}render(){var t;return L`
@@ -292,7 +292,7 @@ class ye extends class{constructor(t){}T(t,e,i){this.Σdt=t,this.M=e,this.Σct=i
         border: 0;
         outline: none;
         text-decoration: none;
-        color: var(--text);
+        color: var(--gray);
       }
 
       a strong {

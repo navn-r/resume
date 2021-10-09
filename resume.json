@@ -142,12 +142,7 @@
       "repo": "https://github.com/navn-r/uimpactify",
       "url": "https://uimpactify.herokuapp.com",
       "type": "Website",
-      "technology": [
-        "MongoDB",
-        "Express.js",
-        "Angular",
-        "Node.js"
-      ]
+      "technology": ["MongoDB", "Express.js", "Angular", "Node.js"]
     },
     {
       "name": "Noten",
