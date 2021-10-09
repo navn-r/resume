@@ -8,7 +8,7 @@ export const cardStyle = css`
   @media screen {
     a:hover {
       background: rgba(255, 255, 0, 0.2) !important;
-      box-shadow: 0px 2px 10px rgba(255, 255, 0, 0.2) !important;
+      box-shadow: 0 2px 10px rgba(255, 255, 0, 0.2) !important;
     }
   }
 `;
@@ -35,7 +35,7 @@ export const titleCardStyle = css`
     text-decoration: none;
     outline: none;
     border: 0;
-    color: var(--text);
+    color: var(--gray);
   }
 
   h4 {
@@ -67,7 +67,7 @@ export const listParagraphStyle = css`
 
   ul {
     padding-left: 1.375rem;
-    line-height: 1.25rem;
+    line-height: 1.3125rem;
   }
 
   li:not(:first-child) {

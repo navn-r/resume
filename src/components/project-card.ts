@@ -30,7 +30,7 @@ export class ProjectCard extends LitElement {
         border: 0;
         outline: none;
         text-decoration: none;
-        color: var(--text);
+        color: var(--gray);
       }
 
       a strong {

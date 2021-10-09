@@ -21,6 +21,10 @@ export class EducationCard extends LitElement {
         margin: 0;
         padding: 0;
       }
+
+      .body strong {
+        color: var(--gray);
+      }
     `,
   ];
 

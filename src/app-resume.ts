@@ -14,7 +14,7 @@ export class App extends LitElement {
     }
 
     .section {
-      width: 95%;
+      width: 92.5%;
       margin: 1.5rem auto;
     }
 
@@ -24,7 +24,7 @@ export class App extends LitElement {
       font-weight: 500;
       text-transform: uppercase;
       padding-bottom: 2px;
-      border-bottom: 1.5px solid var(--text);
+      border-bottom: 1.5px solid var(--light-gray);
       margin-bottom: 1rem;
     }
 
@@ -91,7 +91,7 @@ export class App extends LitElement {
         <skills-card .skills="${this.data.skills}"></skills-card>
       </div>
       <div class="section">
-        <h1 class="title">Experiences</h1>
+        <h1 class="title">Experience</h1>
         ${this.data.work.map(
           (value) => html`<work-card .work="${value}"></work-card>`
         )}

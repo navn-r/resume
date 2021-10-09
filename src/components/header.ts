@@ -8,11 +8,11 @@ export class Header extends LitElement {
   static styles = css`
     #header {
       display: grid;
-      background-color: var(--gray);
-      color: var(--bg);
+      color: var(--gray);
+      background-color: var(--bg);
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      padding: 2.5rem;
+      grid-template-columns: auto max-content;
+      padding: 2.5rem 2.5rem 0.5rem;
     }
 
     fa-icon {
@@ -24,7 +24,7 @@ export class Header extends LitElement {
       font-family: var(--title);
       font-size: 3.5rem;
       margin: auto 0;
-      text-align: center;
+      text-align: left;
       font-weight: 600;
     }
 
@@ -36,13 +36,12 @@ export class Header extends LitElement {
 
     #lower-row {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1.07fr 1fr;
     }
 
     .contact {
       display: grid;
       grid-template-columns: 2rem auto;
-      align-items: center;
       column-gap: 0.5rem;
     }
 
@@ -54,42 +53,18 @@ export class Header extends LitElement {
       text-decoration: none;
       outline: none;
       border: 0;
-      color: var(--off-white);
+      color: black;
+      font-weight: 400;
     }
 
     .contact a {
-      color: var(--bg);
-    }
-
-    .footer {
-      width: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      background-color: var(--dark-gray);
-      color: var(--off-white);
-      padding: 1rem 0;
-      font-family: var(--main);
-    }
-
-    .footer fa-icon {
-      font-size: 1rem;
-    }
-
-    @media print {
-      .footer {
-        display: none;
-      }
-
-      #contact-container > .contact:first-child {
-        display: none;
-      }
+      color: var(--gray);
     }
 
     @media screen {
       #contact-container a:hover {
         background: rgba(255, 255, 0, 0.2) !important;
-        box-shadow: 0px 2px 10px rgba(255, 255, 0, 0.2) !important;
+        box-shadow: 0 2px 10px rgba(255, 255, 0, 0.2) !important;
       }
     }
   `;
@@ -105,24 +80,6 @@ export class Header extends LitElement {
 
   constructor() {
     super();
-
-    if (!this.hideFooter && window.location.hostname !== 'localhost') {
-      this._getRecentCommit();
-    }
-  }
-
-  private async _getRecentCommit(): Promise<void> {
-    const [
-      {
-        commit: {
-          author: { date },
-        },
-      },
-    ] = await fetch(
-      'https://api.github.com/repos/navn-r/resume/commits?per_page=1&path=src/resume.json'
-    ).then((res) => res.json());
-
-    this.time = new Date(date as string);
   }
 
   private _getIcon(input: string): string {
@@ -134,30 +91,11 @@ export class Header extends LitElement {
     return ICONS[input] ?? 'fas-fa-link';
   }
 
-  private _renderFooter() {
-    if (this.hideFooter) {
-      return null;
-    }
-
-    return html`
-      <div class="footer">
-        <em>Last Updated: ${this.time.toDateString()}</em>
-        <a href="./RavindaranNavinn_Resume.pdf" target="_blank">
-          Download PDF <fa-icon class="fas fa-download"></fa-icon>
-        </a>
-      </div>
-    `;
-  }
-
   render() {
     return html`
       <div id="header">
         <h1 id="name">${this.basics.name}</h1>
         <div id="contact-container">
-          <div class="contact">
-            <fa-icon class="fas fa-map-marker-alt"></fa-icon>
-            ${Object.values(this.basics.location).join(', ')}
-          </div>
           <div class="contact">
             <fa-icon class="fas fa-paper-plane"></fa-icon>
             <a href="mailto:${this.basics.email}">${this.basics.email}</a>
@@ -180,7 +118,6 @@ export class Header extends LitElement {
           </div>
         </div>
       </div>
-      ${this._renderFooter()}
     `;
   }
 }
