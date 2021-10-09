@@ -25,6 +25,17 @@
   },
   "work": [
     {
+      "name": "Royal Bank of Canada",
+      "location": "Toronto, ON",
+      "position": "Full-Stack Software Developer Co-op",
+      "url": "https://www.rbc.com/",
+      "startDate": "2022-01-10",
+      "endDate": "2022-04-22",
+      "highlights": [
+        "Incoming Winter 2022 Co-op — OMNI Technology & Operations"
+      ]
+    },
+    {
       "name": "Major League Hacking",
       "location": "Remote, N.A.",
       "position": "Open Source Fellow",
@@ -33,7 +44,7 @@
       "endDate": "2021-08-31",
       "highlights": [
         "Selected as one of **30** fellows from over **5000+** international applicants, under the guidance of MLH mentors and coaches",
-        "Implemented and demoed Git merge conflict resolution in the Jupyterlab IDE using **React**, **TypeScript** and **Python**, allowing data scientists to preview and fix **Jupyter Notebook** conflicts **without a terminal**"
+        "Implemented and demoed Git merge conflict resolution in the Jupyterlab IDE using React, TypeScript and Python, allowing data scientists to preview and fix Jupyter Notebook conflicts without a terminal"
       ]
     },
     {
@@ -44,9 +55,9 @@
       "startDate": "2021-05-03",
       "endDate": "2021-08-31",
       "highlights": [
-        "Eliminated redundant manual user tests by creating an **End-to-End automation suite** with **Jest** and **Playwright**",
-        "Reduced developer setup from **2 hours** to **10 minutes** by Dockerizing the **React** and **Rails** codebase with **Docker Compose**",
-        "Built a **33%** faster database seeding script with **auto-generated data** using **Faker**, replacing outdated migration scripts"
+        "Eliminated redundant manual user tests by creating an end-to-end automation suite with Jest and Playwright",
+        "Reduced developer setup from **2 hours** to **10 minutes** by dockerizing the React and Rails codebase with Docker Compose",
+        "Built a **33%** faster database seeding script with auto-generated data using Faker, replacing outdated migration scripts"
       ]
     },
     {
@@ -57,8 +68,8 @@
       "startDate": "2020-09-08",
       "endDate": "2021-04-30",
       "highlights": [
-        "Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with **Karma** and **Jasmine**",
-        "Refactored **700+** lines of legacy **AngularJS** plugins to **Angular**, improving code modularity using dependency injection",
+        "Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with Karma and Jasmine",
+        "Refactored **700+** lines of legacy AngularJS plugins to Angular, improving code modularity using dependency injection",
         "Developed the foundation of an audit trail used by **130+** international accounting firms, preventing asset misappropriation"
       ]
     }
@@ -104,7 +115,7 @@
         "Node.js",
         "Ruby on Rails",
         "Docker",
-        "JIRA",
+        "Jira",
         "GitHub Actions",
         "MongoDB",
         "PostgreSQL",
@@ -125,9 +136,7 @@
     {
       "name": "UImpactify",
       "description": "An online learning and crowdfunding platform to provide accessible specialized education in the social purpose sector",
-      "highlights": [
-        "Spearheaded the design and development of course creation, realtime chat, assessment analytics and donation systems to effectively engage student and instructor collaboration"
-      ],
+      "highlights": [],
       "startDate": "2020-09",
       "endDate": "2020-12",
       "repo": "https://github.com/navn-r/uimpactify",
@@ -137,16 +146,12 @@
         "MongoDB",
         "Express.js",
         "Angular",
-        "Node.js",
-        "WebSockets",
-        "Heroku",
-        "Figma",
-        "JIRA"
+        "Node.js"
       ]
     },
     {
       "name": "Noten",
-      "description": "An open source grade tracker app with **75+ installs** featuring multi-semester management, grade prediction, multiple grade scales, and selective course + grade calculation",
+      "description": "A grade tracker with **80+** installs featuring multi-semester management, grade prediction, multiple grade scales, and selective course + grade calculation",
       "highlights": [],
       "startDate": "2020-04",
       "endDate": "2020-05",
@@ -163,7 +168,7 @@
     },
     {
       "name": "Spotify API Clone",
-      "description": "A microservices **REST API** backend to create and follow user profiles, upload and like songs, generate and query playlists",
+      "description": "A microservices REST API backend to create and follow user profiles, upload and like songs, generate and query playlists",
       "startDate": "2020-11",
       "endDate": "2020-12",
       "repo": "https://github.com/navn-r/spotify-api-clone",

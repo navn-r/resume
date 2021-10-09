@@ -52,24 +52,29 @@ table {
   --main: 'IBM Plex Sans', 'sans-serif';
   --title: 'IBM Plex Serif', 'serif';
   --code: 'monospace';
-  --text: #000000;
+  --text: var(--gray);
   --bg: #ffffff;
 
   --light-gray: #808080;
   --off-white: #b2b2b2;
   --dark-gray: #0f1417;
   --gray: #272b2e;
-  --red: #db4817;
+  --red: #b11226;
   --orange: #e0a632;
   --aqua: #04868a;
-  --green: #a8e4a0;
+  --green: #556b2f;
   --blue: #46c2ff;
 }
+
 
 body {
   line-height: 1;
   background-color: var(--bg);
   color: var(--text);
+}
+
+.footer {
+  display: none;
 }
 
 @keyframes fade {
@@ -79,9 +84,38 @@ body {
   }
 }
 
+@media screen {
+  .footer {
+    display: flex;
+    width: 11in;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    background-color: var(--gray);
+    transform: translateY(-2.5rem);
+  }
+  
+  .footer a {
+    text-decoration: none;
+    font-family: var(--main);
+    color: var(--bg);
+    padding: 0.5rem;
+  }
+
+  .footer a:hover {
+    background: rgba(255, 255, 0, 0.2) !important;
+    box-shadow: 0px 2px 10px rgba(255, 255, 0, 0.2) !important;
+  }
+
+  .footer fa-icon {
+    font-size: 1rem;
+  }
+}
+
 @media screen and (min-width: 11.5in) {
   body {
-    background-color: var(--light-gray);
+    background-color: var(--gray);
   }
 
   .wrapper {
@@ -102,7 +136,7 @@ body {
   }
 
   html {
-    font-size: 80%;
+    font-size: 78%;
   }
 
   body {
