@@ -6,7 +6,7 @@ const ep = new exiftool.ExiftoolProcess();
   const browser = await puppeteer.launch({
     dumpio: true,
     headless: true,
-    args: ['--font-render-hinting=none'],
+    args: ['--font-render-hinting=none', '--lang=en-GB'],
   });
   const page = await browser.newPage();
 
