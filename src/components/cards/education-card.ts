@@ -1,32 +1,12 @@
-import { css, html, LitElement } from 'lit';
-import { property, customElement } from 'lit/decorators.js';
-import { Resume } from '../types';
-import { formatDate, parse } from '../utils';
-import { cardStyle, listParagraphStyle, titleCardStyle } from './card.style';
+import { html, LitElement } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
+import { Resume } from '../../types';
+import { formatDate, parse } from '../../utils';
+import { cardStyle, detailedTitleStyle, infoStyle } from './styles';
 
 @customElement('education-card')
 export class EducationCard extends LitElement {
-  static styles = [
-    cardStyle,
-    titleCardStyle,
-    listParagraphStyle,
-    css`
-      .body {
-        display: grid;
-        grid-template-rows: auto;
-        row-gap: 0.5rem;
-      }
-
-      .body p {
-        margin: 0;
-        padding: 0;
-      }
-
-      .body strong {
-        color: var(--gray);
-      }
-    `,
-  ];
+  static styles = [cardStyle, detailedTitleStyle, infoStyle];
 
   @property({ type: Object })
   education!: Resume.IEducation;

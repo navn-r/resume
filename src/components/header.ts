@@ -1,7 +1,7 @@
 import './icon';
 import { Resume } from '../types';
 import { css, html, LitElement } from 'lit';
-import { property, customElement, state } from 'lit/decorators.js';
+import { property, customElement } from 'lit/decorators.js';
 
 @customElement('app-header')
 export class Header extends LitElement {
@@ -68,12 +68,6 @@ export class Header extends LitElement {
       }
     }
   `;
-
-  @property({ type: Boolean })
-  hideFooter = false;
-
-  @state()
-  time: Date = new Date(Date.now());
 
   @property({ type: Object })
   basics!: Resume.IBasics;

@@ -107,10 +107,7 @@ export class App extends LitElement {
 
   render() {
     return html`
-      <app-header
-        .basics="${this.data.basics}"
-        ?hidefooter="${this._showLetter}"
-      ></app-header>
+      <app-header .basics="${this.data.basics}"></app-header>
       ${this._showLetter ? this._renderLetter() : this._renderResume()}
     `;
   }

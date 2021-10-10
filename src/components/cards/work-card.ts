@@ -1,12 +1,12 @@
 import { html, LitElement } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
-import { Resume } from '../types';
-import { formatDate, parse } from '../utils';
-import { titleCardStyle, listParagraphStyle, cardStyle } from './card.style';
+import { Resume } from '../../types';
+import { formatDate, parse } from '../../utils';
+import { cardStyle, detailedTitleStyle, infoStyle } from './styles';
 
 @customElement('work-card')
 export class WorkCard extends LitElement {
-  static styles = [cardStyle, titleCardStyle, listParagraphStyle];
+  static styles = [cardStyle, detailedTitleStyle, infoStyle];
 
   @property({ type: Object })
   work!: Resume.IWork;
@@ -23,7 +23,7 @@ export class WorkCard extends LitElement {
             ${formatDate(this.work.endDate)}
           </h4>
         </div>
-        <ul class="body">
+        <ul>
           ${this.work.highlights.map((h) => html`<li>${parse(h)}</li>`)}
         </ul>
       </div>

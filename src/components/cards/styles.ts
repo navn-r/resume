@@ -13,7 +13,73 @@ export const cardStyle = css`
   }
 `;
 
-export const titleCardStyle = css`
+export const infoStyle = css`
+  p,
+  ul {
+    margin: 0;
+    padding: 0;
+    font-size: 1.0625rem;
+  }
+
+  ul {
+    padding-left: 1.375rem;
+    line-height: 1.3125rem;
+  }
+
+  li:not(:first-child) {
+    margin: 0.25rem 0;
+  }
+
+  li::marker {
+    font-size: 0.825rem;
+  }
+
+  .body {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 0.5rem;
+  }
+
+  .body p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .body strong {
+    color: var(--gray);
+  }
+`;
+
+export const simpleTitleStyle = css`
+  .title-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  .title-container * {
+    font-size: 1.125rem;
+  }
+
+  .title-container > p > strong:first-of-type {
+    font-size: 1.25rem;
+    font-family: var(--title);
+    font-weight: 600;
+  }
+
+  a {
+    border: 0;
+    outline: none;
+    text-decoration: none;
+    color: var(--gray);
+  }
+
+  a strong {
+    font-weight: 500;
+  }
+`;
+
+export const detailedTitleStyle = css`
   .title-container {
     display: grid;
     justify-content: space-between;
@@ -54,27 +120,5 @@ export const titleCardStyle = css`
     grid-area: location;
     text-align: right;
     font-size: 1.25rem;
-  }
-`;
-
-export const listParagraphStyle = css`
-  p,
-  ul {
-    margin: 0;
-    padding: 0;
-    font-size: 1.0625rem;
-  }
-
-  ul {
-    padding-left: 1.375rem;
-    line-height: 1.3125rem;
-  }
-
-  li:not(:first-child) {
-    margin: 0.25rem 0;
-  }
-
-  li::marker {
-    font-size: 0.825rem;
   }
 `;

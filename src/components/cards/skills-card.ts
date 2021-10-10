@@ -1,28 +1,19 @@
-import { css, html, LitElement } from 'lit';
-import { property, customElement } from 'lit/decorators.js';
-import { Resume } from '../types';
-import { parse } from '../utils';
-import { listParagraphStyle } from './card.style';
+import { html, LitElement } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
+import { Resume } from '../../types';
+import { parse } from '../../utils';
+import { infoStyle } from './styles';
 
 @customElement('skills-card')
 export class SkillsCard extends LitElement {
-  static styles = [
-    listParagraphStyle,
-    css`
-      .skills-card {
-        display: grid;
-        grid-template-rows: auto;
-        row-gap: 0.5rem;
-      }
-    `,
-  ];
+  static styles = [infoStyle];
 
   @property({ type: Array })
   skills!: Resume.ISkill[];
 
   render() {
     return html`
-      <div class="skills-card">
+      <div class="body">
         ${this.skills.map(
           (skill) => html`
             <p>
