@@ -24,10 +24,9 @@ export class EducationCard extends LitElement {
           </h4>
         </div>
         <div class="body">
-          <p><strong>Cumulative GPA:</strong> ${this.education.score}</p>
           <p>
-            <strong>Awards:</strong>
-            <em>${this.education.awards.join(', ')}</em>
+            <strong>Cumulative GPA:</strong> ${this.education.score} —
+            ${this.education.awards.join(', ')}
           </p>
           <p>
             <strong>Teaching Assistant:</strong> ${parse(

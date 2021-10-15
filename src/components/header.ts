@@ -12,7 +12,7 @@ export class Header extends LitElement {
       background-color: var(--bg);
       display: grid;
       grid-template-columns: auto max-content;
-      padding: 2.5rem 2.5rem 0.5rem;
+      padding: 2rem 2.5rem 0.5rem;
     }
 
     fa-icon {
