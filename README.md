@@ -2,7 +2,7 @@
   <img src="banner.svg" width="800" height="200" />
   <h6 align="center">
   
-  [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/) [![Node.js CI](https://github.com/navn-r/resume/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/navn-r/resume/actions/workflows/main.yml) [![wakatime](https://wakatime.com/badge/github/navn-r/resume.svg)](https://wakatime.com/badge/github/navn-r/resume) [![CodeFactor](https://www.codefactor.io/repository/github/navn-r/resume/badge/develop)](https://www.codefactor.io/repository/github/navn-r/resume/overview/develop)
+  [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/) [![Node.js CI](https://github.com/navn-r/resume/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/navn-r/resume/actions/workflows/main.yml) [![wakatime](https://wakatime.com/badge/github/navn-r/resume.svg)](https://wakatime.com/badge/github/navn-r/resume) [![CodeFactor](https://www.codefactor.io/repository/github/navn-r/resume/badge)](https://www.codefactor.io/repository/github/navn-r/resume)
   
   
   </h6>
