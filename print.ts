@@ -10,12 +10,12 @@ const ep = new exiftool.ExiftoolProcess();
   });
   const page = await browser.newPage();
 
-  await page.goto(`file://${__dirname}/docs/index.html`, {
+  await page.goto(`file://${__dirname}/dist/index.html`, {
     waitUntil: 'networkidle2',
   });
 
   await page.pdf({
-    path: 'docs/RavindaranNavinn_Resume.pdf',
+    path: 'dist/RavindaranNavinn_Resume.pdf',
     printBackground: true,
     displayHeaderFooter: false,
     scale: 1,
@@ -26,7 +26,7 @@ const ep = new exiftool.ExiftoolProcess();
   await ep.open();
 
   await ep.writeMetadata(
-    'docs/RavindaranNavinn_Resume.pdf',
+    'dist/RavindaranNavinn_Resume.pdf',
     {
       all: '', // remove existing tags
       Title: 'Navinn Ravindaran - Resume',
@@ -48,6 +48,8 @@ const ep = new exiftool.ExiftoolProcess();
         'Full Stack',
         'Frontend',
         'Backend',
+        'Data Structures',
+        'Algorithms',
       ],
     },
     ['overwrite_original']

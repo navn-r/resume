@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Navinn Ravindaran",
-    "label": "Developer, Learner",
+    "label": "",
     "email": "navinn.ravindaran@mail.utoronto.ca",
     "url": "https://navn.me",
     "location": {
@@ -12,12 +12,12 @@
     },
     "profiles": [
       {
-        "network": "GitHub",
+        "network": "github-alt",
         "username": "navn-r",
         "url": "https://github.com/navn-r"
       },
       {
-        "network": "LinkedIn",
+        "network": "linkedin",
         "username": "navn-r",
         "url": "https://www.linkedin.com/in/navn-r"
       }
@@ -43,7 +43,7 @@
       "startDate": "2021-06-05",
       "endDate": "2021-08-31",
       "highlights": [
-        "Selected as one of **30** fellows from over **5000+** international applicants, under the guidance of MLH mentors and coaches",
+        "Selected as one of <strong>30</strong> fellows from over <strong>5000+</strong> international applicants, under the guidance of MLH mentors and coaches",
         "Implemented and demoed Git merge conflict resolution in the Jupyterlab IDE using React, TypeScript and Python, allowing data scientists to preview and fix Jupyter Notebook conflicts without a terminal"
       ]
     },
@@ -56,8 +56,8 @@
       "endDate": "2021-08-31",
       "highlights": [
         "Eliminated redundant manual user tests by creating an end-to-end automation suite with Jest and Playwright",
-        "Reduced developer setup from **2 hours** to **10 minutes** by dockerizing the React and Rails codebase with Docker Compose",
-        "Built a **33%** faster database seeding script with auto-generated data using Ruby, replacing outdated migration scripts"
+        "Reduced developer setup from <strong>2 hours</strong> to <strong>10 minutes</strong> by dockerizing the React and Rails codebase with Docker Compose",
+        "Built a <strong>33%</strong> faster database seeding script with auto-generated data using Faker, replacing outdated migration scripts"
       ]
     },
     {
@@ -68,9 +68,9 @@
       "startDate": "2020-09-08",
       "endDate": "2021-04-30",
       "highlights": [
-        "Decreased developer & QA regression efforts by **60%** by converting manual tests to unit tests with Karma and Jasmine",
-        "Refactored **700+** lines of legacy AngularJS plugins to Angular, improving code modularity using dependency injection",
-        "Developed the foundation of an audit trail used by **130+** international accounting firms, preventing asset misappropriation"
+        "Decreased developer & QA regression efforts by <strong>60%</strong> by converting manual tests to unit tests with Karma and Jasmine",
+        "Refactored <strong>700+</strong> lines of legacy AngularJS plugins to Angular, improving code modularity using dependency injection",
+        "Developed the foundation of an audit trail used by <strong>130+</strong> international accounting firms, preventing asset misappropriation"
       ]
     }
   ],
@@ -85,7 +85,7 @@
       "endDate": "2023-04-30",
       "score": "3.58 / 4.00",
       "courses": ["Software Design (CSCB07)"],
-      "awards": ["Dean's List of Academic Excellence", "UofT Scholar"]
+      "awards": ["Dean's List of Academic Excellence", "UofT Scholar ($7500)"]
     }
   ],
   "skills": [
@@ -113,7 +113,6 @@
         "Ruby on Rails",
         "Docker",
         "Jira",
-        "GitHub Actions",
         "MongoDB",
         "PostgreSQL",
         "Firebase"
@@ -145,7 +144,7 @@
     },
     {
       "name": "Noten",
-      "description": "A grade tracker with **80+** installs featuring multi-semester management, grade prediction, multiple grade scales, and selective course + grade calculation",
+      "description": "A grade tracker with <strong>80+</strong> installs featuring multi-semester management, multiple grade scales, grade prediction, and selective course + grade calculation",
       "highlights": [],
       "startDate": "2020-04",
       "endDate": "2020-05",

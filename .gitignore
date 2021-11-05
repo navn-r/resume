@@ -1,5 +1,4 @@
 /node_modules/
-/lib/
-/out/
+/dist/
 /.vscode/
-/docs/
+.DS_Store
