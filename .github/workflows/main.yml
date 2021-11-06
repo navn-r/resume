@@ -19,6 +19,14 @@ jobs:
         with:
           version: 6.20.3
 
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+
       - name: Install dependencies
         run: pnpm install && sudo apt install exiftool
 
@@ -27,7 +35,7 @@ jobs:
 
       - name: Print PDF
         # This is honestly pretty janky, but oh well
-        run: npm run serve & sleep 5 && npm run print && pkill -15 -x "npm run serve"
+        run: npm run serve & sleep 2 && npm run print && pkill -15 -x "npm run serve"; echo $?
 
       - name: Deploy
         if: always()
