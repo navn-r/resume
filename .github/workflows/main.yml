@@ -20,12 +20,17 @@ jobs:
           version: 6.20.3
 
       - name: Install dependencies
-        run: pnpm install # && sudo apt install exiftool
+        run: pnpm install && sudo apt install exiftool
 
       - name: Build
         run: npm run build
 
+      - name: Print PDF
+        # This is honestly pretty janky, but oh well
+        run: npm run serve & sleep 5 && npm run print && pkill -15 -x "npm run serve"
+
       - name: Deploy
+        if: always()
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages

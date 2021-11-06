@@ -10,7 +10,7 @@ const ep = new exiftool.ExiftoolProcess();
   });
   const page = await browser.newPage();
 
-  await page.goto(`file://${__dirname}/dist/index.html`, {
+  await page.goto(`http://localhost:5000/resume/`, {
     waitUntil: 'networkidle2',
   });
 

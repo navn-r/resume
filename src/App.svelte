@@ -11,7 +11,7 @@
 </script>
 
 <div>
-  <a href="https://navn.me/" target="__blank"
+  <a href="./RavindaranNavinn_Resume.pdf" target="__blank"
     >Download PDF <i class="fas fa-download" /></a
   >
 </div>
@@ -41,8 +41,11 @@
 
     --wrapper: #131516;
     --bg: #ffffff;
-    --text: #000000;
-    --gray: gray;
+    --blue: #423b6d;
+    --green: #732654;
+    --gray: #ababab;
+    --black: #252525;
+    --text: var(--black);
   }
 
   :global(*) {

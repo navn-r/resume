@@ -15,7 +15,7 @@ This resume uses the schema from the [JSON Resume](https://jsonresume.org/schema
 ### Built with:
 
 - [Svelte](https://svelte.dev) + TypeScript + SCSS
-- Puppeteer for auto-magically generating a pdf on build (view [here](https://github.com/navn-r/resume/blob/master/RavindaranNavinn_Resume.pdf)) (**FIXME**)
+- Puppeteer for auto-magically generating a pdf on build (view [here](https://github.com/navn-r/resume/blob/gh-pages/RavindaranNavinn_Resume.pdf))
 - GitHub Actions on push to Github Pages
 - :heart:
 
@@ -36,7 +36,7 @@ Build to production
 npm run build
 ```
 
-Print to PDF (**FIXME**)
+Print to PDF (Run `build` first)
 ```
 npm run print
 ```
