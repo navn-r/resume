@@ -9,7 +9,8 @@ const ep = new exiftool.ExiftoolProcess();
     args: ['--font-render-hinting=none', '--lang=en-GB'],
   });
   const page = await browser.newPage();
-
+  
+  await page.setViewport({ width: 1920, height: 1080});
   await page.goto(`http://localhost:5000/resume/`, {
     waitUntil: 'networkidle2',
   });
