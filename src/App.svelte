@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { fade } from 'svelte/transition';
+
   import Education from './sections/Education.svelte';
   import Experience from './sections/Experience.svelte';
   import Header from './sections/Header.svelte';
@@ -10,13 +12,13 @@
   export let resume: Resume.ISchema;
 </script>
 
-<div>
+<div in:fade={{ delay: 250, duration: 300 }}>
   <a href="./RavindaranNavinn_Resume.pdf" target="__blank"
     >Download PDF <i class="fas fa-download" /></a
   >
 </div>
 
-<main>
+<main in:fade={{ delay: 250, duration: 300 }}>
   <Header basics={resume.basics} />
 
   <h3>EDUCATION</h3>
@@ -40,12 +42,21 @@
     --serif: 'IBM Plex Serif', 'serif';
 
     --wrapper: #131516;
-    --bg: #ffffff;
+    --white: #ffffff;
     --blue: #423b6d;
-    --green: #732654;
     --gray: #ababab;
     --black: #252525;
+
+    --bg: var(--white);
     --text: var(--black);
+
+    // 1rem == 12pt == 16px
+    --normal: #{calc(10pt / 12pt)}rem;
+    --title: #{calc(11pt / 12pt)}rem;
+  }
+
+  :global(::selection) {
+    background-color: var(--gray);
   }
 
   :global(*) {
@@ -53,11 +64,6 @@
     padding: 0;
     box-sizing: border-box;
     font-variant-ligatures: none;
-  }
-
-  :global(html) {
-    // 1rem == 12pt == 16px
-    font-size: 12pt;
   }
 
   :global(body) {
@@ -98,14 +104,14 @@
 
   main {
     background-color: var(--bg);
-    font-size: 10pt;
+    font-size: var(--normal);
     padding: 2rem;
   }
 
   h3 {
     font-family: var(--serif);
     font-weight: 400;
-    font-size: 11pt;
+    font-size: var(--title);
     border-bottom: 1px solid var(--gray);
     margin: 1rem 0 0.75rem;
   }

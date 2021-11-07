@@ -5,6 +5,7 @@ import type { Resume } from './resume.schema';
 const app = new App({
   target: document.getElementById('app'),
   props: { resume: resume as Resume.ISchema },
+  intro: true,
 });
 
 export default app;

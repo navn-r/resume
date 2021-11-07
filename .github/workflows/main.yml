@@ -35,7 +35,7 @@ jobs:
 
       - name: Print PDF
         # This is honestly pretty janky, but oh well
-        run: npm run serve & sleep 2 && npm run print && pkill -15 -x "npm run serve"; echo $?
+        run: npm run serve & sleep 1 && npm run print && pkill -15 -x "npm run serve" && echo 'done'; echo $?
 
       - name: Deploy
         if: always()

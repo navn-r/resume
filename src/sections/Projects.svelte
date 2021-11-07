@@ -18,7 +18,7 @@
           <li>{@html highlight}</li>
         {/each}
       {/if}
-      <li><strong>Technology</strong>: {project.technology.join(', ')}</li>
+      <li><strong>Technology:</strong> {project.technology.join(', ')}</li>
     </ul>
   {/each}
 </section>
@@ -28,14 +28,14 @@
     display: grid;
     grid-template-columns: auto max-content max-content;
     column-gap: 0.25rem;
-    font-size: 11pt;
+    font-size: var(--title);
 
     & > strong {
       font-family: var(--serif);
     }
 
     &:not(:first-child) {
-      margin-top: 0.75rem;
+      margin-top: 1rem;
     }
   }
 

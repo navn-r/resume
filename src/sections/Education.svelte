@@ -40,7 +40,7 @@
       justify-content: space-between;
 
       &:first-child {
-        font-size: 11pt;
+        font-size: var(--title);
       }
     }
   }

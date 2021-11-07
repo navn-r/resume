@@ -24,10 +24,10 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
-    font-size: 11pt;
+    font-size: var(--title);
 
     &:not(:first-child) {
-      margin-top: 0.75rem;
+      margin-top: 1rem;
     }
   }
 

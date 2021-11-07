@@ -41,7 +41,7 @@
   .contacts {
     display: grid;
     row-gap: 0.25rem;
-    font-size: 10pt;
+    font-size: var(--normal);
   }
 
   .contact {
