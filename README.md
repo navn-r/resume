@@ -8,6 +8,8 @@
   </h6>
 </div>
 
+<img align="right" src="public/qr.png" width="250" />
+
 ### Schema
 
 This resume uses the schema from the [JSON Resume](https://jsonresume.org/schema/) initiative. As such, all information found in the resume is located in [`resume.json`](/src/resume.json). Types for each property in the Resume schema is located in [`resume.schema.ts`](/src/resume.schema.ts).
