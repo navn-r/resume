@@ -57,7 +57,7 @@
       "highlights": [
         "Eliminated redundant manual user tests by creating an end-to-end automation suite with Jest and Playwright",
         "Reduced developer setup from <strong>2 hours</strong> to <strong>10 minutes</strong> by dockerizing the React and Rails codebase with Docker Compose",
-        "Built a <strong>33%</strong> faster database seeding script with auto-generated data using Faker, replacing outdated migration scripts"
+        "Built a <strong>33%</strong> faster database seeding script with auto-generated data using Ruby, replacing outdated migration scripts"
       ]
     },
     {
