@@ -12,12 +12,19 @@
   export let resume: Resume.ISchema;
 </script>
 
-<div in:fade={{ delay: 250, duration: 300 }}>
-  <img src="./qr.png" alt="QR Code for PDF link" />
-  <a href="./RavindaranNavinn_Resume.pdf" target="__blank"
-    >Download PDF <i class="fas fa-download" /></a
+<p>
+  <a
+    in:fade={{ delay: 200, duration: 300 }}
+    href="./RavindaranNavinn_Resume.pdf"
+    target="__blank">Download PDF <i class="fas fa-download" /></a
   >
-</div>
+</p>
+
+<img
+  in:fade={{ delay: 250, duration: 300 }}
+  src="./qr.png"
+  alt="QR Code for PDF link"
+/>
 
 <main in:fade={{ delay: 250, duration: 300 }}>
   <Header basics={resume.basics} />
@@ -35,6 +42,11 @@
   <Projects projects={resume.projects} />
 </main>
 
+<p in:fade={{ delay: 300, duration: 300 }}>
+  Made with <i class="fas fa-heart" />
+  from <i class="fab fa-canadian-maple-leaf" />
+</p>
+
 <style lang="scss">
   /* Global Styles */
 
@@ -47,6 +59,7 @@
     --blue: #423b6d;
     --gray: #ababab;
     --black: #252525;
+    --red: #c54545;
 
     --bg: var(--white);
     --text: var(--black);
@@ -104,6 +117,9 @@
   /** Resume Styles */
 
   main {
+    width: 8.5in;
+    height: 11in;
+    margin: 0 auto;
     background-color: var(--bg);
     font-size: var(--normal);
     padding: 2rem;
@@ -124,7 +140,8 @@
     }
   }
 
-  div {
+  p {
+    color: var(--bg);
     margin: 0 auto;
     max-width: 8.5in;
     padding: 1rem 0;
@@ -133,43 +150,42 @@
       color: var(--bg);
     }
 
-    img {
-      display: none;
-    }
-  }
-
-  @media screen and (min-width: 8.5in) {
-    main {
-      width: 8.5in;
-      height: 11in;
-      margin: 0 auto;
-    }
-
-    div {
+    &:first-of-type {
       text-align: right;
     }
+
+    &:nth-of-type(2) i {
+      color: var(--red);
+    }
   }
+
+  img {
+    display: none;
+    max-width: 250px;
+    margin-left: calc(50vw - 125px);
+  }
+
+  /** Mobile Styles */
 
   @media screen and (max-width: 8.5in) {
     main {
       display: none;
     }
 
-    div {
-      height: 100vh;
-      width: 80%;
+    p {
+      height: calc(50vh - 125px - 1rem);
+      width: 250px;
+      text-align: center;
 
-      display: flex;
-      flex-direction: column;
-      row-gap: 1rem;
-
-      justify-content: center;
-      align-items: center;
-
-      img {
-        display: initial;
-        max-width: 250px;
+      &:first-of-type {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
       }
+    }
+
+    img {
+      display: initial;
     }
   }
 
@@ -179,7 +195,8 @@
     main {
       height: 100vh;
     }
-    div {
+
+    p {
       display: none;
     }
 

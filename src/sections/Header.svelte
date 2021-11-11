@@ -35,7 +35,7 @@
 
   h1 {
     font-family: var(--serif);
-    font-size: 28pt;
+    font-size: #{calc(28pt / 12pt)}rem;
   }
 
   .contacts {
