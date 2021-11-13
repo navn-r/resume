@@ -132,7 +132,7 @@
 
     border-bottom: 1px solid var(--gray);
     line-height: 0rem;
-    margin: 1.625rem 0 1.25rem;
+    margin: 1.4375rem 0;
 
     span {
       background-color: var(--bg);
