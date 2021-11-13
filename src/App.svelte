@@ -56,8 +56,7 @@
 
     --wrapper: #131516;
     --white: #ffffff;
-    --blue: #423b6d;
-    --gray: #ababab;
+    --gray: #2f4f4f;
     --black: #252525;
     --red: #c54545;
 
@@ -128,6 +127,7 @@
   h3 {
     font-family: var(--serif);
     font-size: var(--title);
+    color: var(--gray);
     font-weight: 400;
 
     border-bottom: 1px solid var(--gray);

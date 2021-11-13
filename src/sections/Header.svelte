@@ -53,6 +53,7 @@
 
   i {
     transform: translateY(1px);
+    color: var(--gray);
   }
 
   .lower {
