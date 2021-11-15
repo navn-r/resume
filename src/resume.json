@@ -55,7 +55,7 @@
       "startDate": "2021-05-03",
       "endDate": "2021-08-31",
       "highlights": [
-        "Eliminated redundant manual user tests by creating an end-to-end automation suite with Jest and Playwright",
+        "Pioneered an E2E automation pipeline with Jest, Playwright and Github Actions, eliminating redundant manual user tests",
         "Reduced developer setup from <strong>2 hours</strong> to <strong>10 minutes</strong> by dockerizing the React and Rails codebase with Docker Compose",
         "Built a <strong>33%</strong> faster database seeding script with auto-generated data using Ruby, replacing outdated migration scripts"
       ]
