@@ -69,7 +69,8 @@
   }
 
   :global(::selection) {
-    background-color: var(--gray);
+    background-color: var(--red);
+    color: var(--white);
   }
 
   :global(*) {
