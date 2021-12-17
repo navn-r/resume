@@ -2,6 +2,9 @@ const puppeteer = require('puppeteer');
 const exiftool = require('node-exiftool');
 const ep = new exiftool.ExiftoolProcess();
 
+const PORT = process.argv[2] === '--dev' ? '3000' : '5000';
+const OUT = process.argv[2] === '--dev' ? 'public' : 'dist';
+
 (async () => {
   const browser = await puppeteer.launch({
     dumpio: true,
@@ -10,13 +13,13 @@ const ep = new exiftool.ExiftoolProcess();
   });
   const page = await browser.newPage();
   
-  await page.setViewport({ width: 1920, height: 1080});
-  await page.goto(`http://localhost:5000/resume/`, {
+  await page.setViewport({ width: 2560, height: 1440});
+  await page.goto(`http://localhost:${PORT}/resume/`, {
     waitUntil: 'networkidle2',
   });
 
   await page.pdf({
-    path: 'dist/RavindaranNavinn_Resume.pdf',
+    path: `${OUT}/RavindaranNavinn_Resume.pdf`,
     printBackground: true,
     displayHeaderFooter: false,
     scale: 1,
@@ -27,7 +30,7 @@ const ep = new exiftool.ExiftoolProcess();
   await ep.open();
 
   await ep.writeMetadata(
-    'dist/RavindaranNavinn_Resume.pdf',
+    `${OUT}/RavindaranNavinn_Resume.pdf`,
     {
       all: '', // remove existing tags
       Title: 'Navinn Ravindaran - Resume',

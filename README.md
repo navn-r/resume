@@ -38,7 +38,7 @@ Build to production
 npm run build
 ```
 
-Print to PDF (Run `build` first)
+Print to PDF (Requires dev server to be running)
 ```
 npm run print
 ```
