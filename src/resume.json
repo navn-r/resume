@@ -32,7 +32,7 @@
       "startDate": "2022-01-10",
       "endDate": "2022-04-22",
       "highlights": [
-        "Incoming Winter 2022 Co-op — OMNI Technology & Operations; primarily developing with Angular and Java Spring"
+        "Creating a new home mortgage application experience for RBC advisors using Angular, Java Spring Boot and GraphQL"
       ]
     },
     {
@@ -83,7 +83,7 @@
       "studyType": "Honours Bachelor of Science",
       "startDate": "2019-09-08",
       "endDate": "2023-04-30",
-      "score": "3.58 / 4.00",
+      "score": "3.53 / 4.00",
       "courses": ["Software Design (CSCB07)"],
       "awards": ["Dean's List of Academic Excellence", "UofT Scholar ($7500)"]
     }
@@ -124,6 +124,7 @@
         "APIs (REST, GraphQL)",
         "Agile Methodologies (Scrum, Kanban)",
         "Test Driven Development",
+        "DBMS",
         "CI/CD"
       ]
     }
@@ -144,7 +145,7 @@
     },
     {
       "name": "Noten",
-      "description": "A grade tracker with <strong>80+</strong> installs featuring multi-semester management, multiple grade scales, grade prediction, and selective course + grade calculation",
+      "description": "A grade tracker with <strong>100+</strong> installs featuring multi-semester management, multiple grade scales, grade prediction, and selective course + grade calculation",
       "highlights": [],
       "startDate": "2020-04",
       "endDate": "2020-05",
