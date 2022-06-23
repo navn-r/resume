@@ -25,6 +25,17 @@
   },
   "work": [
     {
+      "name": "HubSpot",
+      "location": "Toronto, ON",
+      "position": "Software Engineer Co-op",
+      "url": "https://www.hubspot.com/",
+      "startDate": "2022-08-29",
+      "endDate": "2022-12-16",
+      "highlights": [
+        "Incoming Fall 2022 Intern — Primarily working with React and TypeScript"
+      ]
+    },
+    {
       "name": "Royal Bank of Canada",
       "location": "Toronto, ON",
       "position": "Full-Stack Software Developer Co-op",
@@ -32,7 +43,9 @@
       "startDate": "2022-01-10",
       "endDate": "2022-04-22",
       "highlights": [
-        "Creating a new home mortgage application experience for RBC advisors using Angular, Java Spring Boot and GraphQL"
+        "Leveraged Google Analytics to track and optimise cruicial user interactions for over <strong>35+</strong> client and advisor events",
+        "Developed unit and integration tests using Jest, JUnit and Mockito, maintaining code compatibility with <strong>97%</strong> coverage",
+        "Implemented automated language preference with app-wide translations using Angular and Spring boot, expanding access to new French and Bilingual mortgage clients"
       ]
     },
     {
@@ -82,7 +95,7 @@
       "area": "Computer Science & Statistics Co-op",
       "studyType": "Honours Bachelor of Science",
       "startDate": "2019-09-08",
-      "endDate": "2023-04-30",
+      "endDate": "2024-04-30",
       "score": "3.53 / 4.00",
       "courses": ["Software Design (CSCB07)"],
       "awards": ["Dean's List of Academic Excellence", "UofT Scholar ($7500)"]
@@ -133,9 +146,7 @@
     {
       "name": "UImpactify",
       "description": "An online learning and crowdfunding platform to provide accessible specialized education in the social purpose sector",
-      "highlights": [
-        "Spearheaded the design and development of course creation, realtime chat, assessment analytics and donation systems to effectively engage student and instructor collaboration"
-      ],
+      "highlights": [],
       "startDate": "2020-09",
       "endDate": "2020-12",
       "repo": "https://github.com/navn-r/uimpactify",
@@ -159,16 +170,6 @@
         "TypeScript",
         "Firebase Realtime Database + Authentication"
       ]
-    },
-    {
-      "name": "Spotify API Clone",
-      "description": "A microservices REST API backend to create and follow user profiles, upload and like songs, generate and query playlists",
-      "startDate": "2020-11",
-      "endDate": "2020-12",
-      "repo": "https://github.com/navn-r/spotify-api-clone",
-      "url": "https://navn.me/spotify-api-clone",
-      "type": "Documentation",
-      "technology": ["Java", "Spring Boot", "MongoDB", "Neo4j"]
     }
   ]
 }
