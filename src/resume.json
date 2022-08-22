@@ -32,7 +32,7 @@
       "startDate": "2022-08-29",
       "endDate": "2022-12-16",
       "highlights": [
-        "Incoming Fall 2022 Intern — Primarily working with React and TypeScript"
+        "Incoming Fall 2022 Intern — Frontend Dev Tooling team; Primarily working with React and TypeScript"
       ]
     },
     {
@@ -144,15 +144,26 @@
   ],
   "projects": [
     {
-      "name": "UImpactify",
-      "description": "An online learning and crowdfunding platform to provide accessible specialized education in the social purpose sector",
+      "name": "DrawHub",
+      "description": "A realtime collaborative whiteboard platform featuring custom visibility, email notifications, and exportable canvasses",
       "highlights": [],
-      "startDate": "2020-09",
-      "endDate": "2020-12",
-      "repo": "https://github.com/navn-r/uimpactify",
-      "url": "https://uimpactify.herokuapp.com",
+      "startDate": "2022-07",
+      "endDate": "2022-08",
+      "repo": "https://github.com/navn-r/drawhub",
+      "url": "https://drawhub.tech",
       "type": "Website",
-      "technology": ["MongoDB", "Express.js", "Angular", "Node.js"]
+      "technology": [
+        "React",
+        "NestJS",
+        "WebSockets",
+        "GraphQL",
+        "MongoDB",
+        "Redis",
+        "Auth0",
+        "AWS S3",
+        "Kubernetes",
+        "DigitalOcean"
+      ]
     },
     {
       "name": "Noten",
