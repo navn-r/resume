@@ -14,9 +14,7 @@
       </p>
       <p>
         <span>{school.studyType}, {school.area}</span>
-        <span
-          >{formatDate(school.startDate)} — {formatDate(school.endDate)}</span
-        >
+        <span>{formatDate(school.endDate)} (Expected)</span>
       </p>
     </div>
     <p>

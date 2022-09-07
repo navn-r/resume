@@ -32,7 +32,7 @@
       "startDate": "2022-08-29",
       "endDate": "2022-12-16",
       "highlights": [
-        "Incoming Fall 2022 Intern — Frontend Dev Tooling team; Primarily working with React and TypeScript"
+        "Currently building internal infrastructure tools for product-facing frontend engineers using React and TypeScript"
       ]
     },
     {
@@ -45,7 +45,7 @@
       "highlights": [
         "Leveraged Google Analytics to track and optimise cruicial user interactions for over <strong>35+</strong> client and advisor events",
         "Developed unit and integration tests using Jest, JUnit and Mockito, maintaining code compatibility with <strong>97%</strong> coverage",
-        "Implemented automated language preference with app-wide translations using Angular and Spring boot, expanding access to new French and Bilingual mortgage clients"
+        "Expanded access to new French and Bilingual mortgage clients by implementing automated language preference with app-wide translations using Angular and Spring boot"
       ]
     },
     {
@@ -96,9 +96,9 @@
       "studyType": "Honours Bachelor of Science",
       "startDate": "2019-09-08",
       "endDate": "2024-04-30",
-      "score": "3.53 / 4.00",
+      "score": "3.53",
       "courses": ["Software Design (CSCB07)"],
-      "awards": ["Dean's List of Academic Excellence", "UofT Scholar ($7500)"]
+      "awards": ["Dean's List", "UofT Scholar"]
     }
   ],
   "skills": [

@@ -10,10 +10,11 @@ const OUT = process.argv[2] === '--dev' ? 'public' : 'dist';
     dumpio: true,
     headless: true,
     args: ['--font-render-hinting=none', '--lang=en-GB'],
+    ignoreDefaultArgs: ['--disable-extensions'],
   });
   const page = await browser.newPage();
-  
-  await page.setViewport({ width: 2560, height: 1440});
+
+  await page.setViewport({ width: 2560, height: 1440 });
   await page.goto(`http://localhost:${PORT}/resume/`, {
     waitUntil: 'networkidle2',
   });
