@@ -43,8 +43,7 @@
       "startDate": "2022-01-10",
       "endDate": "2022-04-22",
       "highlights": [
-        "Leveraged Google Analytics to track and optimise cruicial user interactions for over <strong>35+</strong> client and advisor events",
-        "Developed unit and integration tests using Jest, JUnit and Mockito, maintaining code compatibility with <strong>97%</strong> coverage",
+        "Optimised <strong>35+</strong> crucial user interactions by leveraging Google Analytics to streamline the mortgage application process",
         "Expanded access to new French and Bilingual mortgage clients by implementing automated language preference with app-wide translations using Angular and Spring boot"
       ]
     },
@@ -83,7 +82,7 @@
       "highlights": [
         "Decreased developer & QA regression efforts by <strong>60%</strong> by converting manual tests to unit tests with Karma and Jasmine",
         "Refactored <strong>700+</strong> lines of legacy AngularJS plugins to Angular, improving code modularity using dependency injection",
-        "Developed the foundation of an audit trail used by <strong>130+</strong> international accounting firms, preventing asset misappropriation"
+        "Developed an audit trail function used by <strong>130+</strong> international accounting firms, minimizing problematic behaviors such as asset misappropriation and protecting clients by providing transaction history"
       ]
     }
   ],
@@ -96,7 +95,7 @@
       "studyType": "Honours Bachelor of Science",
       "startDate": "2019-09-08",
       "endDate": "2024-04-30",
-      "score": "3.53",
+      "score": "3.29",
       "courses": ["Software Design (CSCB07)"],
       "awards": ["Dean's List", "UofT Scholar"]
     }
