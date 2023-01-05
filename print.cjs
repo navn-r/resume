@@ -2,11 +2,12 @@ const puppeteer = require('puppeteer');
 const exiftool = require('node-exiftool');
 const ep = new exiftool.ExiftoolProcess();
 
-const PORT = process.argv[2] === '--dev' ? '3000' : '5000';
+const PORT = process.argv[2] === '--dev' ? '5173' : '4173';
 const OUT = process.argv[2] === '--dev' ? 'public' : 'dist';
 
 (async () => {
   const browser = await puppeteer.launch({
+    executablePath: 'google-chrome',
     dumpio: true,
     headless: true,
     args: ['--font-render-hinting=none', '--lang=en-GB'],
