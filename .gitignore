@@ -2,3 +2,6 @@
 /dist/
 /.vscode/
 .DS_Store
+
+# local prints
+public/RavindaranNavinn_Resume.pdf

@@ -3,9 +3,9 @@
   "version": "3.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite --host --port=3000",
     "build": "vite build",
-    "serve": "vite preview",
+    "serve": "vite preview --port=5000",
     "check": "svelte-check --tsconfig ./tsconfig.json --fail-on-warnings --fail-on-hints",
     "format": "prettier --write src/*.svelte src/*.ts src/**/*.svelte",
     "print:ci": "node print.cjs",

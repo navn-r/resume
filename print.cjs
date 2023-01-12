@@ -7,6 +7,7 @@ const OUT = process.argv[2] === '--dev' ? 'public' : 'dist';
 
 (async () => {
   const browser = await puppeteer.launch({
+    executablePath: 'google-chrome',
     dumpio: true,
     headless: true,
     args: ['--font-render-hinting=none', '--lang=en-GB'],

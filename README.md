@@ -42,3 +42,5 @@ Print to PDF (Requires dev server to be running)
 ```
 npm run print
 ```
+
+**Note**: `exiftool` and browser deps for `puppeteer` must be installed. See [puppeteer/docs/troubleshooting.md](https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md) 
