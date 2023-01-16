@@ -32,7 +32,9 @@
       "startDate": "2022-08-29",
       "endDate": "2022-12-16",
       "highlights": [
-        "Currently building internal infrastructure tools for product-facing frontend engineers using React and TypeScript"
+        "Developed a VSCode extension leveraging TypeScript's internal type checker to provide full type introspection for symbols, eliminating the need to traverse multiple locations for nested type definitions",
+        "Implemented the ability to re-run migrations across <strong>1000+</strong> front-end repositories using React and Redux, streamlining core infrastructure workflows by removing redundant duplication of settings",
+        "Extended a project generator CLI to support automated code refactoring scripts using Node and TypeScript, enabling all HubSpot front-end developers to build code mods using the TypeScript abstract syntax tree"
       ]
     },
     {
@@ -45,18 +47,6 @@
       "highlights": [
         "Optimised <strong>35+</strong> crucial user interactions by leveraging Google Analytics to streamline the mortgage application process",
         "Expanded access to new French and Bilingual mortgage clients by implementing automated language preference with app-wide translations using Angular and Spring boot"
-      ]
-    },
-    {
-      "name": "Major League Hacking",
-      "location": "Remote, N.A.",
-      "position": "Open Source Fellow",
-      "url": "https://fellowship.mlh.io",
-      "startDate": "2021-06-05",
-      "endDate": "2021-08-31",
-      "highlights": [
-        "Selected as one of <strong>30</strong> fellows from over <strong>5000+</strong> international applicants, under the guidance of MLH mentors and coaches",
-        "Implemented and demoed Git merge conflict resolution in the Jupyterlab IDE using React, TypeScript and Python, allowing data scientists to preview and fix Jupyter Notebook conflicts without a terminal"
       ]
     },
     {
@@ -96,7 +86,10 @@
       "startDate": "2019-09-08",
       "endDate": "2024-04-30",
       "score": "3.29",
-      "courses": ["Software Design (CSCB07)"],
+      "courses": [
+        "Software Design (CSCB07)",
+        "Programming on the Web (CSCC09)"
+      ],
       "awards": ["Dean's List", "UofT Scholar"]
     }
   ],
