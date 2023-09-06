@@ -11,11 +11,13 @@
       <span><a href={work.url}>{work.name}</a> | {work.position}</span>
       <span>{formatDate(work.startDate)} — {formatDate(work.endDate)}</span>
     </p>
-    <ul>
-      {#each work.highlights as highlight}
-        <li>{@html highlight}</li>
-      {/each}
-    </ul>
+    {#if work.highlights.length > 0}
+      <ul>
+        {#each work.highlights as highlight}
+          <li>{@html highlight}</li>
+        {/each}
+      </ul>
+    {/if}
   {/each}
 </section>
 

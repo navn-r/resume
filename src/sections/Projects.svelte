@@ -8,7 +8,9 @@
   {#each projects as project}
     <p>
       <strong>{project.name}</strong>
-      <a href={project.url}>(<strong>{project.type}</strong>)</a>
+      {#if project.url}
+        <a href={project.url}>(<strong>{project.type}</strong>)</a>
+      {/if}
       <a href={project.repo}>(<strong>GitHub</strong>)</a>
     </p>
     <ul>

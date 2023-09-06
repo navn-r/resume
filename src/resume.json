@@ -25,6 +25,17 @@
   },
   "work": [
     {
+      "name": "American Express",
+      "location": "Toronto, ON",
+      "position": "Full-Stack Software Engineer Intern",
+      "url": "https://www.americanexpress.com/en-ca/",
+      "startDate": "2023-09-05",
+      "endDate": "2023-12-22",
+      "highlights": [
+        "Leveraging React, TypeScript, and Node.js to streamline card member connections at Pearson International Airport (YYZ)"
+      ]
+    },
+    {
       "name": "HubSpot",
       "location": "Toronto, ON",
       "position": "Software Engineer Co-op",
@@ -81,15 +92,16 @@
       "institution": "University of Toronto",
       "location": "Toronto, ON",
       "url": "https://www.utoronto.ca/",
-      "area": "Computer Science & Statistics Co-op",
+      "area": "Computer Science Co-op",
       "studyType": "Honours Bachelor of Science",
       "startDate": "2019-09-08",
       "endDate": "2024-04-30",
-      "score": "3.27",
+      "score": "3.26",
       "courses": [
-        "Intro to Software Engineering (CSCC01)",
         "Software Design (CSCB07)",
-        "Programming on the Web (CSCC09)"
+        "Intro to Software Engineering (CSCC01)",
+        "Programming on the Web (CSCC09)",
+        "Engineering Large Software Systems (CSCD01)"
       ],
       "awards": ["Dean's List", "UofT Scholar"]
     }
@@ -143,7 +155,6 @@
       "startDate": "2022-07",
       "endDate": "2022-08",
       "repo": "https://github.com/navn-r/drawhub",
-      "url": "https://drawhub.tech",
       "type": "Website",
       "technology": [
         "React",
@@ -160,7 +171,7 @@
     },
     {
       "name": "Noten",
-      "description": "A grade tracker with <strong>100+</strong> installs featuring multi-semester management, multiple grade scales, grade prediction, and selective course + grade calculation",
+      "description": "A semester-based grade tracker with <strong>100+</strong> installs, multiple grade scales, grade prediction, and selective calculation",
       "highlights": [],
       "startDate": "2020-04",
       "endDate": "2020-05",
