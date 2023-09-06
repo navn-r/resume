@@ -11,13 +11,13 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v2
       - uses: pnpm/action-setup@v2
         with:
-          version: 6.20.3
+          version: 8.4.0
 
       - name: Cache pnpm modules
         uses: actions/cache@v2
