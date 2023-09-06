@@ -8,7 +8,9 @@
   {#each projects as project}
     <p>
       <strong>{project.name}</strong>
-      <a href={project.url}>(<strong>{project.type}</strong>)</a>
+      {#if project.url}
+        <a href={project.url}>(<strong>{project.type}</strong>)</a>
+      {/if}
       <a href={project.repo}>(<strong>GitHub</strong>)</a>
     </p>
     <ul>
@@ -35,7 +37,7 @@
     }
 
     &:not(:first-child) {
-      margin-top: 1rem;
+      margin-top: 0.75rem; // FIXME: 1rem;
     }
   }
 
