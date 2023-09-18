@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Resume } from 'src/resume.schema';
-  import { formatDate } from '../utils';
+  import { isPresent, formatDate } from '../utils';
 
   export let experience: Resume.IWork[];
 </script>
@@ -9,7 +9,11 @@
   {#each experience as work}
     <p>
       <span><a href={work.url}>{work.name}</a> | {work.position}</span>
-      <span>{formatDate(work.startDate)} — {formatDate(work.endDate)}</span>
+      <span
+        >{formatDate(work.startDate)} — {isPresent(work.endDate)
+          ? 'Present'
+          : formatDate(work.endDate)}</span
+      >
     </p>
     {#if work.highlights.length > 0}
       <ul>
@@ -29,7 +33,7 @@
     font-size: var(--title);
 
     &:not(:first-child) {
-      margin-top: 1rem;
+      margin-top: 0.75rem;
     }
   }
 

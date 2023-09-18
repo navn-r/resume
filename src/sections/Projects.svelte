@@ -37,7 +37,7 @@
     }
 
     &:not(:first-child) {
-      margin-top: 1rem;
+      margin-top: 0.75rem;
     }
   }
 

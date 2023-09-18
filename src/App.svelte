@@ -117,8 +117,7 @@
   /** Resume Styles */
 
   main {
-    width: 8.5in;
-    height: 11in;
+    width: 816px;
     margin: 0 auto;
     background-color: var(--bg);
     font-size: var(--normal);
@@ -128,7 +127,6 @@
   h3 {
     font-family: var(--serif);
     font-size: var(--title);
-    color: var(--gray);
     font-weight: 400;
     display: flex;
 
@@ -144,7 +142,7 @@
   p {
     color: var(--bg);
     margin: 0 auto;
-    max-width: 8.5in;
+    max-width: 816px;
     padding: 1rem 0;
 
     a {
@@ -194,7 +192,8 @@
 
   @media print {
     main {
-      height: 100vh;
+      width: 8.5in;
+      height: 11in;
     }
 
     p {
