@@ -6,3 +6,5 @@
  */
 export const formatDate = (date: string): string =>
   new Date(date).toLocaleString('en-GB', { month: 'short', year: 'numeric' });
+
+export const isPresent = (date: string): boolean => new Date(date) > new Date();

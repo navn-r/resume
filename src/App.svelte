@@ -128,7 +128,6 @@
   h3 {
     font-family: var(--serif);
     font-size: var(--title);
-    color: var(--gray);
     font-weight: 400;
     display: flex;
 

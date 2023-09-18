@@ -9,18 +9,13 @@
   {#each education as school}
     <div>
       <p>
-        <a href={school.url}><h4>{school.institution}</h4></a>
-        <span>{school.location}</span>
-      </p>
-      <p>
-        <span>{school.studyType}, {school.area}</span>
+        <span
+          ><a href={school.url}>{school.institution}</a> | {school.studyType},
+          {school.area}</span
+        >
         <span>{formatDate(school.endDate)} (Expected)</span>
       </p>
     </div>
-    <p>
-      <strong>Cumulative GPA:</strong>
-      {school.score} — {school.awards.join(', ')}
-    </p>
     <p>
       <strong>Teaching Assistant:</strong>
       {school.courses.join(', ')}
@@ -31,6 +26,7 @@
 <style lang="scss">
   div {
     display: grid;
+    margin-bottom: 0.25rem;
 
     p {
       display: grid;
@@ -45,5 +41,6 @@
 
   a {
     font-family: var(--serif);
+    font-weight: bold;
   }
 </style>
