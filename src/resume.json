@@ -32,7 +32,8 @@
       "startDate": "2023-09-05",
       "endDate": "2023-12-22",
       "highlights": [
-        "Leveraging React, TypeScript, and Node.js to streamline card member connections at Pearson International Airport (YYZ)"
+        "Refined card member connections by <strong>50%</strong> at Pearson International Airport through building an Apple Wallet priority pass",
+        "Spearheaded an automated dependency management system with Node.js, TypeScript and GitHub Actions, reducing technical debt by <strong>27%</strong> through eliminating manual vulnerability patching"
       ]
     },
     {
@@ -96,10 +97,11 @@
       "studyType": "HBSc",
       "startDate": "2019-09-08",
       "endDate": "2024-04-30",
-      "score": "3.26",
+      "score": "3.28",
       "courses": [
         "Software Design (CSCB07)",
-        "Intro to Software Engineering (CSCC01)",
+        "Introduction to Databases and Web Applications (CSCB20)",
+        "<br />Intro to Software Engineering (CSCC01)",
         "Programming on the Web (CSCC09)",
         "Engineering Large Software Systems (CSCD01)"
       ],
