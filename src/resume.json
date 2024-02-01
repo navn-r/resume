@@ -33,7 +33,7 @@
       "endDate": "2023-12-22",
       "highlights": [
         "Refined card member connections by <strong>50%</strong> at Pearson International Airport through building an Apple Wallet priority pass",
-        "Spearheaded an automated dependency management system with Node.js, TypeScript and GitHub Actions, reducing technical debt by <strong>27%</strong> through eliminating manual vulnerability patching"
+        "Spearheaded an automated dependency management system with Node.js, TypeScript, GraphQL and GitHub Actions, reducing technical debt by <strong>27%</strong> through eliminating manual vulnerability patching"
       ]
     },
     {
@@ -99,11 +99,11 @@
       "endDate": "2024-04-30",
       "score": "3.28",
       "courses": [
-        "Software Design (CSCB07)",
-        "Introduction to Databases and Web Applications (CSCB20)",
-        "<br />Intro to Software Engineering (CSCC01)",
-        "Programming on the Web (CSCC09)",
-        "Engineering Large Software Systems (CSCD01)"
+        "Software Design",
+        "Introduction to Databases and Web Applications",
+        "Intro to Software Engineering",
+        "Programming on the Web",
+        "Engineering Large Software Systems"
       ],
       "awards": ["Dean's List", "UofT Scholar"]
     }
