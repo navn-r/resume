@@ -25,7 +25,7 @@ This resume uses the schema from the [JSON Resume](https://jsonresume.org/schema
 
 Install dependencies
 ```
-pnpm install
+npm install
 ```
 
 Dev server
