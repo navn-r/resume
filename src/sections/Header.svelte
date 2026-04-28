@@ -12,10 +12,6 @@
       <a href="mailto:{basics.email}">{basics.email}</a>
     </div>
     <div class="lower">
-      <div class="contact">
-        <i class="fas fa-link" />
-        <a href={basics.url}>{basics.url.replace('https://', '')}</a>
-      </div>
       {#each basics.profiles as profile}
         <div class="contact">
           <i class="fab fa-{profile.network}" />
@@ -29,7 +25,7 @@
 <style lang="scss">
   section {
     display: grid;
-    grid-template-columns: auto 15rem;
+    grid-template-columns: 1fr max-content;
     height: max-content;
   }
 
@@ -42,12 +38,16 @@
     display: grid;
     row-gap: 0.25rem;
     font-size: var(--normal);
+
+    & > .contact {
+      column-gap: 0.4rem;
+    }
   }
 
   .contact {
     display: grid;
     grid-template-columns: 1rem auto;
-    column-gap: 0.5rem;
+    column-gap: 0.4rem;
     align-items: center;
   }
 
@@ -57,15 +57,8 @@
   }
 
   .lower {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
-
-    & .contact:nth-child(2) {
-      justify-content: center;
-    }
-
-    & .contact:nth-child(3) {
-      justify-content: right;
-    }
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
   }
 </style>

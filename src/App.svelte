@@ -29,14 +29,14 @@
 <main in:fade={{ delay: 250, duration: 300 }}>
   <Header basics={resume.basics} />
 
-  <h3>EDUCATION</h3>
-  <Education education={resume.education} />
+  <h3>EXPERIENCE</h3>
+  <Experience experience={resume.work} />
 
   <h3>SKILLS</h3>
   <Skills skills={resume.skills} />
 
-  <h3>EXPERIENCE</h3>
-  <Experience experience={resume.work} />
+  <h3>EDUCATION</h3>
+  <Education education={resume.education} />
 
   <h3>PROJECTS</h3>
   <Projects projects={resume.projects} />
@@ -118,6 +118,8 @@
 
   main {
     width: 816px;
+    height: 1056px;
+    overflow: hidden;
     margin: 0 auto;
     background-color: var(--bg);
     font-size: var(--normal);
@@ -130,7 +132,7 @@
     font-weight: 400;
     display: flex;
 
-    margin: 0.75rem 0;
+    margin: 0.875rem 0;
     &::after {
       content: '';
       flex: 1 1;

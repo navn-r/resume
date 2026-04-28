@@ -7,14 +7,16 @@
 
 <section>
   {#each experience as work}
-    <p>
-      <span><a href={work.url}>{work.name}</a> | {work.position}</span>
-      <span
+    <div class="title-container">
+      <span><a href={work.url}>{work.name}</a></span>
+      <span class="right">{work.location}</span>
+      <span>{work.position}</span>
+      <span class="right"
         >{formatDate(work.startDate)} — {isPresent(work.endDate)
           ? 'Present'
           : formatDate(work.endDate)}</span
       >
-    </p>
+    </div>
     {#if work.highlights.length > 0}
       <ul>
         {#each work.highlights as highlight}
@@ -26,14 +28,23 @@
 </section>
 
 <style lang="scss">
-  p {
+  .title-container {
     display: grid;
-    grid-template-columns: repeat(2, max-content);
-    justify-content: space-between;
+    grid-template-columns: 1fr auto;
+    row-gap: 0.125rem;
     font-size: var(--title);
 
     &:not(:first-child) {
       margin-top: 0.75rem;
+    }
+
+    .right {
+      text-align: right;
+    }
+
+    span:nth-child(3),
+    span:nth-child(4) {
+      font-size: var(--normal);
     }
   }
 

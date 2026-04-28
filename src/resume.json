@@ -3,12 +3,12 @@
   "basics": {
     "name": "Navinn Ravindaran",
     "label": "",
-    "email": "navinn.ravindaran@mail.utoronto.ca",
+    "email": "navinn@duck.com",
     "url": "https://navn.me",
     "location": {
-      "city": "Toronto",
-      "region": "Ontario",
-      "countryCode": "CA"
+      "city": "New York",
+      "region": "New York",
+      "countryCode": "US"
     },
     "profiles": [
       {
@@ -25,6 +25,19 @@
   },
   "work": [
     {
+      "name": "Meta",
+      "location": "New York, NY",
+      "position": "Software Engineer",
+      "url": "https://about.meta.com/",
+      "startDate": "2024-08-05",
+      "endDate": "2030-01-01",
+      "highlights": [
+        "Owned Instagram's AI Restyle backend serving <strong>712K</strong> daily creators; designed a prompt ranking system that lifted broadcast shares <strong>+45.5%</strong> WoW during holiday campaigns",
+        "Migrated Instagram Reels comment-theme matching to DRAMA-1B embeddings, cutting inference calls <strong>50%</strong> while improving accuracy <strong>+5.6pp</strong>; built auto-triggering notification achieving <strong>10.8%</strong> CTR vs <strong>2-3%</strong> baseline",
+        "Rebuilt Restyle's internal preset prompt platform, unifying photo, video, and text modalities with automated evals and translation; built an LLM pipeline that cut preset launch time from <strong>1 week</strong> to <strong>1 day</strong>"
+      ]
+    },
+    {
       "name": "American Express",
       "location": "Toronto, ON",
       "position": "Full-Stack Software Engineer Intern",
@@ -39,7 +52,7 @@
     {
       "name": "HubSpot",
       "location": "Toronto, ON",
-      "position": "Software Engineer Co-op",
+      "position": "Software Engineer Intern",
       "url": "https://www.hubspot.com/",
       "startDate": "2022-08-29",
       "endDate": "2022-12-16",
@@ -52,39 +65,13 @@
     {
       "name": "Royal Bank of Canada",
       "location": "Toronto, ON",
-      "position": "Full-Stack Software Developer Co-op",
+      "position": "Full-Stack Software Developer Intern",
       "url": "https://www.rbc.com/",
       "startDate": "2022-01-10",
       "endDate": "2022-04-22",
       "highlights": [
         "Optimised <strong>35+</strong> crucial user interactions by leveraging Google Analytics to streamline the mortgage application process",
         "Expanded access to new French and Bilingual mortgage clients by implementing automated language preference with app-wide translations using Angular and Spring boot"
-      ]
-    },
-    {
-      "name": "Halo Science",
-      "location": "Chicago, IL",
-      "position": "Full-Stack Software Engineer Intern",
-      "url": "https://www.halo.science",
-      "startDate": "2021-05-03",
-      "endDate": "2021-08-31",
-      "highlights": [
-        "Pioneered an E2E automation pipeline with Jest, Playwright and GitHub Actions, eliminating redundant manual user tests",
-        "Reduced developer setup from <strong>2 hours</strong> to <strong>10 minutes</strong> by dockerizing the React and Rails codebase with Docker Compose",
-        "Built a <strong>33%</strong> faster database seeding script with auto-generated data using Ruby, replacing outdated migration scripts"
-      ]
-    },
-    {
-      "name": "CaseWare International",
-      "location": "Toronto, ON",
-      "position": "Software Developer Co-op",
-      "url": "https://www.caseware.com/ca",
-      "startDate": "2020-09-08",
-      "endDate": "2021-04-30",
-      "highlights": [
-        "Decreased developer & QA regression efforts by <strong>60%</strong> by converting manual tests to unit tests with Karma and Jasmine",
-        "Refactored <strong>700+</strong> lines of legacy AngularJS plugins to Angular, improving code modularity using dependency injection",
-        "Developed an audit trail function used by <strong>130+</strong> international accounting firms, minimizing problematic behaviors such as asset misappropriation and protecting clients by providing transaction history"
       ]
     }
   ],
@@ -96,7 +83,7 @@
       "area": "Computer Science Co-op",
       "studyType": "HBSc",
       "startDate": "2019-09-08",
-      "endDate": "2024-04-30",
+      "endDate": "2024-06-15",
       "score": "3.28",
       "courses": [
         "Software Design",
@@ -114,38 +101,38 @@
       "keywords": [
         "TypeScript",
         "JavaScript",
-        "HTML",
-        "CSS",
-        "Java",
         "Python",
-        "Ruby",
+        "PHP",
+        "Java",
         "SQL",
-        "C",
-        "Shell"
+        "HTML",
+        "CSS"
       ]
     },
     {
-      "name": "Frameworks & Tools",
+      "name": "Frameworks & Infrastructure",
       "keywords": [
         "React",
-        "Angular",
         "Node.js",
-        "Ruby on Rails",
-        "Docker",
-        "Jira",
-        "MongoDB",
+        "GraphQL",
         "PostgreSQL",
-        "Firebase"
+        "Redis",
+        "MongoDB",
+        "Docker",
+        "Kubernetes",
+        "AWS",
+        "CI/CD"
       ]
     },
     {
-      "name": "Concepts",
+      "name": "Domains",
       "keywords": [
-        "APIs (REST, GraphQL)",
-        "Agile Methodologies (Scrum, Kanban)",
-        "Test Driven Development",
-        "DBMS",
-        "CI/CD"
+        "LLM Integration & Pipelines",
+        "Embedding Models (Retrieval, Similarity)",
+        "A/B Testing & Experimentation",
+        "Event-driven Systems",
+        "i18n / Localization",
+        "Internal Developer Tooling"
       ]
     }
   ],
@@ -169,23 +156,6 @@
         "AWS S3",
         "Kubernetes",
         "DigitalOcean"
-      ]
-    },
-    {
-      "name": "Noten",
-      "description": "A semester-based grade tracker with <strong>100+</strong> installs, multiple grade scales, grade prediction, and selective calculation",
-      "highlights": [],
-      "startDate": "2020-04",
-      "endDate": "2020-05",
-      "repo": "https://github.com/navn-r/noten",
-      "url": "https://play.google.com/store/apps/details?id=com.noten",
-      "type": "Google Play Store",
-      "features": [],
-      "technology": [
-        "Ionic",
-        "React",
-        "TypeScript",
-        "Firebase Realtime Database + Authentication"
       ]
     }
   ]

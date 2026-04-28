@@ -13,7 +13,7 @@
           ><a href={school.url}>{school.institution}</a> | {school.studyType},
           {school.area}</span
         >
-        <span>{formatDate(school.endDate)} (Expected)</span>
+        <span>{formatDate(school.endDate)}</span>
       </p>
     </div>
     <p>
