@@ -1,9 +1,28 @@
 const puppeteer = require('puppeteer');
 const exiftool = require('node-exiftool');
+const resume = require('./src/resume.json');
 const ep = new exiftool.ExiftoolProcess();
 
 const PORT = process.argv[2] === '--dev' ? '3000' : '5000';
 const OUT = process.argv[2] === '--dev' ? 'public' : 'dist';
+
+const buildKeywords = (data) => {
+  const [first, ...rest] = data.basics.name.split(' ');
+  const current = data.work[0];
+
+  const front = [
+    first,
+    rest.join(' '),
+    current.position,
+    current.name,
+    'NYC',
+    data.basics.location.region,
+  ];
+
+  const skills = data.skills.flatMap((s) => s.keywords);
+
+  return [...new Set([...front, ...skills])];
+};
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -34,29 +53,13 @@ const OUT = process.argv[2] === '--dev' ? 'public' : 'dist';
   await ep.writeMetadata(
     `${OUT}/RavindaranNavinn_Resume.pdf`,
     {
-      all: '', // remove existing tags
-      Title: 'Navinn Ravindaran - Resume',
-      Subject: 'Resume',
-      Author: 'Navinn Ravindaran',
+      all: '',
+      Title: `${resume.basics.name} - Resume`,
+      Subject: `${resume.work[0].position} Resume`,
+      Author: resume.basics.name,
       Creator: 'Chromium (Puppeteer)',
       Producer: 'github.com/navn-r/resume',
-      'Keywords+': [
-        'Navinn',
-        'Ravindaran',
-        'Resume',
-        'Canada',
-        'Computer Science',
-        'SWE',
-        'Software Engineering',
-        'Developer',
-        'Student',
-        'Coder',
-        'Full Stack',
-        'Frontend',
-        'Backend',
-        'Data Structures',
-        'Algorithms',
-      ],
+      'Keywords+': buildKeywords(resume),
     },
     ['overwrite_original']
   );
